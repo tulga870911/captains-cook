@@ -1,0 +1,54 @@
+@bgColor:#f4f5f7;
+@themeColor:#de9b1b;
+
+
+@font-face {
+      
+      font-family: 'montserratBold';
+      src: url("../fonts/Montserrat-Bold.otf");
+ }
+ @font-face {
+      
+      font-family: 'sansRegular';
+      src: url("../fonts/OpenSans-Regular.ttf");
+ }
+  @font-face {
+      
+      font-family: 'sansBold';
+      src: url("../fonts/OpenSans-Bold.ttf");
+ }
+
+ .fontHeading
+ {
+ 	  font-family: 'montserratBold';
+ }
+
+  .fontRegular
+ {
+ 	  font-family: 'sansRegular';
+ }
+  .fontBold
+ {
+ 	  font-family: 'sansBold';
+ }
+
+ h1,h2,h3,h4
+ {
+ 	.fontHeading();
+  color: #000;
+ }
+
+body
+{
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: @bgColor;
+  color: #fff;
+  .fontRegular();
+}
+
+html
+{
+  height: 100%;
+}

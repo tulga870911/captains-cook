@@ -1,0 +1,338 @@
+@font-face {
+  font-family: 'montserratBold';
+  src: url("../fonts/Montserrat-Bold.otf");
+}
+@font-face {
+  font-family: 'sansRegular';
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: 'sansBold';
+  src: url("../fonts/OpenSans-Bold.ttf");
+}
+.fontHeading {
+  font-family: 'montserratBold';
+}
+.fontRegular {
+  font-family: 'sansRegular';
+}
+.fontBold {
+  font-family: 'sansBold';
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'montserratBold';
+  color: #000;
+}
+body {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #f4f5f7;
+  color: #fff;
+  font-family: 'sansRegular';
+}
+html {
+  height: 100%;
+}
+.home .banner {
+  width: 100%;
+  height: 300px;
+  background: url("../images/header-home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.home .banner .bannerContent {
+  padding-top: 100px;
+}
+.home .banner .bannerContent h2 {
+  font-size: 30px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  color: #fff;
+}
+.home .banner .bannerContent div {
+  font-size: 15px;
+  padding-top: 10px;
+}
+.home .banner .bannerContent img {
+  width: 130px;
+  height: 45px;
+  margin-top: 20px;
+}
+.home .mainContent {
+  margin-top: 30px;
+}
+.home .mainContent h3 {
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+.home .mainContent .offerBox {
+  padding: 20px;
+  padding-top: 25px;
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #dedfe1;
+  height: 205px;
+  margin-top: 40px;
+  text-align: center;
+}
+.home .mainContent .offerBox img {
+  width: 90px;
+  height: 66px;
+}
+.home .mainContent .offerBox h4 {
+  color: #000;
+}
+.home .mainContent .offerBox input {
+  margin-top: 10px;
+  border-radius: 3px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #dedfe1;
+  width: 90%;
+  font-size: 10px;
+}
+.home .mainContent .chefInfo {
+  color: #54595c;
+}
+.home .mainContent .chefInfo .chefDetails {
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: -2px;
+}
+.home .mainContent .chefInfo .chefDetails div:last-child {
+  font-size: 10px;
+}
+.home .mainContent .chefInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 60px;
+}
+.home .mainContent .chefInfo .rating {
+  float: right;
+  font-size: 12px;
+  padding-top: 10px;
+}
+.home .mainContent .chefInfo .rating div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.home .mainContent .chefInfo .rating .fa {
+  color: #de9b1b;
+}
+.home .mainContent .giftContainer,
+.home .mainContent .chefsContainer {
+  padding: 0px;
+  margin: 0px;
+}
+.home .mainContent .giftContainer {
+  padding-left: 10px;
+  padding-right: 25px;
+}
+.home .mainContent .chefs {
+  padding-left: 15px;
+  padding-right: 0px;
+}
+.home .mainContent .chefs .offerBox {
+  background-color: #de9b1b;
+  border: none;
+  padding: 20px;
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+.home .mainContent .chefs .offerBox div {
+  color: #faebce;
+  font-size: 10px;
+}
+.home .mainContent .chefs .offerBox img {
+  width: 70px;
+}
+.home .mainContent .chefs .offerBox h4 {
+  color: #fff;
+  font-size: 14px;
+}
+.home .mainContent .chefs .chefWrapper {
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #dedfe1;
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.home .mainContent .chefs .chefWrapper .chefInfo img,
+.home .mainContent .chefs .chefWrapper .chefInfo .chefDetails {
+  display: inline-block;
+  vertical-align: middle;
+}
+.home .mainContent .chefs .chefWrapper .chefInfo .rating {
+  float: none;
+  padding-left: 55px;
+  margin-top: -10px;
+}
+.home .mainContent .chefs .chefWrapper .chefInfo .rating div:last-child {
+  float: right;
+  color: #de9b1b;
+  font-size: 12px;
+}
+.home .mainContent .meals {
+  margin-top: 30px;
+}
+.home .mainContent .meals .mealWrapper {
+  min-height: 300px;
+  border: 1px solid #dedfe1;
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.home .mainContent .meals .mealWrapper .mealImage {
+  width: 100%;
+  background: url("../images/meal-dummy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+}
+.home .mainContent .meals .mealWrapper .mealInfo {
+  padding: 10px;
+  padding-left: 15px;
+}
+.home .mainContent .meals .mealWrapper .chefInfo {
+  margin-top: 15px;
+  white-space: nowrap;
+}
+.home .mainContent .meals .mealWrapper .chefInfo > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.home .mainContent .meals .mealWrapper .divider {
+  background-color: #dedfe1;
+  width: 100%;
+  height: 1px;
+  margin-top: 10px;
+}
+.home .mainContent .meals .mealWrapper .price {
+  padding: 10px;
+  padding-left: 15px;
+}
+.home .mainContent .meals .mealWrapper .price div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.home .mainContent .meals .mealWrapper .price div:first-child {
+  color: #dd2c2c;
+  font-size: 18px;
+  font-family: 'montserratBold';
+  text-decoration: line-through;
+}
+.home .mainContent .meals .mealWrapper .price div:nth-child(2) {
+  font-size: 25px;
+  font-family: 'montserratBold';
+  margin-left: 11px;
+  color: #000;
+}
+.home .mainContent .meals .mealWrapper .price div:last-child {
+  color: #de9b1b;
+  float: right;
+  font-size: 12px;
+  padding-top: 10px;
+}
+.home .mainContent .cauroselContainer h3 {
+  color: #000;
+  padding-left: 0px;
+}
+.home .mainContent .cauroselContainer .carousel {
+  width: 100%;
+  height: 300px;
+  background: url("../images/carousel-image-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #f6f0d6;
+}
+.home .mainContent .offerContainer {
+  padding-top: 65px;
+}
+.home .mainContent .offerContainer .coupon {
+  position: relative;
+}
+.home .mainContent .offerContainer .coupon img {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: -1;
+}
+.home .mainContent .offerContainer .coupon .text {
+  z-index: 100;
+  position: relative;
+  white-space: nowrap;
+}
+.home .mainContent .offerContainer .coupon .text > div {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'montserratBold';
+}
+.home .mainContent .offerContainer .coupon .text > div:first-child {
+  color: #fff;
+  font-size: 25px;
+  width: 30%;
+  text-align: center;
+  padding-top: 20px;
+}
+.home .mainContent .offerContainer .coupon .text > div:last-child {
+  padding-left: 15px;
+  padding-top: 10px;
+}
+.home .mainContent .offerContainer .coupon .text > div:last-child div:first-child {
+  color: #000;
+  font-size: 16px;
+}
+.home .mainContent .offerContainer .coupon .text > div:last-child div:last-child {
+  color: #fff;
+  font-size: 11px;
+  font-family: 'sansRegular';
+}
+.mainHeader {
+  height: 70px;
+  background-color: #fff;
+  width: 100%;
+}
+.mainHeader img {
+  margin-top: 10px;
+  width: 100px;
+  height: 50px;
+  padding-left: 20px;
+}
+.footer {
+  margin-top: 40px;
+  width: 100;
+  background-color: #1b1d1e;
+  padding-bottom: 30px;
+  color: #de9b1b;
+  font-size: 11px;
+}
+.footer .sectionHead {
+  color: #747b7e;
+}
+.footer .about {
+  padding-left: 10px;
+}
+.footer .about div:first-child {
+  margin-bottom: 10px;
+  color: #747b7e;
+}
+.footer .links div {
+  margin-bottom: 10px;
+}
+.footer .sectionWrapper {
+  padding: 10px;
+  padding-top: 25px;
+}
