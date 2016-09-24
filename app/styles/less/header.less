@@ -10,4 +10,32 @@
 		height: 50px;
 		padding-left: 20px;
 	}
+	.right
+	{
+		position: absolute;
+		right: 30px;
+		top: 20px;
+		color: #000;
+		*
+		{
+			font-size: 13px;
+			margin-left: 5px;
+			display: inline-block;
+			vertical-align: middle;
+			&:first-child
+			{
+				color: @themeColor;
+			}
+
+			&:nth-child(2)
+			{
+				color: #858e93;
+			}
+			&:last-child
+			{
+				color:#000;
+			}
+
+		}
+	}
 }

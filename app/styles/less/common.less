@@ -1,5 +1,8 @@
 @bgColor:#f4f5f7;
 @themeColor:#de9b1b;
+@defaultBorderRadius:3px;
+@warningColor:#ff5858;
+@disabledColor:#d1d1d1;
 
 
 @font-face {
@@ -17,7 +20,15 @@
       font-family: 'sansBold';
       src: url("../fonts/OpenSans-Bold.ttf");
  }
+a
+{
+  color: inherit;
+   text-decoration: none;
+}
+a:hover
+{    text-decoration: none;
 
+}
  .fontHeading
  {
  	  font-family: 'montserratBold';
@@ -38,6 +49,16 @@
   color: #000;
  }
 
+ *:focus {
+    outline: 0;
+}
+
+
+input.ng-invalid.ng-dirty,textarea.ng-invalid.ng-dirty 
+{
+    border-color: @warningColor !important;
+  }
+
 body
 {
   height: 100%;
@@ -52,3 +73,4 @@ html
 {
   height: 100%;
 }
+

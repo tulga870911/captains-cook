@@ -10,6 +10,13 @@
   font-family: 'sansBold';
   src: url("../fonts/OpenSans-Bold.ttf");
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
 .fontHeading {
   font-family: 'montserratBold';
 }
@@ -25,6 +32,13 @@ h3,
 h4 {
   font-family: 'montserratBold';
   color: #000;
+}
+*:focus {
+  outline: 0;
+}
+input.ng-invalid.ng-dirty,
+textarea.ng-invalid.ng-dirty {
+  border-color: #ff5858 !important;
 }
 body {
   height: 100%;
@@ -311,6 +325,27 @@ html {
   height: 50px;
   padding-left: 20px;
 }
+.mainHeader .right {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: #000;
+}
+.mainHeader .right * {
+  font-size: 13px;
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.mainHeader .right *:first-child {
+  color: #de9b1b;
+}
+.mainHeader .right *:nth-child(2) {
+  color: #858e93;
+}
+.mainHeader .right *:last-child {
+  color: #000;
+}
 .footer {
   margin-top: 40px;
   width: 100;
@@ -318,6 +353,9 @@ html {
   padding-bottom: 30px;
   color: #de9b1b;
   font-size: 11px;
+  display: none;
+  /*position:absolute;
+	bottom: 0px;*/
 }
 .footer .sectionHead {
   color: #747b7e;
@@ -335,4 +373,74 @@ html {
 .footer .sectionWrapper {
   padding: 10px;
   padding-top: 25px;
+}
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 350px;
+}
+.auth .error {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.auth h3 {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  margin-top: -45px;
+}
+.auth .otp div {
+  color: #000;
+  margin-top: 20px;
+  font-size: 13px;
+}
+.auth .box {
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+  background-color: #fff;
+  margin: 0px auto;
+  position: absolute;
+  width: 300px;
+}
+.auth .box .boxWrapper {
+  padding: 20px;
+}
+.auth .box .boxWrapper * {
+  margin-bottom: 10px;
+}
+.auth .box .title {
+  background: url("../images/meal-dummy.jpg");
+  background-size: cover;
+  background-repeat: none;
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid ;
+}
+.auth .box input {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #e7e7e7;
+  height: 42px;
+  color: #000;
+  width: 100%;
+  font-size: 13px;
+  padding-left: 10px;
+  padding-top: 3px;
+  margin-top: 3px;
+}
+.auth .box button {
+  height: 40px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #de9b1b;
+  font-size: 13px;
+  text-align: center;
+  color: #de9b1b;
+  font-family: 'sansRegular';
+}
+.auth .box button:disabled {
+  opacity: 0.8;
+  color: #d1d1d1;
+  border-color: #d1d1d1;
 }

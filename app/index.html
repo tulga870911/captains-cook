@@ -22,10 +22,63 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+      <div ng-controller="MasterCtrl">
        <div class="mainHeader">
         <img src="images/logo-small.png"></img>
+          <div class="right">
+            <div class="anon" ng-show="!isLoggedIn()">
+              <a href="#/login">Login</a>
+              <span>or</span>
+              <a href="#/signup">Register</a>
+            </div>
+            <div class="logout" ng-click="logout()" ng-show="isLoggedIn()">
+              <div>Logout</div>
+            </div>
+          </div>
         </div>
        <div ui-view=""></div>
+           <div class="footer row">
+      <div class="col-sm-offset-2 col-xs-8">
+         <div class="col-sm-3 about">
+            <div class="sectionWrapper">
+              <div>ABOUT</div>
+              <div>Web-based platform that connects Mumbaikars hungry for hygienic homemade food with over 250 home-cooks-turned-chefs who are passionate about bringing delicious food to your table.
+              </div>
+            </div>
+          </div>
+         
+         <div class="col-sm-3 links">
+            <div class="sectionWrapper">
+              <div class="sectionHead">CONTACT</div>
+              <div>Customer Support</div>
+              <div>Places We Serve</div>
+              <div>About Us</div>
+              <div>Join Us</div>
+            </div>
+        </div>
+         
+         <div class="col-sm-3 links">
+            <div class="sectionWrapper">
+              <div class="sectionHead">LEGAL</div>
+              <div>Privacy Policy</div>
+              <div>Terms & Conditions</div>
+              <div>Quality Control</div>
+              <div>FAQs</div>
+            </div>
+        </div>
+         <div class="col-sm-3 links">
+            <div class="sectionWrapper">
+              <div class="sectionHead">Social</div>
+              <div>Facebook</div>
+              <div>Twitter</div>
+              <div>Instagram</div>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -54,6 +107,12 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/master.js"></script>
         <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/signup.js"></script>
+        <script src="scripts/services/userservice.js"></script>
+        <script src="scripts/services/configconstants.js"></script>
+        <script src="scripts/controllers/header.js"></script>
+        <script src="scripts/services/homeservice.js"></script>
         <!-- endbuild -->
 </body>
 </html>

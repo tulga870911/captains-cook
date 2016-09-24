@@ -8,10 +8,10 @@
  * Controller of the kaptainkookApp
  */
 angular.module('kaptainkookApp')
-  .controller('MasterCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MasterCtrl', function ($scope,$location) {
+   
+   $scope.go = function(path)
+        {
+            $location.path(path);
+        };
   });

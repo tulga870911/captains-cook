@@ -1,0 +1,16 @@
+<div class="auth">
+    <form name="login_form" novalidate class="box css-form">
+        <h3>Login</h3>
+        <div class="title"></div>
+        <div class="boxWrapper">
+	        <div>
+	            <input required type="email" ng-model="user.emailId" placeholder="email"></input>
+	        </div>
+	        <div>
+	            <input type="password" ng-minlength=5 ng-model="user.password" placeholder="password"></input>
+	        </div>
+	        <button ng-click="loginUser()" ng-disabled="login_form.$invalid">Submit</button>
+	    </div>
+    </form>
+    <div ng-show="isError" class="error">Incorrect username or password</div>
+</div>
