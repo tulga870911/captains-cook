@@ -9,7 +9,7 @@
  */
 angular.module('kaptainkookApp')
   .controller('LoginCtrl', function ($scope,userService) {
-        $scope.user = {emailId:"khalidmbajwa@gmail.com",password:"wowthing"};
+        $scope.user = {emailId:"consumer2@gmail.com",password:"password"};
         $scope.loginUser = function()
         {
            userService.loginUser($scope.user).then(function(data)

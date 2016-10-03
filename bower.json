@@ -13,11 +13,26 @@
     "angular-touch": "1.2.16",
     "angular-route": "1.2.16",
     "ui-router": "~0.3.1",
-    "fontawesome": "~4.6.3"
+    "fontawesome": "~4.6.3",
+    "jquery": "^3.1.1"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
     "angular-scenario": "1.2.16"
   },
-  "appPath": "app"
+  "appPath": "app",
+  "authors": [
+    "ls -ltr"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
