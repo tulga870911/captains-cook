@@ -1,0 +1,348 @@
+@import '../../variable.scss';
+.home {
+  .banner {
+    width: 100%;
+    height: 500px;
+    background: url($imgpath+'assets/images/header-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: relative;
+    .bannerContent {
+      padding-top: 100px;
+      h2 {
+        font-size: 30px;
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+        color: #fff;
+      }
+      div {
+        font-size: 15px;
+        padding-top: 10px;
+        color: white;
+        @extend %sansRegular;
+      }
+      img {
+        width: 130px;
+        height: 45px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    }
+    .search_form {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin-left: 0;
+      background: rgba(0, 0, 0, 0.4);
+      .no-padding-r {
+        padding-right: 0;
+        input {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+      .md-button {
+        background-color: #de9b1b;
+        color: white;
+        font-size: 18px;
+        margin: 0;
+        padding: 11px 20px;
+      }
+      .no-padding-l {
+        padding-left: 0;
+        input {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+      .col-sm-12.col-md-6 {
+        padding: 0;
+        margin: 20px 0;
+      }
+      input {
+        width: 100%;
+        padding: 17px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .mainContent {
+    margin-top: 30px;
+    h3 {
+      padding-left: 15px;
+      margin-bottom: 20px;
+    }
+    .offerBox {
+      padding: 20px;
+      padding-top: 25px;
+      margin-left: 5px;
+      margin-right: 10px;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #dedfe1;
+      height: 205px;
+      margin-top: 40px;
+      text-align: center;
+      img {
+        width: 90px;
+        height: 66px;
+      }
+      h4 {
+        color: #000;
+      }
+      input {
+        margin-top: 10px;
+        border-radius: 3px;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid #dedfe1;
+        width: 90%;
+        font-size: 10px;
+      }
+    }
+    .chefInfo {
+      color: #54595c;
+      .chefDetails {
+        font-size: 12px;
+        div:last-child {
+          font-size: 10px;
+        }
+        margin-left: 10px;
+        margin-top: -2px;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 60px;
+      }
+      .rating {
+        float: right;
+        font-size: 12px;
+        padding-top: 10px;
+        div {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .fa {
+          color: $themeColor;
+        }
+      }
+    }
+    .giftContainer,
+    .chefsContainer {
+      padding: 0px;
+      margin: 0px;
+    }
+    .giftContainer {
+      padding-left: 10px;
+      padding-right: 25px;
+    }
+    .chefs {
+      padding-left: 15px;
+      padding-right: 0px;
+      .offerBox {
+        background-color: $themeColor;
+        border: none;
+        padding: 20px;
+        div {
+          color: #faebce;
+          font-size: 10px;
+        }
+        img {
+          width: 70px;
+        }
+        h4 {
+          color: #fff;
+          font-size: 14px;
+        }
+        margin: 0px;
+        padding-top: 5px;
+        padding-bottom: 0px;
+      }
+      .chefWrapper {
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 1px solid #dedfe1;
+        background-color: #fff;
+        width: 100%;
+        margin-bottom: 30px;
+        .chefInfo {
+          img,
+          .chefDetails {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .rating {
+            float: none;
+            padding-left: 55px;
+            margin-top: -10px;
+            div:last-child {
+              float: right;
+              color: $themeColor;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .meals {
+      margin-top: 30px;
+      .mealWrapper {
+        min-height: 300px;
+        border: 1px solid #dedfe1;
+        background-color: #fff;
+        width: 100%;
+        margin-bottom: 30px;
+        .mealImage {
+          width: 100%;
+          background: url($imgpath+'assets/images/meal-dummy.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 150px;
+        }
+        .mealInfo {
+          padding: 10px;
+          padding-left: 15px;
+        }
+        .chefInfo {
+          margin-top: 15px;
+          white-space: nowrap;
+          & > div {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        .divider {
+          background-color: #dedfe1;
+          width: 100%;
+          height: 1px;
+          margin-top: 10px;
+        }
+        .price {
+          padding: 10px;
+          padding-left: 15px;
+          div {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          div:first-child {
+            color: #dd2c2c;
+            font-size: 18px;
+            text-decoration: line-through;
+          }
+          div:nth-child(2) {
+            font-size: 25px;
+            margin-left: 11px;
+            color: #000;
+          }
+          div:last-child {
+            color: $themeColor;
+            float: right;
+            font-size: 12px;
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+    .cauroselContainer {
+      h3 {
+        color: #000;
+        padding-left: 0px;
+      }
+      .carousel {
+        width: 100%;
+        height: 300px;
+        background: url($imgpath+'assets/images/carousel-image-2.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #f6f0d6;
+      }
+    }
+    .offerContainer {
+      padding-top: 65px;
+      .coupon {
+        position: relative;
+        img {
+          width: 100%;
+          height: 70px;
+          position: absolute;
+          // z-index: -1;
+        }
+        .text {
+          position: relative;
+          white-space: nowrap;
+          & > div {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: 'montserratBold';
+          }
+          & > div:first-child {
+            color: #fff;
+            font-size: 25px;
+            //background-color: red;
+            width: 30%;
+            text-align: center;
+            padding-top: 20px;
+          }
+          & > div:last-child {
+            padding-left: 15px;
+            padding-top: 10px;
+            div:first-child {
+              color: #000;
+              font-size: 16px;
+            }
+            div:last-child {
+              color: #fff;
+              font-size: 11px;
+              font-family: 'sansRegular';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .home {
+    .banner {
+      .search_form {
+        .no-padding-r {
+          padding-left: 0;
+          input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+        .no-padding-l {
+          padding-right: 0;
+          input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+        .col-sm-12.col-md-6 {
+          padding: 0;
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    .banner {
+      .search_form {
+        .md-button {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
