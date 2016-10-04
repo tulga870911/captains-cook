@@ -1,0 +1,13 @@
+<div class="mainHeader">
+  <img src="./assets/images/logo-small.png"></img>
+  <div class="right">
+    <div class="anon" ng-show="!isLoggedIn()">
+      <a ng-click="$ctrl.signin()">Login</a>
+      <span>or</span>
+      <a ng-click="$ctrl.signup()">Register</a>
+    </div>
+    <div class="logout" ng-click="logout()" ng-show="isLoggedIn()">
+      <div>Logout</div>
+    </div>
+  </div>
+</div>

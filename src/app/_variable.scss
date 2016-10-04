@@ -1,0 +1,35 @@
+$bgColor: #f4f5f7;
+$themeColor: #de9b1b;
+$defaultBorderRadius: 3px;
+$warningColor: #ff5858;
+$disabledColor: #d1d1d1;
+
+/* image path */
+
+$imgpath: '../';
+@font-face {
+  font-family: 'montserratBold';
+  src: url("../assets/fonts/Montserrat-Bold.otf");
+}
+
+@font-face {
+  font-family: 'sansRegular';
+  src: url("../assets/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'sansBold';
+  src: url("../assets/fonts/OpenSans-Bold.ttf");
+}
+
+%montserratBold {
+  font-family: 'montserratBold';
+}
+
+%sansRegular {
+  font-family: 'sansRegular';
+}
+
+%sansBold {
+  font-family: 'sansBold';
+}

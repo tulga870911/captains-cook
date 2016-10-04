@@ -1,0 +1,104 @@
+<div class="home">
+  <div class="banner">
+    <div class="bannerContent">
+      <h2>Home Cooked Meal ?</h2>
+      <div>Order Freshly-Prepared Ghar Ka Khana From Home Chefs </div>
+      <img src="assets/images/playstore-logo.png"></img>
+    </div>
+    <div class="search_form row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <div class="col-sm-12 col-md-6">
+          <input type="" name="" placeholder="Delivery Location">
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="col-sm-4 col-xs-6 no-padding-r"><input type="" name=""></div>
+          <div class="col-sm-4 col-xs-6 no-padding-l"><input type="" name=""></div>
+          <div class="col-sm-4 col-xs-12"><md-button>Search</md-button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mainContent">
+    <div class="col-sm-offset-2 col-sm-8">
+      <div class="col-sm-7 cauroselContainer">
+        <h3>Deals & Promotions</h3>
+        <div class="carousel">
+        </div>
+      </div>
+      <div class="col-sm-5 offerContainer">
+        <div class="coupon">
+          <img src="assets/images/coupon.png"></img>
+          <div class="text">
+            <div>10%</div>
+            <div>
+              <div>FIRST ORDER</div>
+              <div>Claim Now</div>
+            </div>
+          </div>
+        </div>
+        <div class="offerBox">
+          <img src="assets/images/refer-icon.png"></img>
+          <h4>REFER A FRIEND</h4>
+          <input placeholder="Friend's email"></input>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-offset-2 col-sm-8 meals">
+      <h3>Featured Meals</h3>
+      <div class="col-sm-6 col-md-4 meal" bindonce ng-repeat="meal in $ctrl.meals">
+        <div class="mealWrapper">
+          <div class="mealImage"></div>
+          <div class="mealInfo">
+            <h4 bo-text="meal.name"></h4>
+            <div class="chefInfo">
+              <img src="assets/images/chef-dummy.jpg"></img>
+              <div class="chefDetails">
+                <div bo-text="meal.chef"></div>
+                <div bo-text="meal.location"></div>
+              </div>
+              <div class="rating">
+                <div bo-text="meal.rating"></div>
+                <div class="fa fa-star"></div>
+              </div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="price">
+            <div bo-text="meal.oldPrice"></div>
+            <div bo-text="meal.price"></div>
+            <div>See More</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-offset-2 col-sm-8 chefs">
+      <h3>Featured Chefs</h3>
+      <div class="col-sm-8 chefsContainer">
+        <div class="col-sm-6 chef" bindonce ng-repeat="chef in $ctrl.chefs">
+          <div class="chefWrapper">
+            <div class="chefInfo">
+              <img src="assets/images/chef-dummy.jpg"></img>
+              <div class="chefDetails">
+                <div bo-text="chef.name"></div>
+                <div bo-text="chef.location"></div>
+              </div>
+              <div class="rating">
+                <div bo-text="chef.rating"></div>
+                <div class="fa fa-star"></div>
+                <div>SEE MORE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 giftContainer">
+        <div class="offerBox">
+          <img src="assets/images/gift-icon.png"></img>
+          <h4>GIFT ONE MEAL</h4>
+          <div>and get one at 50% discount</div>
+          <input placeholder="Friend's email"></input>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+// bower:scss
+// endbower
+@import './variable.scss';
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.fontHeading {
+  font-family: 'montserratBold';
+}
+
+.fontRegular {
+  font-family: 'sansRegular';
+}
+
+.fontBold {
+  font-family: 'sansBold';
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #000;
+  @extend %montserratBold;
+}
+
+*:focus {
+  outline: 0;
+}
+
+input.ng-invalid.ng-dirty,
+textarea.ng-invalid.ng-dirty {
+  border-color: $warningColor !important;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: $bgColor;
+  font-family: 'sansRegular';
+  // color: #fff;
+}
+
+html {
+  height: 100%;
+}
+
+.to_top {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  img {
+    width: 40px;
+  }
+}
+
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+
+// injector
+// endinjector
