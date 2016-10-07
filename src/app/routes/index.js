@@ -12,6 +12,7 @@ const MainCmt = {
 };
 
 export default angular.module('captainscook.routes', [
+    'ngMaterial',
     'captainscook.routes.checkout',
     'captainscook.routes.home',
     'captainscook.routes.listing',
@@ -24,9 +25,17 @@ export default angular.module('captainscook.routes', [
 /** @ngInject */
 function MainCtrl($log, $state, $mdDialog, $document) {
   $log.log('main controller init')
-  this.$onInit = function onInit() {
+  let vm = this;
+  vm.$onInit = function onInit() {
+    if (sessionStorage.isLogin == 'true') {
+      let stateName = $state.current.name;
+      if (stateName == 'main') {
+        $state.go('main.home')
+      } else return
+    }
     $state.go('main.home')
     init()
+    sessionStorage.isLogin = true
   }
 
   function init() {
@@ -50,5 +59,21 @@ function routesConfig($stateProvider, $urlRouterProvider) {
     .state('main.home', {
       url: '/home',
       template: '<home></home>'
+    })
+    .state('main.results', {
+      url: '/results',
+      template: '<results></results>'
+    })
+    .state('main.list', {
+      url: '/list',
+      template: '<list></list>'
+    })
+    .state('main.checkout', {
+      url: '/checkout',
+      template: '<checkout></checkout>'
+    })
+    .state('main.orderplace', {
+      url: '/orderplace',
+      template: '<order-place></order-place>'
     });
 }

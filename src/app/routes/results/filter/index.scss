@@ -1,0 +1,67 @@
+@import '../../../variable.scss';
+.results_filter {
+  padding: 30px;
+  max-width: 320px;
+  .title {
+    @extend %title;
+    margin-bottom: 15px;
+    i {
+      color: $themeColor;
+    }
+  }
+  .sub_title h5 {
+    @extend %txt_5;
+    font-weight: 600;
+    color: $inactive;
+  }
+  .type {
+    margin-bottom: 25px;
+    .btn-group {
+      display: flex;
+      justify-content: space-around;
+      .btn.btn-default {
+        width: 100%;
+        &.active {
+          color: white;
+          background-color: $active;
+        }
+      }
+    }
+  }
+  .region {
+    margin-bottom: 25px;
+    .region-group {
+      md-checkbox {
+        margin-bottom: 10px;
+        .md-label {
+          @extend %txt_5;
+          font-weight: 400;
+          color: $inactive;
+        }
+        &.md-checked {
+          .md-label {
+            @extend %txt_5;
+            font-weight: 600;
+            color: $active;
+          }
+        }
+      }
+    }
+  }
+  .button {
+    button {
+      width: 100%;
+      color: white;
+      background-color: $themeColor;
+      padding: 10px;
+      @extend %txt_5;
+      font-weight: 600;
+      outline: none!important;
+    }
+  }
+  .close{
+  	position: absolute;
+  	right: 10px;
+  	top: 10px;
+  }
+}

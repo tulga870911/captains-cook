@@ -1,21 +1,24 @@
-const HomeCmt = {
-  templateUrl: 'app/routes/home/tpl.html',
-  controller: HomeCtrl
+export const SearchCmt = {
+  templateUrl: 'app/search/tpl.html',
+  controller: SearchCtrl
 }
 
-export default angular.module('captainscook.routes.home', [])
-  .component('home', HomeCmt);
+function SearchCtrl($log, $state) {
+  'ngInject';
+  $log.log('search')
+  let vm = this;
+  vm.$onInit = function onInit() {
+    init()
+  }
 
-function HomeCtrl() {
-  this.meals = [{ name: "Special Beef Recipe", rating: 4.5, location: "West Bengal", chef: "Sanjay Puruthi", price: "$55", oldPrice: "$60" },
-    { name: "Chicken Karhai", rating: 4.1, location: "Andheri East", chef: "Sheetal Magon", price: "$30", oldPrice: "$90" },
-    { name: "Bihari Biryani", rating: 5, location: "Mumbai", chef: "Ronald Weston", price: "$55", oldPrice: "$75" }
+  function init() {
+    let stateName = $state.current.name;
+    $log.log('search state name-->', stateName);
+    if (stateName == 'main.home') {
+      vm.searchBtn = `Search`;
+    } else {
+      vm.searchBtn = `<i class="material-icons">search</i>`;
+    }
+  }
 
-  ];
-  this.chefs = [
-    { name: "RK", rating: 4.5, location: "Andheri East" },
-    { name: "Sheetal Magon", rating: 5, location: "Bangalore" },
-    { name: "Shipra Singh", rating: 4, location: "Andheri West" },
-    { name: "Parveen Sultana", rating: 3.5, location: "Andheri East" }
-  ];
 }

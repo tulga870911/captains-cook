@@ -3,6 +3,11 @@ $themeColor: #de9b1b;
 $defaultBorderRadius: 3px;
 $warningColor: #ff5858;
 $disabledColor: #d1d1d1;
+$disabledColor: #d1d1d1;
+$inactive: #878d91;
+$active: #1b1d1e;
+$green: #2cc34c;
+$txt: #858e93;
 
 /* image path */
 
@@ -32,4 +37,49 @@ $imgpath: '../';
 
 %sansBold {
   font-family: 'sansBold';
+}
+
+%title {
+  font-family: 'montserratBold';
+  font-size: 30px;
+}
+
+%name {
+  font-family: 'montserratBold';
+  font-size: 44px;
+}
+
+%txt_2 {
+  font-family: 'sansBold';
+  font-size: 34px;
+}
+
+%txt_3 {
+  font-family: 'sansBold';
+  font-size: 22px;
+}
+
+%txt {
+  font-family: 'sansBold';
+  font-size: 26px;
+}
+
+%txt_4 {
+  font-family: 'sansBold';
+  font-size: 20px;
+}
+
+%txt_5 {
+  font-family: 'sansRegular';
+  font-size: 16px;
+}
+
+%txt_6 {
+  font-family: 'sansRegular';
+  font-size: 14px;
+}
+
+%btn_txt {
+  font-family: 'sansRegular';
+  font-size: 18px;
 }

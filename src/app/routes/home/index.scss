@@ -30,41 +30,38 @@
         cursor: pointer;
       }
     }
-    .search_form {
+    .search_body {
       position: absolute;
       bottom: 0;
       width: 100%;
       margin-left: 0;
+      margin-right: 0;
       background: rgba(0, 0, 0, 0.4);
-      .no-padding-r {
-        padding-right: 0;
-        input {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
+      .search_form {
+        .no-padding-r {
+          padding-right: 0;
+          input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
         }
-      }
-      .md-button {
-        background-color: #de9b1b;
-        color: white;
-        font-size: 18px;
-        margin: 0;
-        padding: 11px 20px;
-      }
-      .no-padding-l {
-        padding-left: 0;
-        input {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
+        .md-button {
+          background-color: #de9b1b;
+          color: white;
+          font-size: 18px;
+          margin: 0;
         }
-      }
-      .col-sm-12.col-md-6 {
-        padding: 0;
-        margin: 20px 0;
-      }
-      input {
-        width: 100%;
-        padding: 17px;
-        border-radius: 5px;
+        .no-padding-l {
+          padding-left: 0;
+          input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+        .col-sm-12.col-md-6 {
+          padding: 0;
+          margin: 20px 0;
+        }
       }
     }
   }
@@ -125,8 +122,20 @@
           display: inline-block;
           vertical-align: middle;
         }
-        .fa {
+        .material-icons {
+          font-weight: 700;
+          width: 10px;
+          font-size: 12px;
+          vertical-align: middle;
           color: $themeColor;
+          margin-left: 5px;
+          cursor: pointer;
+        }
+        &.star {
+          >.material-icons {
+            font-size: 16px;
+            margin-left: 0;
+          }
         }
       }
     }
@@ -245,6 +254,13 @@
             float: right;
             font-size: 12px;
             padding-top: 10px;
+            i.material-icons {
+              font-size: 12px;
+              font-weight: 700;
+              cursor: pointer;
+              margin-left: 5px;
+              vertical-align: inherit;
+            }
           }
         }
       }
@@ -253,6 +269,15 @@
       h3 {
         color: #000;
         padding-left: 0px;
+        span {
+          font-size: 15px;
+          color: $themeColor;
+          cursor: pointer;
+          i {
+            margin-left: 5px;
+            font-weight: 700;
+          }
+        }
       }
       .carousel {
         width: 100%;
@@ -306,29 +331,47 @@
       }
     }
   }
+  .input {
+    position: relative;
+    input {
+      color: black;
+    }
+    i.material-icons {
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 22px;
+      font-size: 15px;
+      font-weight: 700;
+      color: $themeColor;
+    }
+  }
 }
 
 @media screen and (max-width: 992px) {
   .home {
     .banner {
-      .search_form {
-        .no-padding-r {
-          padding-left: 0;
-          input {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+      .search_body {
+        padding: 0 20px;
+        .search_form {
+          .no-padding-r {
+            padding-left: 0;
+            input {
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+            }
           }
-        }
-        .no-padding-l {
-          padding-right: 0;
-          input {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+          .no-padding-l {
+            padding-right: 0;
+            input {
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+            }
           }
-        }
-        .col-sm-12.col-md-6 {
-          padding: 0;
-          margin: 5px 0;
+          .col-sm-12.col-md-6 {
+            padding: 0;
+            margin: 5px 0;
+          }
         }
       }
     }
@@ -338,9 +381,11 @@
 @media screen and (max-width: 768px) {
   .home {
     .banner {
-      .search_form {
-        .md-button {
-          margin: 10px 0;
+      .search_body {
+        .search_form {
+          .md-button {
+            margin: 10px 0;
+          }
         }
       }
     }

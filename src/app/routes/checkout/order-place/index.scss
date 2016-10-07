@@ -1,0 +1,73 @@
+@import '../../../variable.scss';
+.orderplace {
+  justify-content: center;
+  padding-top: 20px;
+  min-height: calc(100vh - 270px);
+  .title {
+    h4 {
+      padding-bottom: 15px;
+      @extend %title;
+      border-bottom: 1px $inactive solid;
+    }
+  }
+  .pan {
+    .pan_body {
+      text-align: center;
+      padding: 35px 0;
+      .icon {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        color: $themeColor;
+        border: 5px $themeColor solid;
+        margin: auto;
+        i {
+          font-weight: 600;
+          font-size: 60px;
+          position: absolute;
+          left: 5px;
+          top: 5px;
+        }
+      }
+      h5 {
+        @extend %txt_3;
+      }
+      .gurrantee {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        max-width: 300px;
+        background-color: $inactive;
+        padding: 10px;
+        color: white;
+        margin: 15px auto;
+      }
+      .total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        max-width: 300px;
+        padding: 10px;
+        margin: 15px auto;
+        font-family: 'montserratBold';
+      }
+      .button {
+      	max-width: 300px;
+      	margin: 15px auto;
+        button {
+        	outline: none!important;
+        	font-family: 'montserratBold';
+        	font-size: 15px;
+        	padding: 15px 25px;
+        	width: 100%;
+          display: flex;
+          justify-content: space-between;
+          border-radius: 5px;
+          color: $themeColor;
+          border: 1px $themeColor solid;
+        }
+      }
+    }
+  }
+}

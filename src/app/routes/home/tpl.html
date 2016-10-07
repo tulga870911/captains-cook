@@ -5,23 +5,16 @@
       <div>Order Freshly-Prepared Ghar Ka Khana From Home Chefs </div>
       <img src="assets/images/playstore-logo.png"></img>
     </div>
-    <div class="search_form row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <div class="col-sm-12 col-md-6">
-          <input type="" name="" placeholder="Delivery Location">
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <div class="col-sm-4 col-xs-6 no-padding-r"><input type="" name=""></div>
-          <div class="col-sm-4 col-xs-6 no-padding-l"><input type="" name=""></div>
-          <div class="col-sm-4 col-xs-12"><md-button>Search</md-button></div>
-        </div>
+    <div class="row search_body">
+      <div class="page_wrap">
+        <ct-search></ct-search>
       </div>
     </div>
   </div>
-  <div class="row mainContent">
-    <div class="col-sm-offset-2 col-sm-8">
+  <div class="page_wrap row mainContent">
+    <div class="col-sm-12">
       <div class="col-sm-7 cauroselContainer">
-        <h3>Deals & Promotions</h3>
+        <h3>Deals & Promotions <span ng-click="$ctrl.goResult()">All Deals<i class="material-icons">arrow_forward</i></span></h3>
         <div class="carousel">
         </div>
       </div>
@@ -39,11 +32,14 @@
         <div class="offerBox">
           <img src="assets/images/refer-icon.png"></img>
           <h4>REFER A FRIEND</h4>
-          <input placeholder="Friend's email"></input>
+          <div class="input">
+            <input placeholder="Friend's email"></input>
+            <i class="material-icons">arrow_forward</i>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-offset-2 col-sm-8 meals">
+    <div class="col-sm-12 meals">
       <h3>Featured Meals</h3>
       <div class="col-sm-6 col-md-4 meal" bindonce ng-repeat="meal in $ctrl.meals">
         <div class="mealWrapper">
@@ -56,9 +52,9 @@
                 <div bo-text="meal.chef"></div>
                 <div bo-text="meal.location"></div>
               </div>
-              <div class="rating">
+              <div class="rating star">
                 <div bo-text="meal.rating"></div>
-                <div class="fa fa-star"></div>
+                <i class="material-icons">star_rate</i>
               </div>
             </div>
           </div>
@@ -66,12 +62,12 @@
           <div class="price">
             <div bo-text="meal.oldPrice"></div>
             <div bo-text="meal.price"></div>
-            <div>See More</div>
+            <div>See More<i class="material-icons">arrow_forward</i></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-offset-2 col-sm-8 chefs">
+    <div class="col-sm-12 chefs">
       <h3>Featured Chefs</h3>
       <div class="col-sm-8 chefsContainer">
         <div class="col-sm-6 chef" bindonce ng-repeat="chef in $ctrl.chefs">
@@ -82,10 +78,10 @@
                 <div bo-text="chef.name"></div>
                 <div bo-text="chef.location"></div>
               </div>
-              <div class="rating">
+              <div class="rating star">
                 <div bo-text="chef.rating"></div>
-                <div class="fa fa-star"></div>
-                <div>SEE MORE</div>
+                <i class="material-icons">star_rate</i>
+                <div>SEE MORE<i class="material-icons">arrow_forward</i></div>
               </div>
             </div>
           </div>
@@ -96,7 +92,10 @@
           <img src="assets/images/gift-icon.png"></img>
           <h4>GIFT ONE MEAL</h4>
           <div>and get one at 50% discount</div>
-          <input placeholder="Friend's email"></input>
+          <div class="input">
+            <input placeholder="Friend's email"></input>
+            <i class="material-icons">arrow_forward</i>
+          </div>
         </div>
       </div>
     </div>
