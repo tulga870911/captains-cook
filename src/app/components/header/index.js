@@ -7,7 +7,7 @@ export const Header = {
 };
 
 /** @ngInject */
-function HeaderCtrl($log, $mdDialog, $document) {
+function HeaderCtrl($log, $mdDialog, $document, $state) {
   $log.log('header ctrl');
   var vm = this;
   vm.$onInit = function onInit() {
@@ -15,6 +15,34 @@ function HeaderCtrl($log, $mdDialog, $document) {
   }
   vm.signin = signin;
   vm.signup = signup;
+  vm.showSearch = showSearch;
+  vm.goHome = goHome;
+  vm.isLoggedIn = isLoggedIn;
+  vm.logout = logout;
+
+  function logout() {
+    sessionStorage.isLogin = false;
+  }
+
+  function isLoggedIn() {
+    let isLogin = sessionStorage.isLogin;
+    if (isLogin == 'true') {
+      return true
+    } else return false
+  }
+
+  function goHome() {
+    $state.go('main.home');
+  }
+
+  function showSearch() {
+    let stateName = $state.current.name;
+    if (stateName == 'main.results' || stateName == 'main.list') {
+      return true
+    } else {
+      return false
+    }
+  }
 
   function signin() {
     $mdDialog.show({

@@ -26,7 +26,7 @@ gulp.task('partials', function () {
     .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
 });
 
-gulp.task('html', ['inject', 'partials'], function () {
+gulp.task('html', ['inject'], function () {
   var partialsInjectFile = gulp.src(path.join(conf.paths.tmp, '/partials/templateCacheHtml.js'), { read: false });
   var partialsInjectOptions = {
     starttag: '<!-- inject:partials -->',
@@ -39,18 +39,18 @@ gulp.task('html', ['inject', 'partials'], function () {
   var cssFilter = $.filter('**/*.css', { restore: true });
 
   return gulp.src(path.join(conf.paths.tmp, '/serve/*.html'))
-    .pipe($.inject(partialsInjectFile, partialsInjectOptions))
+    // .pipe($.inject(partialsInjectFile, partialsInjectOptions))
     .pipe($.useref())
     .pipe(jsFilter)
-    .pipe($.sourcemaps.init())
+    // .pipe($.sourcemaps.init())
     .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', conf.errorHandler('Uglify'))
     .pipe($.rev())
-    .pipe($.sourcemaps.write('maps'))
+    // .pipe($.sourcemaps.write('maps'))
     .pipe(jsFilter.restore)
     .pipe(cssFilter)
     // .pipe($.sourcemaps.init())
     .pipe($.replace('../../bower_components/bootstrap-sass/assets/fonts/bootstrap/', '../fonts/'))
-    .pipe($.cssnano())
+    .pipe($.cssnano({ zindex: false }))
     .pipe($.rev())
     // .pipe($.sourcemaps.write('maps'))
     .pipe(cssFilter.restore)
@@ -60,7 +60,9 @@ gulp.task('html', ['inject', 'partials'], function () {
       removeEmptyAttributes: true,
       removeAttributeQuotes: true,
       collapseBooleanAttributes: true,
-      collapseWhitespace: true
+      collapseWhitespace: true,
+      useShortDoctype: true,
+      removeComments: true
     }))
     .pipe(htmlFilter.restore)
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
@@ -89,8 +91,32 @@ gulp.task('other', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
 
+gulp.task('html-copy', function() {
+  return gulp.src(path.join(conf.paths.src, '/app/**/*.html'))
+    .pipe($.htmlmin({
+      removeEmptyAttributes: true,
+      removeAttributeQuotes: true,
+      collapseBooleanAttributes: true,
+      collapseWhitespace: true,
+      useShortDoctype: true,
+      removeComments: true
+    }))
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/app')));
+});
+
 gulp.task('clean', function () {
   return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
 });
-
-gulp.task('build', ['html', 'fonts', 'other']);
+gulp.task('slick-fonts', function() {
+  return gulp.src(path.join(conf.paths.bower, '/slick-carousel/slick/fonts/**/*.*'))
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/styles/fonts')));
+});
+gulp.task('flex-fonts', function() {
+  return gulp.src(path.join(conf.paths.bower, '/flexslider/fonts/**/*.*'))
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/styles/fonts')));
+});
+gulp.task('loader', function() {
+  return gulp.src(path.join(conf.paths.bower, '/slick-carousel/slick/ajax-loader.gif'))
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/styles')));
+});
+gulp.task('build', ['html', 'fonts', 'other', 'html-copy', 'slick-fonts', 'loader']);

@@ -1,1 +1,79 @@
 @import '../variable.scss';
+ct-search {
+  padding: 10px 0;
+  .search_form {
+    margin: 0;
+    .no-padding-r {
+      padding-right: 0;
+      input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    .md-button {
+      background-color: #de9b1b;
+      color: white;
+      font-size: 18px;
+      margin: 0;
+      padding: 6px 20px;
+      height: 50px;
+      i {
+        position: absolute;
+        left: 30px;
+        top: 10px;
+        font-size: 30px;
+      }
+    }
+    .no-padding-l {
+      padding-left: 0;
+      input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+    .col-sm-12.col-md-6 {
+      padding: 0;
+      margin: 20px 0;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  ct-search {
+    .search_form {
+      .no-padding-r {
+        padding-left: 0;
+        input {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+      .no-padding-l {
+        padding-right: 0;
+        input {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+      .col-sm-12.col-md-6 {
+        padding: 0;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ct-search {
+    .search_form {
+      .md-button {
+        margin: 10px 0;
+      }
+    }
+  }
+}

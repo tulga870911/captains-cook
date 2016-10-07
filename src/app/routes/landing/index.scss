@@ -23,7 +23,9 @@
   .img_tick {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     .ticket {
+      margin-top: 15px;
       background: white;
       width: 330px;
       margin-right: 15px;
@@ -56,7 +58,7 @@
     }
   }
   .skip_btn {
-  	margin-top: 20px;
+    margin-top: 20px;
     .md-raise {
       background: rgba(255, 255, 255, 0.3);
       color: white;
