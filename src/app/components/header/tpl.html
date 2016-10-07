@@ -9,13 +9,29 @@
     <ct-search></ct-search>
   </div>
   <div class="right" flex="20" flex-md="50" flex-sm="50" flex-xs="100" flex-order-md="1" flex-order-sm="1" flex-order-xs="1">
-    <div class="anon" ng-show="!isLoggedIn()">
+    <div class="anon" ng-show="!$ctrl.isLoggedIn()">
       <a ng-click="$ctrl.signin()">Login</a>
       <span>or</span>
       <a ng-click="$ctrl.signup()">Register</a>
     </div>
-    <div class="logout" ng-click="logout()" ng-show="isLoggedIn()">
-      <div>Logout</div>
+    <div class="logout" ng-show="$ctrl.isLoggedIn()">
+      <div class="btn-group shopping" uib-dropdown dropdown-append-to-body>
+        <div id="btn-append-to-body" class="icon" uib-dropdown-toggle>
+          <i class="material-icons">local_grocery_store</i><span class="badge">5</span> <span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+          <li role="menuitem"><a href="">Action</a></li>
+        </ul>
+      </div>
+      <div class="btn-group user" uib-dropdown dropdown-append-to-body>
+        <div id="btn-append-to-body" class="icon" uib-dropdown-toggle>
+          User Name <span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+          <li role="menuitem"><a href="" ng-click="$ctrl.logout()">Logout</a></li>
+        </ul>
+      </div>
+      <div class="img"><img src="assets/images/chef-dummy.jpg" class="img-circle"></div>
     </div>
   </div>
 </div>

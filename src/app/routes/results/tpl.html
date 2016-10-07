@@ -28,17 +28,17 @@
       </div>
     </div>
     <div class="results_body" layout="row" layout-wrap layout-padding>
-      <div class="results_item" flex="33" flex-sm="50" flex-xs="100" bindonce ng-repeat="item in $ctrl.meals track by item.id" ng-click="$ctrl.goList()">
+      <div class="results_item" flex="33" flex-sm="50" flex-xs="100" bindonce ng-repeat="item in $ctrl.meals track by item.id">
         <div class="mealWrapper">
-          <div class="mealImage"></div>
+          <div class="mealImage" ng-click="$ctrl.goList()"></div>
           <div class="mealInfo">
             <h4 bo-text="item.name"></h4>
             <div class="meal_info" layout="row">
               <div class="name" flex="35"><i class="material-icons">location_on</i>name</div>
-              <div class="sl" flex="35"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="isReadonly" on-hover="$ctrl.hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+              <div class="sl" flex="45"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
                 <span class="label" ng-class="{'label-warning': $ctrl.percent<30, 'label-info': $ctrl.percent>=30 && percent<70, 'label-success': $ctrl.percent>=70}" ng-show="overStar && !$ctrl.isReadonly">{{$ctrl.percent}}%</span></span>
               </div>
-              <div class="vegan" flex="30">VEGAN</div>
+              <div class="vegan" flex="20">VEGAN</div>
             </div>
             <div class="chefInfo">
               <img src="assets/images/chef-dummy.jpg"></img>

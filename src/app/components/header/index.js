@@ -17,6 +17,19 @@ function HeaderCtrl($log, $mdDialog, $document, $state) {
   vm.signup = signup;
   vm.showSearch = showSearch;
   vm.goHome = goHome;
+  vm.isLoggedIn = isLoggedIn;
+  vm.logout = logout;
+
+  function logout() {
+    sessionStorage.isLogin = false;
+  }
+
+  function isLoggedIn() {
+    let isLogin = sessionStorage.isLogin;
+    if (isLogin == 'true') {
+      return true
+    } else return false
+  }
 
   function goHome() {
     $state.go('main.home');

@@ -115,6 +115,8 @@ function ResultsCtrl($log, $state, $timeout, $scope, $mdDialog, $document) {
     angular.element(window).resize(changeWindow);
     vm.sort = vm.sortBy[0];
     vm.numberOfCarousel = 6;
+    vm.max = 5;
+    vm.rate = 4;
     vm.slickConfig = {
       enabled: true,
       autoplay: true,

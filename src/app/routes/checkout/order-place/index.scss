@@ -38,7 +38,7 @@
         justify-content: space-between;
         font-size: 13px;
         max-width: 300px;
-        background-color: $inactive;
+        background-color: $active;
         padding: 10px;
         color: white;
         margin: 15px auto;
@@ -48,19 +48,30 @@
         justify-content: space-between;
         font-size: 20px;
         max-width: 300px;
-        padding: 10px;
         margin: 15px auto;
         font-family: 'montserratBold';
+        align-items: center;
+        h4 {
+          font-family: 'sansRegular';
+          span:last-child {
+            font-size: 13px;
+            vertical-align: top;
+            font-weight: 200;
+          }
+          span:first-child {
+            font-family: 'montserratBold';
+          }
+        }
       }
       .button {
-      	max-width: 300px;
-      	margin: 15px auto;
+        max-width: 300px;
+        margin: 15px auto;
         button {
-        	outline: none!important;
-        	font-family: 'montserratBold';
-        	font-size: 15px;
-        	padding: 15px 25px;
-        	width: 100%;
+          outline: none!important;
+          font-family: 'montserratBold';
+          font-size: 15px;
+          padding: 15px 25px;
+          width: 100%;
           display: flex;
           justify-content: space-between;
           border-radius: 5px;

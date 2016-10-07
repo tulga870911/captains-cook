@@ -4,7 +4,7 @@
   width: 100%;
   position: relative;
   justify-content: space-between;
-  .search_form{
+  .search_form {
     padding: 0 15px;
   }
   .left {
@@ -38,8 +38,52 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 30px;
+    padding-right: 15px;
+    flex-wrap: wrap;
     color: #000;
+    .logout {
+      .shopping {
+        background-color: #fff;
+        border: none;
+        padding-right: 10px;
+        .icon {
+          position: relative;
+          cursor: pointer;
+          i,
+          span {
+            font-size: 25px;
+            color: $inactive;
+            &.badge {
+              position: absolute;
+              color: white;
+              background-color: $themeColor;
+              font-size: 12px;
+              left: 13px;
+              top: -11px;
+            }
+          }
+        }
+      }
+      .user {
+        cursor: pointer;
+        color: $active;
+        font-family: 'montserratBold';
+        font-size: 18px;
+        padding: 10px;
+        border-left: 1px $inactive solid;
+      }
+    }
+    .img {
+      width: 40px;
+      height: 40px;
+      margin-left: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    }
     a {
       cursor: pointer;
     }

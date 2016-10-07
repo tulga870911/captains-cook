@@ -9,8 +9,9 @@ export function ResultsFilterCtrl($log, $mdDialog) {
   function cancel() {
     $mdDialog.cancel();
   }
+
   function save() {
-  	$mdDialog.cancel()
+    $mdDialog.cancel()
   }
 
   function init() {
