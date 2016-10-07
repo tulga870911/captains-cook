@@ -100,7 +100,23 @@
     margin: 30px -8px 0 -8px;
     .results_item {
       min-width: 260px;
+      position: relative;
       .mealWrapper {
+        &.hover{
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+          transition: all 700ms;
+          height: calc(100% - 35px);
+          .description{
+            padding-top: 15px;
+            height: 160px;
+          }
+          &:hover{
+            opacity: 1;
+          }
+        }
         min-height: 300px;
         border: 1px solid #dedfe1;
         background-color: #fff;

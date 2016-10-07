@@ -30,13 +30,12 @@
     <div class="results_body" layout="row" layout-wrap layout-padding>
       <div class="results_item" flex="33" flex-sm="50" flex-xs="100" bindonce ng-repeat="item in $ctrl.meals track by item.id">
         <div class="mealWrapper">
-          <div class="mealImage" ng-click="$ctrl.goList()"></div>
+          <div class="mealImage"></div>
           <div class="mealInfo">
             <h4 bo-text="item.name"></h4>
             <div class="meal_info" layout="row">
               <div class="name" flex="35"><i class="material-icons">location_on</i>name</div>
               <div class="sl" flex="45"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
-                <span class="label" ng-class="{'label-warning': $ctrl.percent<30, 'label-info': $ctrl.percent>=30 && percent<70, 'label-success': $ctrl.percent>=70}" ng-show="overStar && !$ctrl.isReadonly">{{$ctrl.percent}}%</span></span>
               </div>
               <div class="vegan" flex="20">VEGAN</div>
             </div>
@@ -57,6 +56,35 @@
             <div bo-text="item.oldPrice"></div>
             <div bo-text="item.price"></div>
             <div>Add to Cart<i class="material-icons">local_grocery_store</i></div>
+          </div>
+        </div>
+        <div class="mealWrapper hover">
+          <div class="mealInfo">
+            <h4 bo-text="item.name"></h4>
+            <div class="meal_info" layout="row">
+              <div class="name" flex="35"><i class="material-icons">location_on</i>name</div>
+              <div class="sl" flex="45"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+              </div>
+              <div class="vegan" flex="20">VEGAN</div>
+            </div>
+            <div class="description" bo-text="item.name"></div>
+            <div class="chefInfo">
+              <img src="assets/images/chef-dummy.jpg"></img>
+              <div class="chefDetails">
+                <div bo-text="item.chef"></div>
+                <div bo-text="item.location"></div>
+              </div>
+              <div class="rating star">
+                <div bo-text="item.rating"></div>
+                <i class="material-icons">star_rate</i>
+              </div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="price">
+            <div bo-text="item.oldPrice"></div>
+            <div bo-text="item.price"></div>
+            <div ng-click="$ctrl.goList()">Add to Cart<i class="material-icons">local_grocery_store</i></div>
           </div>
         </div>
       </div>
