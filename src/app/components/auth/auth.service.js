@@ -149,7 +149,14 @@ export function AuthService($log, $location, $http, $cookies, $q, $rootScope, Se
      * @return {Bool|Promise}
      */
     isLoggedIn(callback) {
-      return currentUser && currentUser.customerId ? true : false;
+      const is = currentUser && currentUser.customerId ? true : false;
+      
+      if (arguments.length === 0) {
+        return is;
+      }
+
+      safeCb(callback)(is);
+      return is;
       // return Auth.getCurrentUser(null)
       //   .then(user => {
       //     let is = user && user.customerId ? true : false;
