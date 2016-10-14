@@ -4,7 +4,7 @@ import './listing/index';
 import './login/index';
 import './results/index';
 
-import { routerConfig } from './router.config';
+import { routerConfig } from './pages.router';
 
 const MainCmt = {
   templateUrl: 'app/pages/main.html',
