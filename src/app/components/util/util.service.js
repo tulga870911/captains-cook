@@ -1,6 +1,6 @@
 /** @ngInject */
 export function UtilService($window) {
-  var Util = {
+  let Util = {
     /**
      * Return a callback or noop function
      *
@@ -18,7 +18,7 @@ export function UtilService($window) {
      * @return {Object}     - the parsed url, anchor element
      */
     urlParse(url) {
-      var a = $window.document.createElement('a');
+      let a = $window.document.createElement('a');
       a.href = url;
 
       // Special treatment for IE, see http://stackoverflow.com/a/13405933 for details
@@ -53,6 +53,16 @@ export function UtilService($window) {
         return hostnameCheck && protocolCheck && portCheck;
       });
       return origins.length >= 1;
+    },
+
+    /**
+     * Convert the request data to param string
+     * 
+     * @param  {Object}         data        - data to be sent
+     * @return {[type]}
+     */
+    transformRequest(data) {
+      return angular.toJson(data);
     }
   };
 

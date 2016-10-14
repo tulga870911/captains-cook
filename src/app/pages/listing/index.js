@@ -1,9 +1,9 @@
 const ListCmt = {
-  templateUrl: 'app/routes/listing/tpl.html',
+  templateUrl: 'app/pages/listing/tpl.html',
   controller: ListCtrl
 };
 
-export default angular.module('captainscook.routes.listing', [])
+export default angular.module('captainscook.pages.listing', [])
   .component('list', ListCmt);
 
 function ListCtrl($state) {

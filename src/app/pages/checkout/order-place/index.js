@@ -1,5 +1,5 @@
 export const OrderPlaceCmt = {
-  templateUrl: 'app/routes/checkout/order-place/tpl.html',
+  templateUrl: 'app/pages/checkout/order-place/tpl.html',
   controller: OrderPlaceCtrl
 };
 

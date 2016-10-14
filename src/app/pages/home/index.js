@@ -1,12 +1,14 @@
+import { DialogCtrl } from './dialog';
+
 const HomeCmt = {
-  templateUrl: 'app/routes/home/tpl.html',
+  templateUrl: 'app/pages/home/index.tpl.html',
   controller: HomeCtrl
 }
 
-export default angular.module('captainscook.routes.home', [])
+export default angular.module('captainscook.pages.home', [])
   .component('home', HomeCmt);
 
-function HomeCtrl($state, $log) {
+function HomeCtrl($log, $rootScope, $state, $mdDialog, $document) {
   'ngInject';
   let vm = this;
   vm.meals = [{ name: "Special Beef Recipe", rating: 4.5, location: "West Bengal", chef: "Sanjay Puruthi", price: "$55", oldPrice: "$60" },
@@ -22,7 +24,17 @@ function HomeCtrl($state, $log) {
   ];
   vm.goResult = goResult;
   vm.$onInit = function onInit() {
-    $log.log('home controller');
+    if (!$rootScope.hasShownLanding) {
+      $rootScope.hasShownLanding = true;
+      
+      $mdDialog.show({
+        controller: DialogCtrl,
+        controllerAs: '$ctrl',
+        templateUrl: 'app/pages/home/dialog.tpl.html',
+        parent: $document.body,
+        clickOutsideToClose: false
+      });
+    }
   }
 
   function goResult() {

@@ -1,10 +1,10 @@
 import { ResultsFilterCtrl } from "./filter/index";
 
 const ResultsCmt = {
-  templateUrl: './app/routes/results/tpl.html',
+  templateUrl: './app/pages/results/tpl.html',
   controller: ResultsCtrl
 }
-export default angular.module('captainscook.routes.results', [])
+export default angular.module('captainscook.pages.results', [])
   .component('results', ResultsCmt);
 
 function ResultsCtrl($log, $state, $timeout, $scope, $mdDialog, $document) {
@@ -22,7 +22,7 @@ function ResultsCtrl($log, $state, $timeout, $scope, $mdDialog, $document) {
     $mdDialog.show({
       controller: ResultsFilterCtrl,
       controllerAs: '$ctrl',
-      templateUrl: 'app/routes/results/filter/tpl.html',
+      templateUrl: 'app/pages/results/filter/tpl.html',
       parent: $document.body,
       clickOutsideToClose: false
     })

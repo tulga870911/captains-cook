@@ -5,14 +5,14 @@
       <h4>Call <span>8767-270-270</span></h4>
     </div>
   </div>
-  <div ng-if="$ctrl.showSearch()" class="search_wrap" flex="60" flex-md="100" flex-sm="100" flex-xs="100" flex-order-md="2" flex-order-sm="2" flex-order-xs="2">
+  <div ng-if="$ctrl.isSearchVisible()" class="search_wrap" flex="60" flex-md="100" flex-sm="100" flex-xs="100" flex-order-md="2" flex-order-sm="2" flex-order-xs="2">
     <ct-search></ct-search>
   </div>
   <div class="right" flex="20" flex-md="50" flex-sm="50" flex-xs="100" flex-order-md="1" flex-order-sm="1" flex-order-xs="1">
     <div class="anon" ng-show="!$ctrl.isLoggedIn()">
-      <a ng-click="$ctrl.signin()">Login</a>
+      <a ng-click="$ctrl.showSignIn()">Login</a>
       <span>or</span>
-      <a ng-click="$ctrl.signup()">Register</a>
+      <a ng-click="$ctrl.showSignUp()">Register</a>
     </div>
     <div class="logout" ng-show="$ctrl.isLoggedIn()">
       <div class="btn-group shopping" uib-dropdown dropdown-append-to-body>
@@ -25,7 +25,7 @@
       </div>
       <div class="btn-group user" uib-dropdown dropdown-append-to-body>
         <div id="btn-append-to-body" class="icon" uib-dropdown-toggle>
-          User Name <span class="caret"></span>
+          {{$ctrl.currentUser.name}} <span class="caret"></span>
         </div>
         <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
           <li role="menuitem"><a href="" ng-click="$ctrl.logout()">Logout</a></li>

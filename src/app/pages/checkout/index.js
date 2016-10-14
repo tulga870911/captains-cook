@@ -1,11 +1,11 @@
 import { OrderPlaceCmt } from './order-place/index';
 
 const CheckOutCmt = {
-  templateUrl: 'app/routes/checkout/tpl.html',
+  templateUrl: 'app/pages/checkout/tpl.html',
   controller: CheckOutCtrl
 };
 
-export default angular.module('captainscook.routes.checkout', [])
+export default angular.module('captainscook.pages.checkout', [])
   .component('checkout', CheckOutCmt)
   .component('orderPlace', OrderPlaceCmt);
 

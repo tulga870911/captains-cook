@@ -1,13 +1,13 @@
 /** @ngInject */
-export function AuthService($location, $http, $cookies, $q, ServerUrl, Util) {
-  var safeCb = Util.safeCb;
-  var currentUser = {};
+export function AuthService($log, $location, $http, $cookies, $q, $rootScope, ServerUrl, Util) {
+  let safeCb = Util.safeCb;
+  let currentUser = {};
 
   if ($cookies.get('token') && $location.path() !== '/logout') {
     // currentUser = User.get();
   }
 
-  var Auth = {
+  let Auth = {
 
     /**
      * Authenticate user and save token
@@ -16,27 +16,36 @@ export function AuthService($location, $http, $cookies, $q, ServerUrl, Util) {
      * @param  {Function} callback - optional, function(error, user)
      * @return {Promise}
      */
-    login({
-      email,
-      password
-    }, callback) {
-      return $http.post('/auth/local', {
-          email: email,
-          password: password
+    login({ email, password, device_token }, callback) {
+      return $http.post(ServerUrl + '/login', {
+          emailId: email,
+          password: password,
+          deviceToken: device_token
+        }, {
+          transformRequest: Util.transformRequest
         })
         .then(res => {
-          $cookies.put('token', res.data.token);
-          // currentUser = User.get();
-          return currentUser.$promise;
-        })
-        .then(user => {
-          safeCb(callback)(null, user);
-          return user;
+          $log.log('login response', res);
+
+          let bSuccess = false;
+
+          if (res && res.status == 200 && res.data) {
+            currentUser = res.data.data;
+
+            $rootScope.$emit('USER_UPDATED', currentUser);
+
+            $cookies.put('token', currentUser.token);
+
+            bSuccess = true;
+          }
+
+          safeCb(callback)(null, bSuccess);
+          return bSuccess;
         })
         .catch(err => {
           Auth.logout();
-          safeCb(callback)(err.data);
-          return $q.reject(err.data);
+          safeCb(callback)(err);
+          return $q.reject(err);
         });
     },
 
@@ -55,13 +64,30 @@ export function AuthService($location, $http, $cookies, $q, ServerUrl, Util) {
      * @param  {Function} callback - optional, function(error, user)
      * @return {Promise}
      */
-    createUser(user, callback) {
-      // return User.save(user, function() {
-      //     return safeCb(callback)(null, user);
-      //   }, function(err) {
-      //     return safeCb(callback)(err);
-      //   })
-      //   .$promise;
+    registerUser(user, callback) {
+      return $http.put(ServerUrl + '/customers/signup/validation', {
+          emailId: user.emailId
+        }, {
+          transformRequest: Util.transformRequest
+        })
+        .then(res => {
+          if (res && res.status === 200) {
+            return $http.post(ServerUrl + '/customers/signup', user, {
+              transformRequest: Util.transformRequest
+            });
+          } else {
+            return $q.reject(res);
+          }
+        })
+        .then(res => {
+          safeCb(callback)(null, res);
+          return res;
+        })
+        .catch(err => {
+          Auth.logout();
+          safeCb(callback)(err);
+          return $q.reject(err);
+        });
     },
 
     /**
@@ -71,16 +97,32 @@ export function AuthService($location, $http, $cookies, $q, ServerUrl, Util) {
      * @param  {Function} callback - optional, function(error, user)
      * @return {Promise}
      */
-    registerUser(user, callback) {
-      // return User.save(user, function(data) {
-      //     $cookies.put('token', data.token);
-      //     currentUser = User.get();
-      //     return safeCb(callback)(null, user);
-      //   }, function(err) {
-      //     Auth.logout();
-      //     return safeCb(callback)(err);
-      //   })
-      //   .$promise;
+    confirmSignup({ mobileNumber, otp }, callback) {
+      return $http.put(ServerUrl + '/customers/signup/confirmation', {
+          mobileNumber: parseInt(mobileNumber),
+          otp: otp
+        }, {
+          transformRequest: Util.transformRequest
+        })
+        .then(res => {
+          let bSuccess = false;
+
+          if (res && res.status == 200 && res.data) {
+            currentUser = res.data.data;
+
+            $cookies.put('token', currentUser.token);
+
+            bSuccess = true;
+          }
+
+          safeCb(callback)(null, bSuccess);
+          return bSuccess;
+        })
+        .catch(err => {
+          Auth.logout();
+          safeCb(callback)(err);
+          return $q.reject(err);
+        });
     },
 
     /**
@@ -95,15 +137,8 @@ export function AuthService($location, $http, $cookies, $q, ServerUrl, Util) {
         return currentUser;
       }
 
-      var value = currentUser.hasOwnProperty('$promise') ? currentUser.$promise : currentUser;
-      return $q.when(value)
-        .then(user => {
-          safeCb(callback)(user);
-          return user;
-        }, () => {
-          safeCb(callback)({});
-          return {};
-        });
+      safeCb(callback)(currentUser);
+      return currentUser;
     },
 
     /**
@@ -114,16 +149,13 @@ export function AuthService($location, $http, $cookies, $q, ServerUrl, Util) {
      * @return {Bool|Promise}
      */
     isLoggedIn(callback) {
-      if (arguments.length === 0) {
-        return currentUser.hasOwnProperty('role');
-      }
-
-      return Auth.getCurrentUser(null)
-        .then(user => {
-          var is = user ? true : false;
-          safeCb(callback)(is);
-          return is;
-        });
+      return currentUser && currentUser.customerId ? true : false;
+      // return Auth.getCurrentUser(null)
+      //   .then(user => {
+      //     let is = user && user.customerId ? true : false;
+      //     safeCb(callback)(is);
+      //     return is;
+      //   });
     },
 
     /**

@@ -1,10 +1,9 @@
 export function DialogCtrl($log, $mdDialog) {
   'ngInject';
-  $log.debug('landing ctrl');
   let vm = this;
-  vm.toSite = toSite;
+  vm.closeDlg = closeDlg;
 
-  function toSite() {
+  function closeDlg() {
     $mdDialog.cancel();
   }
 }

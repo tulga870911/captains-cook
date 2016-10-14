@@ -1,0 +1,20 @@
+<md-dialog aria-label="signin" class="login">
+  <md-dialog-content>
+    <div class="auth">
+      <form name="login_form" novalidate class="box css-form" ng-submit="$ctrl.fnLogin()">
+        <h3>Login</h3>
+        <div class="title"></div>
+        <div class="boxWrapper">
+          <div>
+            <input required type="email" ng-model="$ctrl.user.email" placeholder="email"></input>
+          </div>
+          <div>
+            <input type="password" ng-minlength=5 ng-model="$ctrl.user.password" placeholder="password"></input>
+          </div>
+          <button type="submit" ng-disabled="login_form.$invalid">Submit</button>
+        </div>
+      </form>
+      <div ng-show="$ctrl.isError" class="error">Incorrect username or password</div>
+    </div>
+  </md-dialog-content>
+</md-dialog>

@@ -1,5 +1,5 @@
-import { SignInCtrl } from '../../routes/login/signin/index';
-import { SignUpCtrl } from '../../routes/login/signup/index';
+import { SignInCtrl } from '../../pages/login/signin/index';
+import { SignUpCtrl } from '../../pages/login/signup/index';
 
 export const Header = {
   templateUrl: 'app/components/header/tpl.html',
@@ -7,35 +7,29 @@ export const Header = {
 };
 
 /** @ngInject */
-function HeaderCtrl($log, $mdDialog, $document, $state) {
-  $log.log('header ctrl');
-  var vm = this;
+function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth) {
+  let vm = this;
   vm.$onInit = function onInit() {
 
   }
-  vm.signin = signin;
-  vm.signup = signup;
-  vm.showSearch = showSearch;
+  vm.showSignIn = showSignIn;
+  vm.showSignUp = showSignUp;
+  vm.isSearchVisible = isSearchVisible;
   vm.goHome = goHome;
-  vm.isLoggedIn = isLoggedIn;
-  vm.logout = logout;
+  
+  vm.isLoggedIn = Auth.isLoggedIn;
+  vm.logout = Auth.logout;
+  vm.currentUser = Auth.getCurrentUser();
 
-  function logout() {
-    sessionStorage.isLogin = false;
-  }
-
-  function isLoggedIn() {
-    let isLogin = sessionStorage.isLogin;
-    if (isLogin == 'true') {
-      return true
-    } else return false
-  }
+  $rootScope.$on('$destroy', $rootScope.$on('USER_UPDATED', function(event, data) {
+    vm.currentUser = data;
+  }));
 
   function goHome() {
     $state.go('main.home');
   }
 
-  function showSearch() {
+  function isSearchVisible() {
     let stateName = $state.current.name;
     if (stateName == 'main.results' || stateName == 'main.list') {
       return true
@@ -44,21 +38,21 @@ function HeaderCtrl($log, $mdDialog, $document, $state) {
     }
   }
 
-  function signin() {
+  function showSignIn() {
     $mdDialog.show({
       controller: SignInCtrl,
       controllerAs: '$ctrl',
-      templateUrl: 'app/routes/login/signin/tpl.html',
+      templateUrl: 'app/pages/login/signin/tpl.html',
       parent: $document.body,
       clickOutsideToClose: true
     })
   }
 
-  function signup() {
+  function showSignUp() {
     $mdDialog.show({
       controller: SignUpCtrl,
       controllerAs: '$ctrl',
-      templateUrl: 'app/routes/login/signup/tpl.html',
+      templateUrl: 'app/pages/login/signup/tpl.html',
       parent: $document.body,
       clickOutsideToClose: true
     })

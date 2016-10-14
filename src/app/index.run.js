@@ -7,7 +7,6 @@ export function runBlock($log) {
     toTop();
   }
   init();
-  $log.debug('runBlock end');
 
   function toTop() {
     angular.element(window).scroll(function() {

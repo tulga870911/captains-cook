@@ -1,5 +1,5 @@
 /* global moment:false, $ */
-import './routes/index'
+import './pages/index'
 import './common/index'
 import './components/auth/index'
 
@@ -8,7 +8,6 @@ import { Header } from './components/header/index';
 import { SearchCmt } from './search/index';
 import { config } from './index.config';
 import { runBlock } from './index.run';
-import { MainController } from './main/main.controller';
 
 angular.module('captainscook', [
     'ngAnimate',
@@ -21,7 +20,7 @@ angular.module('captainscook', [
     'ui.bootstrap',
     'ngMaterial',
     'toastr',
-    'captainscook.routes',
+    'captainscook.pages',
     'captainscook.common',
     'captainscook.auth',
     'pasvaz.bindonce',
@@ -35,4 +34,3 @@ angular.module('captainscook', [
   .constant('moment', moment)
   .config(config)
   .run(runBlock)
-  .controller('MainController', MainController)
