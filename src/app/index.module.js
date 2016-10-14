@@ -1,6 +1,7 @@
 /* global moment:false, $ */
 import './routes/index'
 import './common/index'
+import './components/auth/index'
 
 import { Footer } from './components/footer/index';
 import { Header } from './components/header/index';
@@ -22,6 +23,7 @@ angular.module('captainscook', [
     'toastr',
     'captainscook.routes',
     'captainscook.common',
+    'captainscook.auth',
     'pasvaz.bindonce',
     'slick',
     'angular-flexslider'

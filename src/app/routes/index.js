@@ -24,18 +24,10 @@ export default angular.module('captainscook.routes', [
 
 /** @ngInject */
 function MainCtrl($log, $state, $mdDialog, $document) {
-  $log.log('main controller init')
   let vm = this;
+  
   vm.$onInit = function onInit() {
-    if (sessionStorage.isLogin == 'true') {
-      let stateName = $state.current.name;
-      if (stateName == 'main') {
-        $state.go('main.home')
-      } else return
-    }
-    $state.go('main.home')
-    init()
-    sessionStorage.isLogin = true
+    init();
   }
 
   function init() {
