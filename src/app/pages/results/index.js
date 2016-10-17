@@ -15,6 +15,7 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
   }
   vm.goList = goList;
   vm.selectCategory = selectCategory;
+  vm.isCategorySelected = isCategorySelected;
   vm.showFilter = showFilter;
   vm.categories = Meal.getCurrentCategories();
   vm.meals = Meal.getCurrentItems();
@@ -45,10 +46,12 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
   }
 
   function selectCategory(index) {
-    angular.forEach(vm.categories, function(value) {
-      value.active = false;
-    })
-    vm.categories[index].active = true;
+    Meal.selectCategory(index);
+    vm.meals = Meal.getCurrentItems();
+  }
+
+  function isCategorySelected(index) {
+    return index === Meal.getSelectedCategoryIndex();
   }
 
   function goList() {

@@ -7,6 +7,7 @@ export function MealService($log, $q, $resource, $window, ServerUrl) {
 
   let categories = [];
   let items = [];
+  let nSelectedCategory = 0;
 
   let Meal = {
     getFeaturedItems(callback) {
@@ -27,9 +28,9 @@ export function MealService($log, $q, $resource, $window, ServerUrl) {
 
           categories[0] = {
             name: 'All Categories',
-            url: './assets/images/carousel-image-2.png',
-            active: true
+            url: './assets/images/carousel-image-2.png'
           };
+          nSelectedCategory = 0;
           for (let i = 0, len = _categories.length; i < len; i++) {
             categories[i + 1] = {
               name: _categories[i],
@@ -49,7 +50,21 @@ export function MealService($log, $q, $resource, $window, ServerUrl) {
       return categories;
     },
     getCurrentItems() {
-      return items;
+      if (!nSelectedCategory)
+        return items;
+      else {
+        return $window._.filter(items, {'category': categories[nSelectedCategory].name});
+      }
+    },
+    getSelectedCategoryIndex() {
+      return nSelectedCategory;
+    },
+    selectCategory(index) {
+      nSelectedCategory = index;
+      // angular.forEach(categories, function(value) {
+      //   value.active = false;
+      // });
+      // categories[index].active = true;
     }
   };
 

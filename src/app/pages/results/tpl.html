@@ -2,7 +2,7 @@
   <div>
     <div class="carousel_wrap">
       <slick ng-if="$ctrl.showCarousel && $ctrl.categories.length > 0" dots="false" infinite="false" speed="300" settings="$ctrl.slickConfig" slides-to-show="{{$ctrl.numberOfCarousel}}" touch-move="true" slides-to-scroll="2" class="filter_wrap">
-        <div class="filter_item" bindonce ng-repeat="category in $ctrl.categories" ng-click="$ctrl.selectCategory($index)" ng-class="{'active': category.active}">
+        <div class="filter_item" bindonce ng-repeat="category in $ctrl.categories" ng-click="$ctrl.selectCategory($index)" ng-class="{'active': $ctrl.isCategorySelected($index)}">
           <img bo-src-i="{{category.url}}">
           <div class="over"></div>
           <div class="title" bo-text="category.name"></div>
@@ -67,7 +67,7 @@
               </div>
               <div class="vegan" flex="20">VEGAN</div>
             </div>
-            <div class="description" bo-text="item.name"></div>
+            <div class="description" bo-text="item.description"></div>
             <div class="chefInfo">
               <img bo-src="item.providerImageURL || 'assets/images/chef-dummy.jpg'"></img>
               <div class="chefDetails">
