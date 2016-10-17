@@ -80,12 +80,17 @@ textarea.ng-invalid.ng-dirty {
 }
 
 body {
-  height: 100%;
-  overflow: hidden;
-  overflow-y: scroll;
+  // position: relative!important;
+  // height: 100%;
+  // overflow: hidden;
+  // overflow-y: scroll;
   background-color: $bgColor;
   font-family: 'sansRegular';
   // color: #fff;
+}
+
+div[ui-view=""] {
+  background-color: $bgColor;
 }
 
 html {
@@ -112,7 +117,7 @@ html {
 
 .show_more {
   align-items: center;
-  >div{
+  >div {
     align-items: center;
   }
   h4 {
@@ -130,24 +135,28 @@ html {
     }
   }
 }
-.page_wrap{
+
+.page_wrap {
   max-width: 1040px;
   margin: auto;
-  >div{
-  }
+  >div {}
 }
-.glyphicon.custom-on{
+
+.glyphicon.custom-on {
   width: 14px;
   height: 18px;
   background: url(../assets/images/on.png) no-repeat;
   background-size: 100% 100%;
 }
-.glyphicon.custom-off{
+
+.glyphicon.custom-off {
   width: 14px;
   height: 18px;
   background: url(../assets/images/off.png) no-repeat;
   background-size: 100% 100%;
 }
+
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

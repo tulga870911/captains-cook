@@ -5,13 +5,18 @@ ct-search {
     margin: 0;
     md-autocomplete{
       border-radius: 5px;
+      height: auto;
+      md-autocomplete-wrap{
+        box-shadow: none;
+      }
     }
     md-autocomplete-wrap{
       height: auto;
       input{
+        border-width: 2px!important;
         height: auto;
         background: white;
-        border: solid;
+        border: inset;
         line-height: 14px;
         border-color: rgb(238, 238, 238);
       }
