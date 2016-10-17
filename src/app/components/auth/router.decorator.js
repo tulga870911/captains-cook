@@ -6,16 +6,10 @@ export function routerDecorator($log, $rootScope, $state, Auth) {
       return;
     }
 
-    Auth.isLoggedIn(angular.noop)
-      .then(is => {
-        $log.log('isLoggedIn', is);
+    // if (!Auth.isLoggedIn()) {
+    //   event.preventDefault();
+    //   $state.go('main.home');
+    // }
 
-        if (is) {
-          return;
-        }
-
-        event.preventDefault();
-        $state.go('main.home');
-      });
   }));
 }

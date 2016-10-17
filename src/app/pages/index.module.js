@@ -23,10 +23,12 @@ export default angular.module('captainscook.pages', [
   .component('main', MainCmt);
 
 /** @ngInject */
-function MainCtrl() {
+function MainCtrl($log, Locality) {
   let vm = this;
-  
-  vm.$onInit = function onInit() {
-  }
-}
 
+  Locality.getLocalities(function(response) {
+    $log.log('localities', response.data);
+  });
+
+  vm.$onInit = function onInit() {}
+}

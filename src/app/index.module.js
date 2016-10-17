@@ -6,7 +6,7 @@ import './components/auth/index.module'
 
 import { Footer } from './components/footer/index';
 import { Header } from './components/header/index';
-import { SearchCmt } from './search/index';
+import { SearchCmt } from './components/search/index';
 import { config } from './index.config';
 import { runBlock } from './index.run';
 
