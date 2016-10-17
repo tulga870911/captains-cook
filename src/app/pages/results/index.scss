@@ -129,6 +129,10 @@
           background-repeat: no-repeat;
           height: 150px;
         }
+        >img{
+          width: 100%;
+          min-height: 203px;
+        }
         .meal_info {
           border-bottom: 1px $inactive solid;
           .name {
