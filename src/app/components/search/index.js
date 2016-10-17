@@ -8,30 +8,7 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
 
   const vm = this;
 
-  vm.locality = {
-    isDisabled: false,
-    noCache: false,
-    selectedItem: null,
-    searchText: '',
-    items: [],
-    onSelectItemChange: item => {
-      $log.info('Locality Item changed to ' + item);
-    },
-    onSearchTextChange: text => {
-      $log.info('Locality Text changed to ' + text);
-    },
-    querySearch: query => {
-      let results = query ? vm.locality.items.filter(createFilterFor(query)) : vm.locality.items;
-      let deferred;
-      if (vm.simulateQuery) {
-        deferred = $q.defer();
-        $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
-        return deferred.promise;
-      } else {
-        return results;
-      }
-    }
-  };
+  vm.locality = $rootScope.locality;
 
   vm.$onInit = function onInit() {
     init();
@@ -46,13 +23,9 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
     }
   }
 
-  $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_LOADED', function(event, data){
-    vm.locality.items = data.map(function(locality) {
-      return {
-        value: locality.toLowerCase(),
-        display: locality
-      };
-    });
+  $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_UPDATED', function(event, data){
+    $log.log('LOCALITY_UPDATED', data);
+    vm.locality = data;
   }));
 
   /**
