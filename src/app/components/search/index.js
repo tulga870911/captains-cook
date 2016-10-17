@@ -23,20 +23,7 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
     }
   }
 
-  $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_UPDATED', function(event, data){
-    $log.log('LOCALITY_UPDATED');
+  $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_UPDATED', function(){
     vm.locality = $rootScope.locality;
   }));
-
-  /**
-   * Create filter function for a query string
-   */
-  function createFilterFor(query) {
-    var lowercaseQuery = angular.lowercase(query);
-
-    return function filterFn(item) {
-      return (item.value.indexOf(lowercaseQuery) === 0);
-    };
-
-  }
 }

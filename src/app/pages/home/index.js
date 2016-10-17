@@ -8,12 +8,13 @@ const HomeCmt = {
 export default angular.module('captainscook.pages.home', [])
   .component('home', HomeCmt);
 
-function HomeCtrl($log, $rootScope, $state, $mdDialog, $document, Chef, Meal) {
+function HomeCtrl($log, $rootScope, $state, $mdDialog, $document, Chef, Meal, Promotion) {
   'ngInject';
   let vm = this;
   vm.meals = [];
   vm.chefs = [];
-  vm.goResult = goResult;
+  vm.promotions = [];
+  vm.showAllDeals = showAllDeals;
 
   vm.$onInit = function onInit() {
     if (!$rootScope.hasShownLanding) {
@@ -35,10 +36,14 @@ function HomeCtrl($log, $rootScope, $state, $mdDialog, $document, Chef, Meal) {
 
   Meal.getFeaturedMeals(function(response){
     vm.meals = response.data;
-    $log.log('Meals', vm.meals);
   });
 
-  function goResult() {
-    $state.go('main.results');
+  Promotion.getPromotions(function(response){
+    vm.promotions = response.data;
+    $log.log('promotions', vm.promotions);
+  });
+
+  function showAllDeals() {
+    //$state.go('main.results');
   }
 }
