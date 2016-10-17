@@ -1,0 +1,69 @@
+@import '../../variable.scss';
+.landing {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  background: opacify(black, .5);
+  opacity: 0.8!important;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  .title {
+    @extend %sansRegular;
+    h2 {
+      color: white;
+      font-size: 50px;
+    }
+    p {
+      color: #b1bcc2;
+      font-size: 22px;
+    }
+  }
+  .img_tick {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .ticket {
+      margin-top: 15px;
+      background: white;
+      width: 330px;
+      margin-right: 15px;
+      padding: 30px;
+      position: relative;
+      padding-bottom: 150px;
+      .img_wrap {
+        padding-top: 30px;
+      }
+      .number {
+        position: absolute;
+        bottom: 0;
+        h1 {
+          font-size: 150px;
+          color: #e7eef2;
+        }
+      }
+      .txt {
+        position: absolute;
+        h3 {
+          color: black;
+          span {
+            color: #858e93;
+          }
+        }
+        p {
+          color: #8f9599;
+        }
+      }
+    }
+  }
+  .skip_btn {
+    margin-top: 20px;
+    .md-raise {
+      background: rgba(255, 255, 255, 0.3);
+      color: white;
+      font-size: 18px;
+      padding: 15px 25px;
+    }
+  }
+}

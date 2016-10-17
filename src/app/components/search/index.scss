@@ -3,6 +3,19 @@ ct-search {
   padding: 10px 0;
   .search_form {
     margin: 0;
+    md-autocomplete{
+      border-radius: 5px;
+    }
+    md-autocomplete-wrap{
+      height: auto;
+      input{
+        height: auto;
+        background: white;
+        border: solid;
+        line-height: 14px;
+        border-color: rgb(238, 238, 238);
+      }
+    }
     .no-padding-r {
       padding-right: 0;
       input {

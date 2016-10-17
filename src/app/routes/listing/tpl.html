@@ -1,0 +1,85 @@
+<div class="list page_wrap">
+  <div>
+    <div class="back" ng-click="$ctrl.goResult()">
+      <h5><i class="material-icons">chevron_left</i><i class="material-icons">chevron_left</i>Back to Results </h5>
+    </div>
+    <div class="carousel_body">
+      <flex-slider slider-id="slider" flex-slide="image in $ctrl.prod.imagePaths track by $index" animation="fade" animation-loop="false" sync="#carousel" slideshow="false" control-nav="false" init-delay="100">
+        <li>
+          <img ng-src="{{image.custom}}">
+        </li>
+      </flex-slider>
+      <flex-slider slider-id="carousel" flex-slide="image in $ctrl.prod.imagePaths track by $index" animation="slide" animation-loop="false" item-width="130" item-margin="5" as-nav-for="#slider" slideshow="false" control-nav="false">
+        <li class="thumb">
+          <img ng-src="{{image.thumbnail}}">
+        </li>
+      </flex-slider>
+    </div>
+    <div class="list_body">
+      <div class="arrow">
+        <div class="left">
+          <button class="btn btn-default"><i class="material-icons">arrow_back</i></button>
+        </div>
+        <div class="right">
+          <button class="btn btn-default"><i class="material-icons">arrow_forward</i></button>
+        </div>
+      </div>
+      <div class="header">
+        <h3>This is another line recipe Special Ratan Beef Recipe</h3>
+        <div class="media">
+          <div class="left">
+            <img src="assets/images/chef-dummy.jpg">
+            <span class="name">by <span>Bonan Jefferson</span></span>
+          </div>
+          <div class="right rating">
+            <span>4.6</span>
+            <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="isReadonly" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+          </div>
+        </div>
+      </div>
+      <div class="body" layout="row" layout-wrap>
+        <div flex="66" flex-sm="100" flex-xs="100" class="txt">
+          <p>FlexSlider initialization properties can be specified as attributes of flex-slider directive using dash separated attributes instead of cammel case.FlexSlider initialization properties can be specified as attributes of flex-slider directive using dash separated attributes instead of cammel case.FlexSlider initialization properties can be specified as attributes of flex-slider directive using dash separated attributes instead of cammel case.FlexSlider initialization properties can be specified as attributes of flex-slider directive using dash separated attributes instead of cammel case.FlexSlider initialization properties can be specified as attributes of flex-slider directive using dash separated attributes instead of cammel case.</p>
+        </div>
+        <div flex class="review">
+          <div class="location">
+            <h5 class="title">FROM:</h5>
+            <i class="material-icons">place</i>
+            <span>Adheri East, Agarkar Chowk</span>
+          </div>
+          <div class="spice">
+            <h5 class="title">SPICE LEVEL:</h5>
+            <span>5 of 5</span>
+            <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+          </div>
+          <div class="type">
+            <h5 class="title">TYPE:</h5>
+            <button class="btn btn-default btn-lg">NON-VEGAN</button>
+          </div>
+          <div class="ingredients">
+            <h5 class="title">INGREDIENTS:</h5>
+            <ul>
+              <li bindonce ng-repeat="item in $ctrl.items = [1, 2, 3, 4, 5]">artichoke hearts <span>16 once</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer" layout="row" layout-wrap>
+        <div class="price" flex-xs="100">
+          <div class="new">
+            <span>PRICE:</span>
+            <h4>$47</h4>
+          </div>
+          <div class="old">
+            <span>OLD PRICE:</span>
+            <h5>$56</h5>
+          </div>
+        </div>
+        <div class="check" flex-xs="100">
+          <button class="btn btn-default"><span class="minus">- </span><span>0</span><span class="plus"> +</span></button>
+          <button class="btn btn-default" ng-click="$ctrl.goCheckOut()">Add to Cart <i class="material-icons">local_grocery_store</i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

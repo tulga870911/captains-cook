@@ -43,15 +43,14 @@
       <h3>Featured Meals</h3>
       <div class="col-sm-6 col-md-4 meal" bindonce ng-repeat="meal in $ctrl.meals">
         <div class="mealWrapper">
-          <!-- <div class="mealImage"></div> -->
-          <img bo-src="meal.imageURL"></img>
+          <div class="mealImage"></div>
           <div class="mealInfo">
-            <h4 bo-text="meal.category"></h4>
+            <h4 bo-text="meal.name"></h4>
             <div class="chefInfo">
-              <img bo-src="meal.providerImageURL"></img>
+              <img src="assets/images/chef-dummy.jpg"></img>
               <div class="chefDetails">
-                <div bo-text="meal.providerName"></div>
-                <div bo-text="meal.localityServed" ng-show="meal.localityServed"></div>
+                <div bo-text="meal.chef"></div>
+                <div bo-text="meal.location"></div>
               </div>
               <div class="rating star">
                 <div bo-text="meal.rating"></div>
@@ -61,7 +60,7 @@
           </div>
           <div class="divider"></div>
           <div class="price">
-            <div bo-text="meal.oldPrice" ng-show="meal.oldPrice"></div>
+            <div bo-text="meal.oldPrice"></div>
             <div bo-text="meal.price"></div>
             <div>See More<i class="material-icons">arrow_forward</i></div>
           </div>
@@ -74,10 +73,10 @@
         <div class="col-sm-6 chef" bindonce ng-repeat="chef in $ctrl.chefs">
           <div class="chefWrapper">
             <div class="chefInfo">
-              <img bo-src="chef.imageUrl"></img>
+              <img src="assets/images/chef-dummy.jpg"></img>
               <div class="chefDetails">
                 <div bo-text="chef.name"></div>
-                <div bo-text="chef.localityServed"></div>
+                <div bo-text="chef.location"></div>
               </div>
               <div class="rating star">
                 <div bo-text="chef.rating"></div>
