@@ -1,4 +1,4 @@
-import '../util/index'
+import '../util/index.module'
 import { AuthService } from './auth.service';
 import { authInterceptor } from './interceptor.service';
 import { routerDecorator } from './router.decorator';

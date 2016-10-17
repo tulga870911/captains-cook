@@ -1,7 +1,8 @@
 /* global moment:false, $ */
-import './pages/index'
-import './common/index'
-import './components/auth/index'
+import './pages/index.module'
+import './common/index.module'
+import './models/index.module'
+import './components/auth/index.module'
 
 import { Footer } from './components/footer/index';
 import { Header } from './components/header/index';
@@ -23,6 +24,7 @@ angular.module('captainscook', [
     'captainscook.pages',
     'captainscook.common',
     'captainscook.auth',
+    'captainscook.models',
     'pasvaz.bindonce',
     'slick',
     'angular-flexslider'

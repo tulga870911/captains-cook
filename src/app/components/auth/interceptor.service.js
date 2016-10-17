@@ -1,11 +1,13 @@
 /** @ngInject */
-export function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
+export function authInterceptor($log, $q, $cookies, $injector, Util) {
   let state;
   return {
     // Add authorization token to headers
     request(config) {
+      $log.log('trying to authorize the request...');
       config.headers = config.headers || {};
       if ($cookies.get('token') && Util.isSameOrigin(config.url)) {
+        $log.log('authorizing the request...');
         config.headers.Authorization = 'Bearer ' + $cookies.get('token');
       }
       return config;
