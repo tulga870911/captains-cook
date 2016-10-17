@@ -2,7 +2,7 @@
 export function MainCtrl($log, $rootScope, $timeout, Locality) {
   let vm = this;
 
-  vm.locality = {
+  $rootScope.locality = {
     isDisabled: false,
     noCache: false,
     selectedItem: null,
@@ -15,7 +15,7 @@ export function MainCtrl($log, $rootScope, $timeout, Locality) {
       $log.info('Locality Text changed to ' + text);
     },
     querySearch: query => {
-      let results = query ? vm.locality.items.filter(createFilterFor(query)) : vm.locality.items;
+      let results = query ? $rootScope.locality.items.filter(createFilterFor(query)) : $rootScope.locality.items;
       let deferred;
       if (vm.simulateQuery) {
         deferred = $q.defer();
@@ -40,14 +40,14 @@ export function MainCtrl($log, $rootScope, $timeout, Locality) {
           return pos == arr.indexOf(elem);
         });
 
-        vm.locality.items = localities.map(function(locality) {
+        $rootScope.locality.items = localities.map(function(locality) {
           return {
             value: locality.toLowerCase(),
             display: locality
           };
         });
 
-        $rootScope.$emit('LOCALITY_UPDATED', vm.locality);
+        $rootScope.$emit('LOCALITY_UPDATED');
       }
     });
   }

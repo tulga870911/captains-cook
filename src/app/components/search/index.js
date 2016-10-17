@@ -24,8 +24,8 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
   }
 
   $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_UPDATED', function(event, data){
-    $log.log('LOCALITY_UPDATED', data);
-    vm.locality = data;
+    $log.log('LOCALITY_UPDATED');
+    vm.locality = $rootScope.locality;
   }));
 
   /**
