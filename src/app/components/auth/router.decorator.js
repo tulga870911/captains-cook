@@ -6,6 +6,8 @@ export function routerDecorator($log, $rootScope, $state, Auth) {
       return;
     }
 
+    $log.log('isLoggedIn', Auth.isLoggedIn());
+
     // if (!Auth.isLoggedIn()) {
     //   event.preventDefault();
     //   $state.go('main.home');

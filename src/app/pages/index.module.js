@@ -23,11 +23,25 @@ export default angular.module('captainscook.pages', [
   .component('main', MainCmt);
 
 /** @ngInject */
-function MainCtrl($log, Locality) {
+function MainCtrl($log, $rootScope, $timeout, Locality) {
   let vm = this;
 
+  vm.localities = [];
+
   Locality.getLocalities(function(response) {
-    $log.log('localities', response.data);
+    if (response && response.data && response.data.subLocs) {
+      vm.localities = response.data.subLocs.map(item => {
+        return item.loc;
+      }).filter((elem, pos, arr) => {
+        return pos == arr.indexOf(elem);
+      });
+
+      $rootScope.$emit('LOCALITY_LOADED', vm.localities);
+
+      // vm.subLocalities = response.data.subLocs.map(item => {
+      //   return item.subLoc;
+      // });
+    }
   });
 
   vm.$onInit = function onInit() {}

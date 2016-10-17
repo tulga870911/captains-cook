@@ -3,13 +3,38 @@ export const SearchCmt = {
   controller: SearchCtrl
 }
 
-function SearchCtrl($log, $state) {
+function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
   'ngInject';
 
   const vm = this;
 
+  vm.locality = {
+    isDisabled: false,
+    noCache: false,
+    selectedItem: null,
+    searchText: '',
+    items: [],
+    onSelectItemChange: item => {
+      $log.info('Locality Item changed to ' + item);
+    },
+    onSearchTextChange: text => {
+      $log.info('Locality Text changed to ' + text);
+    },
+    querySearch: query => {
+      let results = query ? vm.locality.items.filter(createFilterFor(query)) : vm.locality.items;
+      let deferred;
+      if (vm.simulateQuery) {
+        deferred = $q.defer();
+        $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
+        return deferred.promise;
+      } else {
+        return results;
+      }
+    }
+  };
+
   vm.$onInit = function onInit() {
-    init()
+    init();
   }
 
   function init() {
@@ -21,68 +46,14 @@ function SearchCtrl($log, $state) {
     }
   }
 
-  vm.simulateQuery = false;
-  vm.isDisabled = false;
-
-  // list of `state` value/display objects
-  vm.states = loadAll();
-  vm.querySearch = querySearch;
-  vm.selectedItemChange = selectedItemChange;
-  vm.searchTextChange = searchTextChange;
-
-  vm.newState = newState;
-
-  function newState(state) {
-    alert("Sorry! You'll need to create a Constitution for " + state + " first!");
-  }
-
-  // ******************************
-  // Internal methods
-  // ******************************
-
-  /**
-   * Search for states... use $timeout to simulate
-   * remote dataservice call.
-   */
-  function querySearch(query) {
-    var results = query ? vm.states.filter(createFilterFor(query)) : vm.states,
-      deferred;
-    if (vm.simulateQuery) {
-      deferred = $q.defer();
-      $timeout(function () { deferred.resolve(results); }, Math.random() * 1000, false);
-      return deferred.promise;
-    } else {
-      return results;
-    }
-  }
-
-  function searchTextChange(text) {
-    $log.info('Text changed to ' + text);
-  }
-
-  function selectedItemChange(item) {
-    $log.info('Item changed to ' + JSON.stringify(item));
-  }
-
-  /**
-   * Build `states` list of key/value pairs
-   */
-  function loadAll() {
-    var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
-              Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
-              Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
-              Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
-              North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
-              South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
-              Wisconsin, Wyoming';
-
-    return allStates.split(/, +/g).map(function (state) {
+  $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_LOADED', function(event, data){
+    vm.locality.items = data.map(function(locality) {
       return {
-        value: state.toLowerCase(),
-        display: state
+        value: locality.toLowerCase(),
+        display: locality
       };
     });
-  }
+  }));
 
   /**
    * Create filter function for a query string
@@ -90,8 +61,8 @@ function SearchCtrl($log, $state) {
   function createFilterFor(query) {
     var lowercaseQuery = angular.lowercase(query);
 
-    return function filterFn(state) {
-      return (state.value.indexOf(lowercaseQuery) === 0);
+    return function filterFn(item) {
+      return (item.value.indexOf(lowercaseQuery) === 0);
     };
 
   }
