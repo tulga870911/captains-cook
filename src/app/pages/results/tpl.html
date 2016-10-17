@@ -1,11 +1,11 @@
-<div class="results page_wrap">
+<div class="results page_wrap" ng-if="$ctrl.categories.length > 0">
   <div>
     <div class="carousel_wrap">
-      <slick ng-if="$ctrl.showCarousel" dots="false" infinite="false" speed="300" settings="$ctrl.slickConfig" slides-to-show="{{$ctrl.numberOfCarousel}}" touch-move="true" slides-to-scroll="2" class="filter_wrap">
-        <div class="filter_item" bindonce ng-repeat="item in $ctrl.filters" ng-click="$ctrl.selFilter($index)" ng-class="{'active': item.active}">
-          <img bo-src-i="{{item.url}}">
+      <slick ng-if="$ctrl.showCarousel && $ctrl.categories.length > 0" dots="false" infinite="false" speed="300" settings="$ctrl.slickConfig" slides-to-show="{{$ctrl.numberOfCarousel}}" touch-move="true" slides-to-scroll="2" class="filter_wrap">
+        <div class="filter_item" bindonce ng-repeat="category in $ctrl.categories" ng-click="$ctrl.selectCategory($index)" ng-class="{'active': category.active}">
+          <img bo-src-i="{{category.url}}">
           <div class="over"></div>
-          <div class="title" bo-text="item.name"></div>
+          <div class="title" bo-text="category.name"></div>
         </div>
       </slick>
     </div>
@@ -14,7 +14,7 @@
       <div class="left_icon"><i class="material-icons">restaurant</i></div>
     </div>
     <div class="results_txt">
-      <h3>435 RESULTS</h3>
+      <h3>{{$ctrl.meals.length}} RESULTS</h3>
     </div>
     <div class="filter_body" layout="row" layout-wrap>
       <div flex="50" flex-xs="100">
@@ -40,10 +40,10 @@
               <div class="vegan" flex="20">VEGAN</div>
             </div>
             <div class="chefInfo">
-              <img src="assets/images/chef-dummy.jpg"></img>
+              <img bo-src="item.providerImageURL || 'assets/images/chef-dummy.jpg'"></img>
               <div class="chefDetails">
-                <div bo-text="item.chef"></div>
-                <div bo-text="item.location"></div>
+                <div bo-text="item.providerName"></div>
+                <div bo-text="item.localityServed"></div>
               </div>
               <div class="rating star">
                 <div bo-text="item.rating"></div>
@@ -54,7 +54,7 @@
           <div class="divider"></div>
           <div class="price">
             <div bo-text="item.oldPrice"></div>
-            <div bo-text="item.price"></div>
+            <div bo-text="'$' + item.price"></div>
             <div>Add to Cart<i class="material-icons">local_grocery_store</i></div>
           </div>
         </div>
@@ -69,10 +69,10 @@
             </div>
             <div class="description" bo-text="item.name"></div>
             <div class="chefInfo">
-              <img src="assets/images/chef-dummy.jpg"></img>
+              <img bo-src="item.providerImageURL || 'assets/images/chef-dummy.jpg'"></img>
               <div class="chefDetails">
-                <div bo-text="item.chef"></div>
-                <div bo-text="item.location"></div>
+                <div bo-text="item.providerName"></div>
+                <div bo-text="item.localityServed"></div>
               </div>
               <div class="rating star">
                 <div bo-text="item.rating"></div>
@@ -83,17 +83,17 @@
           <div class="divider"></div>
           <div class="price">
             <div bo-text="item.oldPrice"></div>
-            <div bo-text="item.price"></div>
+            <div bo-text="'$' + item.price"></div>
             <div ng-click="$ctrl.goList()">Add to Cart<i class="material-icons">local_grocery_store</i></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="show_more">
+    <!-- <div class="show_more">
       <div layout="column">
         <h4>SHOW MORE</h4>
         <button class="btn btn-default btn-sm"><i class="material-icons">arrow_downward</i></button>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

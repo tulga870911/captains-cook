@@ -7,16 +7,32 @@ const ResultsCmt = {
 export default angular.module('captainscook.pages.results', [])
   .component('results', ResultsCmt);
 
-function ResultsCtrl($log, $state, $timeout, $scope, $mdDialog, $document) {
+function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $document, Meal) {
   'ngInject';
   let vm = this;
   vm.$onInit = function onInit() {
     init();
   }
   vm.goList = goList;
-  vm.selFilter = selFilter;
-  vm.showFilter = showFilter
+  vm.selectCategory = selectCategory;
+  vm.showFilter = showFilter;
+  vm.categories = Meal.getCurrentCategories();
+  vm.meals = Meal.getCurrentItems();
+
   vm.showCarousel = true;
+
+  $scope.$on('SEARCH_RESULT_UPDATED', function() {
+    vm.showCarousel = false;
+    vm.categories = Meal.getCurrentCategories();
+    vm.meals = Meal.getCurrentItems();
+
+    $timeout(() => {
+      vm.showCarousel = true;
+    }, 500);
+
+    $log.log('categories', vm.categories);
+    $log.log('meals', vm.meals);
+  });
 
   function showFilter() {
     $mdDialog.show({
@@ -28,11 +44,11 @@ function ResultsCtrl($log, $state, $timeout, $scope, $mdDialog, $document) {
     })
   }
 
-  function selFilter(index) {
-    angular.forEach(vm.filters, function(value) {
+  function selectCategory(index) {
+    angular.forEach(vm.categories, function(value) {
       value.active = false;
     })
-    vm.filters[index].active = true;
+    vm.categories[index].active = true;
   }
 
   function goList() {
@@ -71,47 +87,8 @@ function ResultsCtrl($log, $state, $timeout, $scope, $mdDialog, $document) {
   }
 
   function init() {
-    $log.log('result controller');
-    vm.filters = [{
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }, {
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }, {
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }, {
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }, {
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }, {
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }, {
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }, {
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }, {
-      url: `./assets/images/carousel-image-2.png`,
-      name: `Name`
-    }];
-    vm.filters[0].active = true;
     vm.sortBy = ['opt1', 'opt2', 'opt3', 'opt4'];
-    vm.meals = [{ name: "Special Beef Recipe", rating: 4.5, location: "West Bengal", chef: "Sanjay Puruthi", price: "$55", oldPrice: "$60", id: 1 },
-      { name: "Chicken Karhai", rating: 4.1, location: "Andheri East", chef: "Sheetal Magon", price: "$30", oldPrice: "$90", id: 2 },
-      { name: "Bihari Biryani", rating: 5, location: "Mumbai", chef: "Ronald Weston", price: "$55", oldPrice: "$75", id: 3 },
-      { name: "Bihari Biryani", rating: 5, location: "Mumbai", chef: "Ronald Weston", price: "$55", oldPrice: "$75", id: 4 },
-      { name: "Bihari Biryani", rating: 5, location: "Mumbai", chef: "Ronald Weston", price: "$55", oldPrice: "$75", id: 5 },
-      { name: "Bihari Biryani", rating: 5, location: "Mumbai", chef: "Ronald Weston", price: "$55", oldPrice: "$75", id: 6 },
-      { name: "Bihari Biryani", rating: 5, location: "Mumbai", chef: "Ronald Weston", price: "$55", oldPrice: "$75", id: 7 },
-      { name: "Bihari Biryani", rating: 5, location: "Mumbai", chef: "Ronald Weston", price: "$55", oldPrice: "$75", id: 8 },
-      { name: "Bihari Biryani", rating: 5, location: "Mumbai", chef: "Ronald Weston", price: "$55", oldPrice: "$75", id: 9 }
-    ];
+    
     angular.element(window).resize(changeWindow);
     vm.sort = vm.sortBy[0];
     vm.numberOfCarousel = 6;

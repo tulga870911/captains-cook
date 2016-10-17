@@ -1,5 +1,5 @@
 /** @ngInject */
-export function MainCtrl($log, $rootScope, $timeout, Locality) {
+export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
   let vm = this;
 
   $rootScope.locality = {
@@ -31,6 +31,15 @@ export function MainCtrl($log, $rootScope, $timeout, Locality) {
     loadLocalities();
   };
 
+  $rootScope.$on('$destroy', $rootScope.$on('SHOW_SEARCH_RESULTS', () => {
+    $log.log('trying to fetch results', {
+      locality: $rootScope.locality.selectedItem.display
+    });
+    Meal.getAvailableItems({locality: 'Andheri East', subLocality: 'Marol', from: 1474531200000, to: 1474534800000}, function(){
+      $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
+    });
+  }));
+
   function loadLocalities() {
     Locality.getLocalities(function(response) {
       if (response && response.data && response.data.subLocs) {
@@ -40,7 +49,7 @@ export function MainCtrl($log, $rootScope, $timeout, Locality) {
           return pos == arr.indexOf(elem);
         });
 
-        $rootScope.locality.items = localities.map(function(locality) {
+        $rootScope.locality.items = localities.map(locality => {
           return {
             value: locality.toLowerCase(),
             display: locality

@@ -34,7 +34,7 @@ function HomeCtrl($log, $rootScope, $state, $mdDialog, $document, Chef, Meal, Pr
     vm.chefs = response.data;
   });
 
-  Meal.getFeaturedMeals(function(response){
+  Meal.getFeaturedItems(function(response){
     vm.meals = response.data;
   });
 

@@ -9,10 +9,15 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
   const vm = this;
 
   vm.locality = $rootScope.locality;
+  vm.showSearchResults = showSearchResults;
 
   vm.$onInit = function onInit() {
     init();
   }
+
+  $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_UPDATED', function(){
+    vm.locality = $rootScope.locality;
+  }));
 
   function init() {
     let stateName = $state.current.name;
@@ -23,7 +28,9 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
     }
   }
 
-  $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_UPDATED', function(){
-    vm.locality = $rootScope.locality;
-  }));
+  function showSearchResults() {
+    $rootScope.$emit('SHOW_SEARCH_RESULTS');
+
+    $state.go('main.results');
+  }
 }
