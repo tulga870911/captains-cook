@@ -17,7 +17,7 @@
           font-size: 30px;
         }
       }
-      .slick-next{
+      .slick-next {
         right: -20px;
       }
     }
@@ -102,18 +102,18 @@
       min-width: 260px;
       position: relative;
       .mealWrapper {
-        &.hover{
+        &.hover {
           position: absolute;
           left: 0;
           top: 0;
           opacity: 0;
           transition: all 700ms;
           height: calc(100% - 35px);
-          .description{
+          .description {
             padding-top: 15px;
             height: 160px;
           }
-          &:hover{
+          &:hover {
             opacity: 1;
           }
         }
@@ -145,6 +145,14 @@
         .mealInfo {
           padding: 10px;
           padding-left: 15px;
+          >h4 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 20px;
+            height: 42px;
+          }
         }
         .chefInfo {
           margin-top: 15px;
