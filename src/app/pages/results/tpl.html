@@ -37,7 +37,7 @@
               <div class="name" flex="35"><i class="material-icons">location_on</i>name</div>
               <div class="sl" flex="45"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
               </div>
-              <div class="vegan" flex="20">VEGAN</div>
+              <div class="vegan" flex="20" bo-hide="item.nonVeg">VEGAN</div>
             </div>
             <div class="chefInfo">
               <img bo-src="item.providerImageURL || 'assets/images/chef-dummy.jpg'"></img>
@@ -65,7 +65,7 @@
               <div class="name" flex="35"><i class="material-icons">location_on</i>name</div>
               <div class="sl" flex="45"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
               </div>
-              <div class="vegan" flex="20">VEGAN</div>
+              <div class="vegan" flex="20" bo-hide="item.nonVeg">VEGAN</div>
             </div>
             <div class="description" bo-text="item.description"></div>
             <div class="chefInfo">
