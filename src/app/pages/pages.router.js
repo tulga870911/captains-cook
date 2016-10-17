@@ -15,9 +15,9 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
       template: '<results></results>',
       authenticate: true
     })
-    .state('main.list', {
-      url: '/list',
-      template: '<list></list>',
+    .state('main.details', {
+      url: '/details',
+      template: '<search-details></search-details>',
       authenticate: true
     })
     .state('main.checkout', {

@@ -1,0 +1,85 @@
+<div class="details page_wrap">
+  <div>
+    <div class="back" ng-click="$ctrl.goToResultPage()">
+      <h5><i class="material-icons">chevron_left</i><i class="material-icons">chevron_left</i>Back to Results </h5>
+    </div>
+    <div class="carousel_body">
+      <flex-slider slider-id="slider" flex-slide="item in $ctrl.meals track by $index" animation="fade" animation-loop="false" sync="#carousel" slideshow="false" control-nav="false" init-delay="100" start-at="$ctrl.getSelectedItemIndex" after="$ctrl.onAfterChange($index)" >
+        <li>
+          <img ng-src="{{item.imageURL}}">
+        </li>
+      </flex-slider>
+      <flex-slider slider-id="carousel" flex-slide="item in $ctrl.meals track by $index" animation="slide" animation-loop="false" item-width="130" item-margin="5" as-nav-for="#slider" slideshow="false" control-nav="false" start-at="$ctrl.getSelectedItemIndex" after="$ctrl.onAfterChange($index)">
+        <li class="thumb">
+          <img ng-src="{{item.imageURL}}">
+        </li>
+      </flex-slider>
+    </div>
+    <div class="list_body">
+      <div class="arrow">
+        <div class="left">
+          <button class="btn btn-default"><i class="material-icons">arrow_back</i></button>
+        </div>
+        <div class="right">
+          <button class="btn btn-default"><i class="material-icons">arrow_forward</i></button>
+        </div>
+      </div>
+      <div class="header">
+        <h3>{{$ctrl.currentItem.name}}</h3>
+        <div class="media">
+          <div class="left">
+            <img src="{{$ctrl.currentItem.providerImageURL || 'assets/images/chef-dummy.jpg'}}">
+            <span class="name">by <span>{{$ctrl.currentItem.providerName}}</span></span>
+          </div>
+          <div class="right rating">
+            <span>{{$ctrl.currentItem.rating}}</span>
+            <span uib-rating ng-model="$ctrl.currentItem.rating" max="$ctrl.max" read-only="isReadonly" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+          </div>
+        </div>
+      </div>
+      <div class="body" layout="row" layout-wrap>
+        <div flex="66" flex-sm="100" flex-xs="100" class="txt">
+          <p>{{$ctrl.currentItem.description}}</p>
+        </div>
+        <div flex class="review">
+          <div class="location">
+            <h5 class="title">FROM:</h5>
+            <i class="material-icons">place</i>
+            <span>{{$ctrl.currentItem.localityServed}}</span>
+          </div>
+          <div class="spice">
+            <h5 class="title">SPICE LEVEL:</h5>
+            <span>5 of 5</span>
+            <span uib-rating ng-model="$ctrl.currentItem.spicyLevel" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+          </div>
+          <div class="type">
+            <h5 class="title">TYPE:</h5>
+            <button class="btn btn-default btn-lg" ng-show="$ctrl.currentItem.nonVeg">NON-VEGAN</button>
+          </div>
+          <div class="ingredients">
+            <h5 class="title">INGREDIENTS:</h5>
+            <ul>
+              <li bindonce ng-repeat="item in $ctrl.items = [1, 2, 3, 4, 5]">artichoke hearts <span>16 once</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer" layout="row" layout-wrap>
+        <div class="price" flex-xs="100">
+          <div class="new">
+            <span>PRICE:</span>
+            <h4>${{$ctrl.currentItem.price}}</h4>
+          </div>
+          <div class="old" ng-show="$ctrl.currentItem.oldPrice">
+            <span>OLD PRICE:</span>
+            <h5>${{$ctrl.currentItem.oldPrice}}</h5>
+          </div>
+        </div>
+        <div class="check" flex-xs="100">
+          <button class="btn btn-default"><span class="minus" ng-click="$ctrl.decreaseQuantity()">- </span><span>{{$ctrl.quantity}}</span><span class="plus" ng-click="$ctrl.increaseQuantity()"> +</span></button>
+          <button class="btn btn-default" ng-click="$ctrl.addToCart($ctrl.currentItem, $ctrl.quantity)" ng-disabled="$ctrl.quantity === 0">Add to Cart <i class="material-icons">local_grocery_store</i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

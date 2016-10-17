@@ -8,6 +8,7 @@ export function MealService($log, $q, $resource, $window, ServerUrl) {
   let categories = [];
   let items = [];
   let nSelectedCategory = 0;
+  let nSelectedItem = 0;
 
   let Meal = {
     getFeaturedItems(callback) {
@@ -59,12 +60,18 @@ export function MealService($log, $q, $resource, $window, ServerUrl) {
     getSelectedCategoryIndex() {
       return nSelectedCategory;
     },
+    getSelectedItemIndex() {
+      return nSelectedItem;
+    },
     selectCategory(index) {
       nSelectedCategory = index;
       // angular.forEach(categories, function(value) {
       //   value.active = false;
       // });
       // categories[index].active = true;
+    },
+    selectItem(index) {
+      nSelectedItem = index;
     }
   };
 

@@ -7,16 +7,18 @@ const ResultsCmt = {
 export default angular.module('captainscook.pages.results', [])
   .component('results', ResultsCmt);
 
-function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $document, Meal) {
+function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $document, Meal, Cart) {
   'ngInject';
   let vm = this;
   vm.$onInit = function onInit() {
     init();
   }
-  vm.goList = goList;
+  vm.goToDetailsPage = goToDetailsPage;
   vm.selectCategory = selectCategory;
   vm.isCategorySelected = isCategorySelected;
   vm.showFilter = showFilter;
+  vm.addToCart = Cart.addToShoppingCart;
+
   vm.categories = Meal.getCurrentCategories();
   vm.meals = Meal.getCurrentItems();
 
@@ -54,8 +56,9 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
     return index === Meal.getSelectedCategoryIndex();
   }
 
-  function goList() {
-    $state.go('main.list');
+  function goToDetailsPage(index) {
+    Meal.selectItem(index);
+    $state.go('main.details');
   }
 
   function changeState() {
@@ -91,7 +94,7 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
 
   function init() {
     vm.sortBy = ['opt1', 'opt2', 'opt3', 'opt4'];
-    
+
     angular.element(window).resize(changeWindow);
     vm.sort = vm.sortBy[0];
     vm.numberOfCarousel = 6;

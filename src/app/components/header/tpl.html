@@ -17,10 +17,10 @@
     <div class="logout" ng-show="$ctrl.isLoggedIn()">
       <div class="btn-group shopping" uib-dropdown dropdown-append-to-body>
         <div id="btn-append-to-body" class="icon" uib-dropdown-toggle>
-          <i class="material-icons">local_grocery_store</i><span class="badge">5</span> <span class="caret"></span>
+          <i class="material-icons">local_grocery_store</i><span class="badge" ng-if="$ctrl.cart.count">{{$ctrl.cart.count}}</span> <span class="caret"></span>
         </div>
         <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
-          <li role="menuitem"><a href="">Action</a></li>
+          <li role="menuitem"><a ui-sref="main.checkout">Action</a></li>
         </ul>
       </div>
       <div class="btn-group user" uib-dropdown dropdown-append-to-body>

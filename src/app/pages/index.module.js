@@ -1,6 +1,6 @@
 import './checkout/index';
 import './home/index';
-import './listing/index';
+import './details/index';
 import './login/index';
 import './results/index';
 
@@ -16,7 +16,7 @@ export default angular.module('captainscook.pages', [
     'ngMaterial',
     'captainscook.pages.checkout',
     'captainscook.pages.home',
-    'captainscook.pages.listing',
+    'captainscook.pages.details',
     'captainscook.pages.login',
     'captainscook.pages.results'
   ])

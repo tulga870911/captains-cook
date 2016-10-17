@@ -7,7 +7,7 @@ export const Header = {
 };
 
 /** @ngInject */
-function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth) {
+function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth, Cart) {
   let vm = this;
   vm.$onInit = function onInit() {
 
@@ -20,9 +20,17 @@ function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth) {
   vm.isLoggedIn = Auth.isLoggedIn;
   vm.logout = Auth.logout;
   vm.currentUser = Auth.getCurrentUser();
+  vm.cart = {
+    count: 0
+  };
 
   $rootScope.$on('$destroy', $rootScope.$on('USER_UPDATED', function(event, data) {
     vm.currentUser = data;
+  }));
+
+  $rootScope.$on('$destroy', $rootScope.$on('CART_UPDATED', function() {
+    vm.cart.count = Cart.getCount();
+    $log.log('cart_updated', vm.cart.count);
   }));
 
   function goHome() {
@@ -31,10 +39,10 @@ function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth) {
 
   function isSearchVisible() {
     let stateName = $state.current.name;
-    if (stateName == 'main.results' || stateName == 'main.list') {
-      return true
+    if (stateName == 'main.results' || stateName == 'main.details') {
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
