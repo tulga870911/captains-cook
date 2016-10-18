@@ -4,12 +4,12 @@
       <h5><i class="material-icons">chevron_left</i><i class="material-icons">chevron_left</i>Back to Results </h5>
     </div>
     <div class="carousel_body">
-      <flex-slider slider-id="slider" flex-slide="item in $ctrl.meals track by $index" animation="fade" animation-loop="false" sync="#carousel" slideshow="false" control-nav="false" init-delay="100" start-at="$ctrl.getSelectedItemIndex" after="$ctrl.onAfterChange($index)" >
+      <flex-slider slider-id="slider" flex-slide="item in $ctrl.meals track by $index" animation="fade" animation-loop="false" sync="#carousel" slideshow="false" control-nav="false" init-delay="100" start-at="$ctrl.getSelectedItemIndex" after="$ctrl.onAfterChange($slider)" >
         <li>
           <img ng-src="{{item.imageURL}}">
         </li>
       </flex-slider>
-      <flex-slider slider-id="carousel" flex-slide="item in $ctrl.meals track by $index" animation="slide" animation-loop="false" item-width="130" item-margin="5" as-nav-for="#slider" slideshow="false" control-nav="false" start-at="$ctrl.getSelectedItemIndex" after="$ctrl.onAfterChange($index)">
+      <flex-slider slider-id="carousel" flex-slide="item in $ctrl.meals track by $index" animation="slide" animation-loop="false" item-width="130" item-margin="5" as-nav-for="#slider" slideshow="false" control-nav="false" start-at="$ctrl.getSelectedItemIndex" after="$ctrl.onAfterChange($slider)">
         <li class="thumb">
           <img ng-src="{{item.imageURL}}">
         </li>
@@ -18,10 +18,10 @@
     <div class="list_body">
       <div class="arrow">
         <div class="left">
-          <button class="btn btn-default"><i class="material-icons">arrow_back</i></button>
+          <button class="btn btn-default" ng-click="$ctrl.selectPreviousItem()"><i class="material-icons">arrow_back</i></button>
         </div>
         <div class="right">
-          <button class="btn btn-default"><i class="material-icons">arrow_forward</i></button>
+          <button class="btn btn-default" ng-click="$ctrl.selectNextItem()"><i class="material-icons">arrow_forward</i></button>
         </div>
       </div>
       <div class="header">

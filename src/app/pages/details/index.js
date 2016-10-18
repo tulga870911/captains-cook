@@ -21,6 +21,8 @@ function DetailsCtrl($log, $state, Meal, Cart) {
   vm.decreaseQuantity = decreaseQuantity;
   vm.increaseQuantity = increaseQuantity;
   vm.addToCart = addToCart;
+  vm.selectPreviousItem = selectPreviousItem;
+  vm.selectNextItem = selectNextItem;
   
   vm.meals = Meal.getCurrentItems();
   vm.currentItem = vm.meals[Meal.getSelectedItemIndex()];
@@ -42,7 +44,11 @@ function DetailsCtrl($log, $state, Meal, Cart) {
     return index === Meal.getSelectedItemIndex();
   }
   function onAfterChange(slider) {
-    $log.log('after', slider);
+    let elem = slider.element;
+    
+    Meal.selectItem(elem.currentSlide);
+
+    vm.currentItem = vm.meals[Meal.getSelectedItemIndex()];
   }
   function increaseQuantity() {
     vm.quantity++;
@@ -57,6 +63,12 @@ function DetailsCtrl($log, $state, Meal, Cart) {
   function addToCart(item, quantity) {
     Cart.addToShoppingCart(item, quantity);
     goToCheckout();
+  }
+  function selectPreviousItem() {
+    angular.element('#slider a.flex-prev').click();
+  }
+  function selectNextItem() {
+    angular.element('#slider a.flex-next').click();
   }
 
   vm.$onInit = function onInit() {
