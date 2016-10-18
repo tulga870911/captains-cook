@@ -3,22 +3,55 @@ ct-search {
   padding: 10px 0;
   .search_form {
     margin: 0;
-    md-autocomplete{
+    md-autocomplete {
       border-radius: 5px;
       height: auto;
-      md-autocomplete-wrap{
+      md-autocomplete-wrap {
         box-shadow: none;
       }
     }
-    md-autocomplete-wrap{
+    md-autocomplete-wrap {
       height: auto;
-      input{
+      input {
         border-width: 2px!important;
         height: auto;
         background: white;
         border: inset;
         line-height: 14px;
         border-color: rgb(238, 238, 238);
+      }
+    }
+    .location {
+      .icon {
+        position: absolute;
+        color: $themeColor;
+        right: 10px;
+        top: 12px;
+        background: white;
+      }
+    }
+    .date {
+      md-autocomplete {
+        min-width: 155px!important;
+      }
+      .icon {
+        position: absolute;
+        color: $inactive;
+        right: 5px;
+        top: 12px;
+        background: white;
+      }
+    }
+    .time {
+      md-autocomplete {
+        min-width: 155px!important;
+      }
+      .icon {
+        position: absolute;
+        color: $inactive;
+        right: 20px;
+        top: 12px;
+        background: white;
       }
     }
     .no-padding-r {
@@ -59,6 +92,28 @@ ct-search {
       border-radius: 5px;
     }
   }
+}
+
+.date_item {
+  width: 100%;
+  float: left;
+  border-radius: 5px;
+  padding: 0 5px;
+  &:hover {
+    background-color: $themeColor;
+    color: white;
+  }
+  .item-metastat:first-child {
+    float: left;
+  }
+  .item-metastat:last-child {
+    float: right;
+    font-size: 16px;
+  }
+}
+
+md-virtual-repeat-container {
+  min-width: 155px;
 }
 
 @media screen and (max-width: 992px) {

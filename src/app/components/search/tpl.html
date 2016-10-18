@@ -1,5 +1,5 @@
 <div class="search_form row">
-  <div class="col-sm-12 col-md-6">
+  <div class="col-sm-12 col-md-6 location">
     <!-- <input type="" name="" placeholder="Delivery Location"> -->
     <md-autocomplete
       ng-disabled="$ctrl.locality.isDisabled"
@@ -20,13 +20,62 @@
         <!-- <a ng-click="$ctrl.createNewLocality($ctrl.searchText)">Create a new one!</a> -->
       </md-not-found>
     </md-autocomplete>
+    <i class="material-icons icon">location_on</i>
   </div>
   <div class="col-sm-12 col-md-6">
-    <div class="col-sm-4 col-xs-6 no-padding-r">
-      <input type="" name="">
+    <div class="col-sm-4 col-xs-6 no-padding-r date">
+      <!-- <input type="" name=""> -->
+      <md-autocomplete
+          ng-disabled="$ctrl.isDisabled"
+          md-no-cache="$ctrl.noCache"
+          md-selected-item="$ctrl.selectedItem"
+          md-search-text-change="$ctrl.searchTextChange($ctrl.searchText)"
+          md-search-text="$ctrl.searchText"
+          md-selected-item-change="$ctrl.selectedItemChange(item)"
+          md-items="item in $ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.name"
+          md-min-length="0"
+          placeholder="Pick"
+          md-menu-class="autocomplete-custom-template">
+        <md-item-template>
+          <span class="item-metadata date_item">
+            <span class="item-metastat">
+              <strong>{{item.watchers}}</strong>
+            </span>
+            <span class="item-metastat">
+              <i class="material-icons">radio_button_unchecked</i>
+            </span>
+          </span>
+        </md-item-template>
+      </md-autocomplete>
+      <i class="material-icons icon">today</i>
     </div>
-    <div class="col-sm-4 col-xs-6 no-padding-l">
-      <input type="" name="">
+    <div class="col-sm-4 col-xs-6 no-padding-l time">
+      <!-- <input type="" name=""> -->
+      <md-autocomplete
+          ng-disabled="$ctrl.isDisabled"
+          md-no-cache="$ctrl.noCache"
+          md-selected-item="$ctrl.selectedItem"
+          md-search-text-change="$ctrl.searchTextChange($ctrl.searchText)"
+          md-search-text="$ctrl.searchText"
+          md-selected-item-change="$ctrl.selectedItemChange(item)"
+          md-items="item in $ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.name"
+          md-min-length="0"
+          placeholder="Pick"
+          md-menu-class="autocomplete-custom-template">
+        <md-item-template>
+          <span class="item-metadata date_item">
+            <span class="item-metastat">
+              <strong>{{item.watchers}}</strong>
+            </span>
+            <span class="item-metastat">
+              <i class="material-icons">radio_button_unchecked</i>
+            </span>
+          </span>
+        </md-item-template>
+      </md-autocomplete>
+      <i class="material-icons icon">schedule</i>
     </div>
     <div class="col-sm-4 col-xs-12 text-center">
       <md-button aria-label="search" ng-bind-html="$ctrl.searchBtn | trusted" ng-click="$ctrl.showSearchResults()"></md-button>
