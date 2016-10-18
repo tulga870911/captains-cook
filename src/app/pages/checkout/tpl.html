@@ -5,7 +5,7 @@
     </div>
     <div class="body" layout="row" layout-wrap>
       <div class="left" flex="75" flex-sm="100" flex-xs="100">
-        <div class="products">
+        <div class="products" ng-if="$ctrl.items.length > 0">
           <div class="sub_title">
             <h4>PRODUCTS</h4></div>
           <header layout="row" layout-wrap hide-xs>
@@ -15,29 +15,29 @@
             <div class="price" flex="20">PRICE</div>
           </header>
           <div class="product" layout="row" layout-wrap bindonce ng-repeat="item in $ctrl.items track by item.id">
-            <div class="photo" flex="20" flex-xs="30"><div hide-gt-xs>PHOTO</div><img ng-src="{{item.url}}"></div>
+            <div class="photo" flex="20" flex-xs="30"><div hide-gt-xs>PHOTO</div><img bo-src="item.imageURL"></div>
             <div class="name" flex="40" flex-xs="70"><div hide-gt-xs>NAME & DESCRIPTION</div>
               <div class="title">
-                <h3>This is another Special Ratan Beef Recipe</h3>
+                <h3 bo-text="item.name"></h3>
               </div>
               <div class="info">
-                <span class="location"><i class="material-icons">place</i> Punjabi</span>
-                <span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="isReadonly" on-hover="$ctrl.hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+                <span class="location"><i class="material-icons">place</i> {{item.localityServed}}</span>
+                <span class="sl">SL: <span uib-rating ng-model="item.spicyLevel" max="$ctrl.max" read-only="$ctrl.isReadonly" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
                 <span class="label" ng-class="{'label-warning': $ctrl.percent<30, 'label-info': $ctrl.percent>=30 && percent<70, 'label-success': $ctrl.percent>=70}" ng-show="overStar && !$ctrl.isReadonly">{{$ctrl.percent}}%</span></span>
-                <span class="vegan">VEGAN</span>
+                <span class="vegan" ng-hide="item.nonVeg">VEGAN</span>
               </div>
             </div>
             <div class="qty" flex="20" flex-xs="50"><div hide-gt-xs>QTY</div>
-              <button class="btn btn-default btn-sm">- <span>2</span> +</button>
+              <button class="btn btn-default btn-sm"><span class="minus" ng-click="$ctrl.decreaseQuantity($index)">- </span><span>{{item.quantity}}</span><span class="plus" ng-click="$ctrl.increaseQuantity($index)"> +</span></button>
             </div>
             <div class="price" flex="20" flex-xs="50"><div hide-gt-xs>PRICE</div>
-              <div class="new">$<span>47</span><span>.00</span></div>
-              <div class="old">$<span>56</span><span>.00</span></div>
+              <div class="new">$<span>{{item.price}}</span><span>.00</span></div>
+              <div class="old" ng-if="item.oldPrice">$<span>{{item.oldPrice}}</span><span>.00</span></div>
             </div>
-            <div class="close"><i class="material-icons">close</i></div>
+            <div class="close" ng-click="$ctrl.removeItem($index)"><i class="material-icons">close</i></div>
           </div>
         </div>
-        <div class="delivery">
+        <div class="delivery" ng-if="$ctrl.items.length > 0">
           <div class="title">
             <h4>DELIVERY & PAYMENT</h4>
           </div>
@@ -82,7 +82,7 @@
                 <h4>Order Summary</h4>
                 <div class="item">
                   <span>Food Total:</span>
-                  <span>$196.00</span>
+                  <span>{{$ctrl.getTotalAmount() | currency : '$'}}</span>
                 </div>
                 <div class="item">
                   <span>Delivery:</span>
@@ -92,15 +92,15 @@
               <div class="total">
                 <div class="title">
                   <h4>Total:</h4>
-                  <h4>$<span>196<span>.00</span></span></h4>
+                  <h4>$<span>{{$ctrl.getTotalAmount()}}<span>.00</span></span></h4>
                 </div>
                 <div class="button">
-                  <button class="btn btn-default" ng-click="$ctrl.goOrderPlace()">Place Order <i class="material-icons">arrow_forward</i></button>
+                  <button class="btn btn-default" ng-click="$ctrl.placeOrder()" ng-disabled="$ctrl.items.length == 0">Place Order <i class="material-icons">arrow_forward</i></button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="pan coupon">
+          <div class="pan coupon" ng-if="$ctrl.items.length > 0">
             <div class="pan_body">
               <h4>Have a Coupon?</h4>
               <p>COUPON CODE:</p>

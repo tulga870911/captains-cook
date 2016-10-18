@@ -1,7 +1,7 @@
 /** @ngInject */
 export function CartService($log, $q, $resource, $window, $rootScope, ServerUrl) {
   let Resource = $resource(ServerUrl + '/:id', { id: '@id' }, {
-    getFeaturedItems: { method: 'GET', url: ServerUrl + '/featuredItems' },
+    validateCoupon: { method: 'PUT', url: ServerUrl + '/consumers/:id/applycoupon' },
     getAvailableItems: { method: 'GET', url: ServerUrl + '/items/available?locality=:locality&subLocality=:subLocality&from=:from&to=:to' }
   });
 
@@ -10,21 +10,18 @@ export function CartService($log, $q, $resource, $window, $rootScope, ServerUrl)
 
   let Cart = {
     addToShoppingCart(item, qty) {
-      let foundItem = $window._.find(items, {'itemId': item.id});
-      
+      let foundItem = $window._.find(items, { 'id': item.id });
+
       $log.log('foundItem', foundItem);
-      
+
       if (foundItem) {
         foundItem.quantity += qty;
-      }else {
-        items.push({
-          itemId: item.id,
-          price: item.price,
-          quantity: qty
-        });
+      } else {
+        item.quantity = qty;
+        items.push(item);
       }
 
-      total_price+= qty * item.price;
+      total_price += qty * item.price;
 
       $log.log('cart', items);
       $rootScope.$emit('CART_UPDATED');
@@ -33,11 +30,35 @@ export function CartService($log, $q, $resource, $window, $rootScope, ServerUrl)
       items = [];
       $rootScope.$emit('CART_UPDATED');
     },
-    getTotalPrice() {
+    getTotalAmount() {
       return total_price;
     },
     getCount() {
       return items.length;
+    },
+    getItems() {
+      return items;
+    },
+    increaseQuantity(index) {
+      items[index].quantity++;
+      total_price += items[index].price;
+      $rootScope.$emit('CART_UPDATED');
+    },
+
+    decreaseQuantity(index) {
+      if (items[index].quantity <= 0)
+        items[index].quantity = 0;
+      else {
+        items[index].quantity--;
+        total_price -= items[index].price;
+      }
+      $rootScope.$emit('CART_UPDATED');
+    },
+
+    removeItem(index) {
+      total_price -= items[index].price * items[index].quantity;
+      items.splice(index, 1);
+      $rootScope.$emit('CART_UPDATED');
     }
   };
 
