@@ -27,15 +27,76 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
     }
   };
 
+  $rootScope.delivery_date = {
+    isDisabled: false,
+    noCache: false,
+    selectedItem: null,
+    searchText: '',
+    items: [],
+    onSelectItemChange: item => {
+      $log.info('DeliveryDate Item changed to ' + item);
+    },
+    onSearchTextChange: text => {
+      $log.info('DeliveryDate Text changed to ' + text);
+    },
+    querySearch: query => {
+      let results = query ? $rootScope.delivery_date.items.filter(createFilterFor(query)) : $rootScope.delivery_date.items;
+      let deferred;
+      if (vm.simulateQuery) {
+        deferred = $q.defer();
+        $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
+        return deferred.promise;
+      } else {
+        return results;
+      }
+    }
+  };
+
+  $rootScope.delivery_time = {
+    isDisabled: false,
+    noCache: false,
+    selectedItem: null,
+    searchText: '',
+    items: [],
+    onSelectItemChange: item => {
+      $log.info('DeliveryTime Item changed to ' + item);
+    },
+    onSearchTextChange: text => {
+      $log.info('DeliveryTime Text changed to ' + text);
+    },
+    querySearch: query => {
+      let results = query ? $rootScope.delivery_time.items.filter(createFilterFor(query)) : $rootScope.delivery_time.items;
+      let deferred;
+      if (vm.simulateQuery) {
+        deferred = $q.defer();
+        $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
+        return deferred.promise;
+      } else {
+        return results;
+      }
+    }
+  };
+
   vm.$onInit = function onInit() {
     loadLocalities();
+
+    populateDeliveryDateTime();
   };
 
   $rootScope.$on('$destroy', $rootScope.$on('SHOW_SEARCH_RESULTS', () => {
+    let locs = $rootScope.locality.selectedItem.display.split(', ');
+    let delivery_date = $rootScope.delivery_date.selectedItem.value;
+    let delivery_time = $rootScope.delivery_time.selectedItem.value;
+
     $log.log('trying to fetch results', {
-      locality: $rootScope.locality.selectedItem.display
+      locality: $rootScope.locality.selectedItem.display,
+      from: delivery_date + delivery_time,
+      to: delivery_date + delivery_time + 3600000
     });
-    Meal.getAvailableItems({locality: 'Andheri East', subLocality: 'Marol', from: 1474531200000, to: 1474534800000}, function(){
+    // Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: delivery_date + delivery_time, to: delivery_date + delivery_time + 3600000}, function(){
+    //   $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
+    // });
+    Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: 1474531200000, to: 1474534800000}, function(){
       $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
     });
   }));
@@ -44,7 +105,7 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
     Locality.getLocalities(function(response) {
       if (response && response.data && response.data.subLocs) {
         let localities = response.data.subLocs.map(item => {
-          return item.loc;
+          return item.subLoc + ', ' + item.loc;
         }).filter((elem, pos, arr) => {
           return pos == arr.indexOf(elem);
         });
@@ -59,6 +120,40 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
         $rootScope.$emit('LOCALITY_UPDATED');
       }
     });
+  }
+
+  function populateDeliveryDateTime() {
+    let today = new Date();
+    let startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    let from_hours = '', from_ampm = '';
+    let to_hours = '', to_ampm = '';
+
+    for (let i=0; i<7; i++) {
+      $rootScope.delivery_date.items[i] = {
+        value: startOfDay.getTime(),
+        display: (startOfDay.getMonth() + 1) + '/' + startOfDay.getDate() + '/' + startOfDay.getFullYear()
+      };
+      startOfDay.setDate(startOfDay.getDate() + 1);
+    }
+
+    $log.log('delivery_date', $rootScope.delivery_date);
+
+    for (let i=0; i<24; i++) {
+      from_ampm = i < 12? 'AM' : 'PM';
+      from_hours = i % 12;
+      if (i == 12) from_hours = 12;
+
+      to_ampm = (i + 1) < 12? 'AM' : 'PM';
+      to_hours = (i + 1) % 12;
+      if (i + 1 == 12) to_hours = 12;
+
+      $rootScope.delivery_time.items[i] = {
+        value: i * 3600 * 1000,
+        display: from_hours + ':00 ' + from_ampm + ' - ' + to_hours + ':00 ' + to_ampm
+      };
+    }
+
+    $rootScope.$emit('DELIVERY_DATETIME_UPDATED');
   }
 
   /**

@@ -4,9 +4,12 @@ export function authInterceptor($log, $q, $cookies, $injector, Util) {
   return {
     // Add authorization token to headers
     request(config) {
+      $log.log('Intercept..', config);
       config.headers = config.headers || {};
       if ($cookies.get('token') && Util.isSameOrigin(config.url)) {
+      // if ($cookies.get('token')) {
         config.headers.Authorization = 'Bearer ' + $cookies.get('token');
+        $log.log('Authorize..', config);
       }
       return config;
     },

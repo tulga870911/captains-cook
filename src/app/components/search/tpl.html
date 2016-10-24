@@ -1,17 +1,7 @@
 <div class="search_form row">
   <div class="col-sm-12 col-md-6 location">
     <!-- <input type="" name="" placeholder="Delivery Location"> -->
-    <md-autocomplete
-      ng-disabled="$ctrl.locality.isDisabled"
-      md-no-cache="$ctrl.locality.noCache"
-      md-selected-item="$ctrl.locality.selectedItem"
-      md-search-text-change="$ctrl.locality.onSearchTextChange($ctrl.locality.searchText)"
-      md-search-text="$ctrl.locality.searchText"
-      md-selected-item-change="$ctrl.locality.onSelectItemChange(item)"
-      md-items="item in $ctrl.locality.querySearch($ctrl.locality.searchText)"
-      md-item-text="item.display"
-      md-min-length="0"
-      placeholder="Delivery Location">
+    <md-autocomplete ng-disabled="$ctrl.locality.isDisabled" md-no-cache="$ctrl.locality.noCache" md-selected-item="$ctrl.locality.selectedItem" md-search-text-change="$ctrl.locality.onSearchTextChange($ctrl.locality.searchText)" md-search-text="$ctrl.locality.searchText" md-selected-item-change="$ctrl.locality.onSelectItemChange(item)" md-items="item in $ctrl.locality.querySearch($ctrl.locality.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Delivery Location">
       <md-item-template>
         <span md-highlight-text="$ctrl.locality.searchText" md-highlight-flags="^i">{{item.display}}</span>
       </md-item-template>
@@ -25,24 +15,13 @@
   <div class="col-sm-12 col-md-6">
     <div class="col-sm-4 col-xs-6 no-padding-r date">
       <!-- <input type="" name=""> -->
-      <md-autocomplete
-          ng-disabled="$ctrl.isDisabled"
-          md-no-cache="$ctrl.noCache"
-          md-selected-item="$ctrl.selectedItem"
-          md-search-text-change="$ctrl.searchTextChange($ctrl.searchText)"
-          md-search-text="$ctrl.searchText"
-          md-selected-item-change="$ctrl.selectedItemChange(item)"
-          md-items="item in $ctrl.querySearch(ctrl.searchText)"
-          md-item-text="item.name"
-          md-min-length="0"
-          placeholder="Pick"
-          md-menu-class="autocomplete-custom-template">
+      <md-autocomplete ng-disabled="$ctrl.delivery_date.isDisabled" md-no-cache="$ctrl.delivery_date.noCache" md-selected-item="$ctrl.delivery_date.selectedItem" md-search-text-change="$ctrl.delivery_date.onSearchTextChange($ctrl.delivery_date.searchText)" md-search-text="$ctrl.delivery_date.searchText" md-selected-item-change="$ctrl.delivery_date.onSelectItemChange(item)" md-items="item in $ctrl.delivery_date.querySearch(ctrl.delivery_date.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Pick" md-menu-class="autocomplete-custom-template">
         <md-item-template>
           <span class="item-metadata date_item">
             <span class="item-metastat">
-              <strong>{{item.watchers}}</strong>
+              <strong>{{item.display}}</strong>
             </span>
-            <span class="item-metastat">
+          <span class="item-metastat">
               <i class="material-icons">radio_button_unchecked</i>
             </span>
           </span>
@@ -52,24 +31,13 @@
     </div>
     <div class="col-sm-4 col-xs-6 no-padding-l time">
       <!-- <input type="" name=""> -->
-      <md-autocomplete
-          ng-disabled="$ctrl.isDisabled"
-          md-no-cache="$ctrl.noCache"
-          md-selected-item="$ctrl.selectedItem"
-          md-search-text-change="$ctrl.searchTextChange($ctrl.searchText)"
-          md-search-text="$ctrl.searchText"
-          md-selected-item-change="$ctrl.selectedItemChange(item)"
-          md-items="item in $ctrl.querySearch(ctrl.searchText)"
-          md-item-text="item.name"
-          md-min-length="0"
-          placeholder="Pick"
-          md-menu-class="autocomplete-custom-template">
+      <md-autocomplete ng-disabled="$ctrl.delivery_time.isDisabled" md-no-cache="$ctrl.delivery_time.noCache" md-selected-item="$ctrl.delivery_time.selectedItem" md-search-text-change="$ctrl.delivery_time.onSearchTextChange($ctrl.delivery_time.searchText)" md-search-text="$ctrl.delivery_time.searchText" md-selected-item-change="$ctrl.delivery_time.onSelectItemChange(item)" md-items="item in $ctrl.delivery_time.querySearch(ctrl.delivery_time.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Pick" md-menu-class="autocomplete-custom-template">
         <md-item-template>
           <span class="item-metadata date_item">
             <span class="item-metastat">
-              <strong>{{item.watchers}}</strong>
+              <strong>{{item.display}}</strong>
             </span>
-            <span class="item-metastat">
+          <span class="item-metastat">
               <i class="material-icons">radio_button_unchecked</i>
             </span>
           </span>
@@ -78,7 +46,7 @@
       <i class="material-icons icon">schedule</i>
     </div>
     <div class="col-sm-4 col-xs-12 text-center">
-      <md-button aria-label="search" ng-bind-html="$ctrl.searchBtn | trusted" ng-click="$ctrl.showSearchResults()"></md-button>
+      <md-button aria-label="search" ng-bind-html="$ctrl.searchBtn | trusted" ng-click="$ctrl.showSearchResults()" ng-disabled="!$ctrl.locality.selectedItem || !$ctrl.delivery_date.selectedItem || !$ctrl.delivery_time.selectedItem"></md-button>
     </div>
   </div>
 </div>

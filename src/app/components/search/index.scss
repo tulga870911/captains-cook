@@ -74,6 +74,9 @@ ct-search {
         top: 10px;
         font-size: 30px;
       }
+      &:disabled {
+        background-color: #777 !important;
+      }
     }
     .no-padding-l {
       padding-left: 0;

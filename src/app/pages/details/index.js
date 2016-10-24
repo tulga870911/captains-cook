@@ -17,7 +17,6 @@ function DetailsCtrl($log, $state, Meal, Cart) {
   vm.isItemSelected = isItemSelected;
   vm.onAfterChange = onAfterChange;
   vm.getSelectedItemIndex = Meal.getSelectedItemIndex();
-  vm.quantity = 0;
   vm.decreaseQuantity = decreaseQuantity;
   vm.increaseQuantity = increaseQuantity;
   vm.addToCart = addToCart;
@@ -27,7 +26,11 @@ function DetailsCtrl($log, $state, Meal, Cart) {
   vm.meals = Meal.getCurrentItems();
   vm.currentItem = vm.meals[Meal.getSelectedItemIndex()];
 
-  if (!vm.meals || !vm.meals.length){
+  vm.quantity = Cart.getCurrentQty(vm.currentItem);
+
+  $log.log('currentItem', vm.currentItem);
+
+  if (!vm.meals || !vm.meals.length || !vm.currentItem){
     goToResultPage();
   }
 
@@ -50,19 +53,26 @@ function DetailsCtrl($log, $state, Meal, Cart) {
 
     vm.currentItem = vm.meals[Meal.getSelectedItemIndex()];
   }
-  function increaseQuantity() {
+  function increaseQuantity(item) {
+    if (vm.quantity >= vm.currentItem.qtyAvailable){
+      vm.quantity = vm.currentItem.qtyAvailable;
+      return;
+    }
     vm.quantity++;
+    Cart.addToShoppingCart(item, 1);
   }
-  function decreaseQuantity() {
+  function decreaseQuantity(item) {
     if (vm.quantity <= 0){
       vm.quantity = 0;
       return;
     }
     vm.quantity--;
+    Cart.addToShoppingCart(item, -1);
   }
-  function addToCart(item, quantity) {
-    Cart.addToShoppingCart(item, quantity);
-    goToCheckout();
+  function addToCart(item) {
+    vm.quantity = 1;
+    Cart.addToShoppingCart(item, 1);
+    // goToCheckout();
   }
   function selectPreviousItem() {
     angular.element('#slider a.flex-prev').click();

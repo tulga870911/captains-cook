@@ -14,7 +14,7 @@
   <div class="page_wrap row mainContent">
     <div class="col-sm-12">
       <div class="col-sm-7 cauroselContainer">
-        <h3>Deals & Promotions <span ng-click="$ctrl.showAllDeals()">All Deals<i class="material-icons">arrow_forward</i></span></h3>
+        <h3>Deals & Promotions <!-- <span ng-click="$ctrl.showAllDeals()">All Deals<i class="material-icons">arrow_forward</i></span> --></h3>
         <div class="carousel">
         </div>
       </div>
@@ -62,15 +62,15 @@
           <div class="price">
             <div bo-text="meal.oldPrice" ng-show="meal.oldPrice"></div>
             <div bo-text="'$' + meal.price"></div>
-            <div>See More<i class="material-icons">arrow_forward</i></div>
+            <div><!-- See More<i class="material-icons">arrow_forward</i> --></div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-sm-12 chefs">
       <h3>Featured Chefs</h3>
-      <div class="col-sm-8 chefsContainer">
-        <div class="col-sm-6 chef" bindonce ng-repeat="chef in $ctrl.chefs">
+      <div class="col-sm-12 chefsContainer">
+        <div class="col-sm-4 chef" bindonce ng-repeat="chef in $ctrl.chefs">
           <div class="chefWrapper">
             <div class="chefInfo">
               <img bo-src="chef.imageUrl"></img>
@@ -81,13 +81,13 @@
               <div class="rating star">
                 <div bo-text="chef.rating"></div>
                 <i class="material-icons">star_rate</i>
-                <div>SEE MORE<i class="material-icons">arrow_forward</i></div>
+                <div><!-- SEE MORE<i class="material-icons">arrow_forward</i> --></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-4 giftContainer">
+      <!-- <div class="col-sm-4 giftContainer">
         <div class="offerBox">
           <img src="assets/images/gift-icon.png"></img>
           <h4>GIFT ONE MEAL</h4>
@@ -97,7 +97,7 @@
             <i class="material-icons">arrow_forward</i>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

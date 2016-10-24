@@ -1,7 +1,6 @@
 /** @ngInject */
 export function CartService($log, $q, $resource, $window, $rootScope, ServerUrl) {
   let Resource = $resource(ServerUrl + '/:id', { id: '@id' }, {
-    validateCoupon: { method: 'PUT', url: ServerUrl + '/consumers/:id/applycoupon' },
     getAvailableItems: { method: 'GET', url: ServerUrl + '/items/available?locality=:locality&subLocality=:subLocality&from=:from&to=:to' }
   });
 
@@ -44,7 +43,16 @@ export function CartService($log, $q, $resource, $window, $rootScope, ServerUrl)
       total_price += items[index].price;
       $rootScope.$emit('CART_UPDATED');
     },
+    getCurrentQty(item) {
+      if (!item || !item.id)
+        return 0;
 
+      let foundItem = $window._.find(items, { 'id': item.id });
+      if (foundItem)
+        return foundItem.quantity;
+      else
+        return 0;
+    },
     decreaseQuantity(index) {
       if (items[index].quantity <= 0)
         items[index].quantity = 0;

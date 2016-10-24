@@ -18,7 +18,7 @@ function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth, Cart) 
   vm.goHome = goHome;
   
   vm.isLoggedIn = Auth.isLoggedIn;
-  vm.logout = Auth.logout;
+  vm.logout = logout;
   vm.currentUser = Auth.getCurrentUser();
   vm.cart = {
     count: 0
@@ -34,6 +34,11 @@ function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth, Cart) 
   }));
 
   function goHome() {
+    $state.go('main.home');
+  }
+
+  function logout() {
+    Auth.logout();
     $state.go('main.home');
   }
 

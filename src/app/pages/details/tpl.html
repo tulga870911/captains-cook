@@ -76,8 +76,8 @@
           </div>
         </div>
         <div class="check" flex-xs="100">
-          <button class="btn btn-default"><span class="minus" ng-click="$ctrl.decreaseQuantity()">- </span><span>{{$ctrl.quantity}}</span><span class="plus" ng-click="$ctrl.increaseQuantity()"> +</span></button>
-          <button class="btn btn-default" ng-click="$ctrl.addToCart($ctrl.currentItem, $ctrl.quantity)" ng-disabled="$ctrl.quantity === 0">Add to Cart <i class="material-icons">local_grocery_store</i></button>
+          <button class="btn btn-default" ng-hide="$ctrl.quantity === 0"><span class="minus" ng-click="$ctrl.decreaseQuantity($ctrl.currentItem)">- </span><span>{{$ctrl.quantity}}</span><span class="plus" ng-click="$ctrl.increaseQuantity($ctrl.currentItem)"> +</span></button>
+          <button class="btn btn-default" ng-click="$ctrl.addToCart($ctrl.currentItem)" ng-show="$ctrl.quantity === 0">Add to Cart <i class="material-icons">local_grocery_store</i></button>
         </div>
       </div>
     </div>
