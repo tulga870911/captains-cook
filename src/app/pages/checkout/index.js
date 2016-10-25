@@ -9,7 +9,7 @@ export default angular.module('captainscook.pages.checkout', [])
   .component('checkout', CheckOutCmt)
   .component('orderPlace', OrderPlaceCmt);
 
-function CheckOutCtrl($log, $state, $rootScope, Cart) {
+function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth) {
   'ngInject';
 
   let vm = this;
@@ -21,6 +21,7 @@ function CheckOutCtrl($log, $state, $rootScope, Cart) {
   vm.decreaseQuantity = Cart.decreaseQuantity;
   vm.removeItem = Cart.removeItem;
   vm.getTotalAmount = Cart.getTotalAmount;
+  vm.applyCoupon = applyCoupon;
 
   function goOrderPlace() {
     $state.go('main.orderplace')
@@ -57,5 +58,31 @@ function CheckOutCtrl($log, $state, $rootScope, Cart) {
       { stateOn: 'glyphicon-heart' },
       { stateOff: 'glyphicon-off' }
     ];
+  }
+
+  function applyCoupon() {
+    let currentUser = Auth.getCurrentUser();
+    let items = Cart.getItems().map(item => {
+      return {
+        itemId: item.id,
+        price: item.price,
+        quantity: item.quantity
+      };
+    });
+
+    $log.log('applying Coupon for the customer', {
+      consumerId: currentUser.customerId,
+      couponCode: vm.coupon,
+      items: items
+    });
+
+    Coupon.applyCoupon({
+      consumerId: currentUser.customerId,
+      couponCode: vm.coupon,
+      items: items
+    }, response => {
+      $log.log('coupon response', response);
+    });
+    return false;
   }
 }

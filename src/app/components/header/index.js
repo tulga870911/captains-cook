@@ -16,6 +16,7 @@ function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth, Cart) 
   vm.showSignUp = showSignUp;
   vm.isSearchVisible = isSearchVisible;
   vm.goHome = goHome;
+  vm.goToCheckout = goToCheckout;
   
   vm.isLoggedIn = Auth.isLoggedIn;
   vm.logout = logout;
@@ -35,6 +36,10 @@ function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth, Cart) 
 
   function goHome() {
     $state.go('main.home');
+  }
+
+  function goToCheckout() {
+    $state.go('main.checkout');
   }
 
   function logout() {

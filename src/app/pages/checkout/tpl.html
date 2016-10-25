@@ -15,8 +15,10 @@
             <div class="price" flex="20">PRICE</div>
           </header>
           <div class="product" layout="row" layout-wrap bindonce ng-repeat="item in $ctrl.items track by item.id">
-            <div class="photo" flex="20" flex-xs="30"><div hide-gt-xs>PHOTO</div><img bo-src="item.imageURL"></div>
-            <div class="name" flex="40" flex-xs="70"><div hide-gt-xs>NAME & DESCRIPTION</div>
+            <div class="photo" flex="20" flex-xs="30">
+              <div hide-gt-xs>PHOTO</div><img bo-src="item.imageURL"></div>
+            <div class="name" flex="40" flex-xs="70">
+              <div hide-gt-xs>NAME & DESCRIPTION</div>
               <div class="title">
                 <h3 bo-text="item.name"></h3>
               </div>
@@ -27,10 +29,12 @@
                 <span class="vegan" ng-hide="item.nonVeg">VEGAN</span>
               </div>
             </div>
-            <div class="qty" flex="20" flex-xs="50"><div hide-gt-xs>QTY</div>
+            <div class="qty" flex="20" flex-xs="50">
+              <div hide-gt-xs>QTY</div>
               <button class="btn btn-default btn-sm"><span class="minus" ng-click="$ctrl.decreaseQuantity($index)">- </span><span>{{item.quantity}}</span><span class="plus" ng-click="$ctrl.increaseQuantity($index)"> +</span></button>
             </div>
-            <div class="price" flex="20" flex-xs="50"><div hide-gt-xs>PRICE</div>
+            <div class="price" flex="20" flex-xs="50">
+              <div hide-gt-xs>PRICE</div>
               <div class="new">$<span>{{item.price}}</span><span>.00</span></div>
               <div class="old" ng-if="item.oldPrice">$<span>{{item.oldPrice}}</span><span>.00</span></div>
             </div>
@@ -72,44 +76,47 @@
         </div>
       </div>
       <div class="right" flex="25" flex-sm="100" flex-xs="100">
-          <div class="pan">
-            <div class="pan_head">
-              <i class="material-icons">av_timer</i>
-              <span> DELIVERY IN APROX. 60 MINS</span>
-            </div>
-            <div class="pan_body">
-              <div class="order">
-                <h4>Order Summary</h4>
-                <div class="item">
-                  <span>Food Total:</span>
-                  <span>{{$ctrl.getTotalAmount() | currency : '$'}}</span>
-                </div>
-                <div class="item">
-                  <span>Delivery:</span>
-                  <span class="delivery">FREE</span>
-                </div>
+        <div class="pan">
+          <div class="pan_head">
+            <i class="material-icons">av_timer</i>
+            <span> DELIVERY IN APROX. 60 MINS</span>
+          </div>
+          <div class="pan_body">
+            <div class="order">
+              <h4>Order Summary</h4>
+              <div class="item">
+                <span>Food Total:</span>
+                <span>{{$ctrl.getTotalAmount() | currency : '$'}}</span>
               </div>
-              <div class="total">
-                <div class="title">
-                  <h4>Total:</h4>
-                  <h4>$<span>{{$ctrl.getTotalAmount()}}<span>.00</span></span></h4>
-                </div>
-                <div class="button">
-                  <button class="btn btn-default" ng-click="$ctrl.placeOrder()" ng-disabled="$ctrl.items.length == 0">Place Order <i class="material-icons">arrow_forward</i></button>
-                </div>
+              <div class="item">
+                <span>Delivery:</span>
+                <span class="delivery">FREE</span>
+              </div>
+            </div>
+            <div class="total">
+              <div class="title">
+                <h4>Total:</h4>
+                <h4>$<span>{{$ctrl.getTotalAmount()}}<span>.00</span></span></h4>
+              </div>
+              <div class="button">
+                <button class="btn btn-default" ng-click="$ctrl.placeOrder()" ng-disabled="$ctrl.items.length == 0">Place Order <i class="material-icons">arrow_forward</i></button>
               </div>
             </div>
           </div>
-          <div class="pan coupon" ng-if="$ctrl.items.length > 0">
-            <div class="pan_body">
-              <h4>Have a Coupon?</h4>
-              <p>COUPON CODE:</p>
-              <div class="input">
-                <input type="" name="">
-                <i class="material-icons">arrow_forward</i>
-              </div>
+        </div>
+        <div class="pan coupon" ng-if="$ctrl.items.length > 0">
+          <div class="pan_body">
+            <h4>Have a Coupon?</h4>
+            <p>COUPON CODE:</p>
+            <div class="input">
+              <form ng-submit="$ctrl.applyCoupon()">
+                <input type="text" name="coupon" ng-model="$ctrl.coupon">
+                <i class="material-icons" ng-click="$ctrl.applyCoupon()">arrow_forward</i>
+                <input type="submit" style="position: absolute; left: -9999px; width:1px, height: 1px">
+              </form>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
