@@ -20,9 +20,6 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
 
   $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_UPDATED', function () {
     vm.locality = $rootScope.locality;
-  }));
-
-  $rootScope.$on('$destroy', $rootScope.$on('DELIVERY_DATETIME_UPDATED', function () {
     vm.delivery_date = $rootScope.delivery_date;
   }));
 

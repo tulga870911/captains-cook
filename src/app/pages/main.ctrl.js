@@ -33,8 +33,16 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
     selectedItem: null,
     searchText: '',
     items: [],
+    subitems: [],
     onSelectItemChange: item => {
-      $log.info('DeliveryDate Item changed to ' + item);
+      let index = $rootScope.delivery_date.items.indexOf(item);
+      $log.info('DeliveryDate Item changed to ' + index);
+
+      if (index < 0)
+        $rootScope.delivery_time.items = [];
+      else
+        $rootScope.delivery_time.items = $rootScope.delivery_date.subitems[index];
+      $rootScope.delivery_time.selectedItem = null;
     },
     onSearchTextChange: text => {
       $log.info('DeliveryDate Text changed to ' + text);
@@ -80,7 +88,7 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
   vm.$onInit = function onInit() {
     loadLocalities();
 
-    populateDeliveryDateTime();
+    // populateDeliveryDateTime();
   };
 
   $rootScope.$on('$destroy', $rootScope.$on('SHOW_SEARCH_RESULTS', () => {
@@ -93,12 +101,12 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
       from: delivery_date + delivery_time,
       to: delivery_date + delivery_time + 3600000
     });
-    // Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: delivery_date + delivery_time, to: delivery_date + delivery_time + 3600000}, function(){
-    //   $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
-    // });
-    Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: 1474531200000, to: 1474534800000}, function(){
+    Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: delivery_date + delivery_time, to: delivery_date + delivery_time + 3600000}, function(){
       $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
     });
+    // Meal.getAvailableItems({ locality: locs[1], subLocality: locs[0], from: 1474531200000, to: 1474534800000 }, function() {
+    //   $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
+    // });
   }));
 
   function loadLocalities() {
@@ -110,6 +118,8 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
           return pos == arr.indexOf(elem);
         });
 
+        let times = response.data.times;
+
         $rootScope.locality.items = localities.map(locality => {
           return {
             value: locality.toLowerCase(),
@@ -117,18 +127,54 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
           };
         });
 
+        for (let i = 0, len = times.length; i < len; i++){
+          let date_from = new Date(times[i].from);
+          let date_to = new Date(times[i].to);
+          let startOfDay = new Date(date_from.getFullYear(), date_from.getMonth(), date_from.getDate());
+          let j = 0;
+
+          $rootScope.delivery_date.items[i] = {
+            value: startOfDay.getTime(),
+            display: (startOfDay.getMonth() + 1) + '/' + startOfDay.getDate() + '/' + startOfDay.getFullYear()
+          };
+
+          $rootScope.delivery_date.subitems[i] = [];
+
+          for (let timestamp = date_from.getTime(); timestamp < date_to.getTime(); timestamp+= 3600 * 1000){
+            let date = new Date(timestamp);
+            
+            let from_hours = date.getHours(), from_mins = date.getMinutes();
+            let from_ampm = from_hours < 12 ? 'AM' : 'PM';
+            let to_hours = from_hours + 1, to_mins = date.getMinutes();
+            let to_ampm = to_hours < 12 ? 'AM' : 'PM';
+
+            from_hours = from_hours % 12;
+            if (from_hours == 12) from_hours = 12;
+            to_hours = to_hours % 12;
+            if (to_ampm == 'PM') to_hours = 12;
+
+            $rootScope.delivery_date.subitems[i][j++] = {
+              value: timestamp - startOfDay.getTime(),
+              display: from_hours + ':' + from_mins + ' ' + from_ampm + ' - ' + to_hours + ':' + to_mins + ' ' + to_ampm
+            };
+          }
+        }
+        $log.log('available items', response.data);
+
         $rootScope.$emit('LOCALITY_UPDATED');
       }
     });
   }
 
-  function populateDeliveryDateTime() {
+  /*function populateDeliveryDateTime() {
     let today = new Date();
     let startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    let from_hours = '', from_ampm = '';
-    let to_hours = '', to_ampm = '';
+    let from_hours = '',
+      from_ampm = '';
+    let to_hours = '',
+      to_ampm = '';
 
-    for (let i=0; i<7; i++) {
+    for (let i = 0; i < 7; i++) {
       $rootScope.delivery_date.items[i] = {
         value: startOfDay.getTime(),
         display: (startOfDay.getMonth() + 1) + '/' + startOfDay.getDate() + '/' + startOfDay.getFullYear()
@@ -138,12 +184,12 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
 
     $log.log('delivery_date', $rootScope.delivery_date);
 
-    for (let i=0; i<24; i++) {
-      from_ampm = i < 12? 'AM' : 'PM';
+    for (let i = 0; i < 24; i++) {
+      from_ampm = i < 12 ? 'AM' : 'PM';
       from_hours = i % 12;
       if (i == 12) from_hours = 12;
 
-      to_ampm = (i + 1) < 12? 'AM' : 'PM';
+      to_ampm = (i + 1) < 12 ? 'AM' : 'PM';
       to_hours = (i + 1) % 12;
       if (i + 1 == 12) to_hours = 12;
 
@@ -154,7 +200,7 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
     }
 
     $rootScope.$emit('DELIVERY_DATETIME_UPDATED');
-  }
+  }*/
 
   /**
    * Create filter function for a query string
