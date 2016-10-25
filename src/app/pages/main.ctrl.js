@@ -101,12 +101,12 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
       from: delivery_date + delivery_time,
       to: delivery_date + delivery_time + 3600000
     });
-    // Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: delivery_date + delivery_time, to: delivery_date + delivery_time + 3600000}, function(){
-    //   $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
-    // });
-    Meal.getAvailableItems({ locality: locs[1], subLocality: locs[0], from: 1474531200000, to: 1474534800000 }, function() {
+    Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: delivery_date + delivery_time, to: delivery_date + delivery_time + 3600000}, function(){
       $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
     });
+    // Meal.getAvailableItems({ locality: locs[1], subLocality: locs[0], from: 1474531200000, to: 1474534800000 }, function() {
+    //   $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
+    // });
   }));
 
   function loadLocalities() {
@@ -143,9 +143,9 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
           for (let timestamp = date_from.getTime(); timestamp < date_to.getTime(); timestamp+= 3600 * 1000){
             let date = new Date(timestamp);
             
-            let from_hours = date.getHours(), from_mins = date.getMinutes();
+            let from_hours = date.getHours(), from_mins = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
             let from_ampm = from_hours < 12 ? 'AM' : 'PM';
-            let to_hours = from_hours + 1, to_mins = date.getMinutes();
+            let to_hours = from_hours + 1, to_mins = from_mins;
             let to_ampm = to_hours < 12 ? 'AM' : 'PM';
 
             from_hours = from_hours % 12;
