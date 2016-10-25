@@ -1,5 +1,7 @@
+import { SignInCtrl } from '../../pages/login/signin/index';
+
 /** @ngInject */
-export function CartService($log, $q, $resource, $window, $rootScope, ServerUrl) {
+export function CartService($log, $q, $resource, $document, $window, $rootScope, $mdDialog, Auth, ServerUrl) {
   let Resource = $resource(ServerUrl + '/:id', { id: '@id' }, {
     getAvailableItems: { method: 'GET', url: ServerUrl + '/items/available?locality=:locality&subLocality=:subLocality&from=:from&to=:to' }
   });
@@ -9,6 +11,16 @@ export function CartService($log, $q, $resource, $window, $rootScope, ServerUrl)
 
   let Cart = {
     addToShoppingCart(item, qty) {
+      if (!Auth.isLoggedIn()) {
+        $mdDialog.show({
+          controller: SignInCtrl,
+          controllerAs: '$ctrl',
+          templateUrl: 'app/pages/login/signin/tpl.html',
+          parent: $document.body,
+          clickOutsideToClose: false
+        });
+      }
+      
       let foundItem = $window._.find(items, { 'id': item.id });
 
       $log.log('foundItem', foundItem);
