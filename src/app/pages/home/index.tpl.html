@@ -16,6 +16,11 @@
       <div class="col-sm-7 cauroselContainer">
         <h3>Deals & Promotions <!-- <span ng-click="$ctrl.showAllDeals()">All Deals<i class="material-icons">arrow_forward</i></span> --></h3>
         <div class="carousel">
+          <flex-slider slider-id="slider" flex-slide="item in $ctrl.meals track by $index" animation="fade" animation-loop="false" slideshow="false" control-nav="false" init-delay="100">
+            <li>
+              <img ng-src="{{item.imageURL}}">
+            </li>
+          </flex-slider>
         </div>
       </div>
       <div class="col-sm-5 offerContainer">
@@ -39,30 +44,55 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-12 meals">
-      <h3>Featured Meals</h3>
-      <div class="col-sm-6 col-md-4 meal" bindonce ng-repeat="meal in $ctrl.meals">
+    <h3 style="float: left;margin: 35px 0 3px 13px;">Featured Meals</h3>
+    <div class="col-sm-12 meals" layout="row" layout-wrap layout-padding>
+      <div class="meal" flex="33" flex-sm="50" flex-xs="100" bindonce ng-repeat="meal in $ctrl.meals">
         <div class="mealWrapper">
           <img bo-src="meal.imageURL"></img>
           <div class="mealInfo">
             <h4 bo-text="meal.name"></h4>
-            <div class="chefInfo">
-              <img bo-src="meal.providerImageURL"></img>
-              <div class="chefDetails">
-                <div bo-text="meal.providerName"></div>
-                <div bo-text="meal.localityServed" ng-show="meal.localityServed"></div>
-              </div>
-              <div class="rating star">
-                <div bo-text="meal.rating"></div>
-                <i class="material-icons">star_rate</i>
-              </div>
+          </div>
+          <div class="chefInfo">
+            <img bo-src="meal.providerImageURL"></img>
+            <div class="chefDetails">
+              <div bo-text="meal.providerName"></div>
+              <div bo-text="meal.localityServed" ng-show="meal.localityServed"></div>
+            </div>
+            <div class="rating star">
+              <div bo-text="meal.rating"></div>
+              <i class="material-icons">star_rate</i>
             </div>
           </div>
           <div class="divider"></div>
           <div class="price">
             <div bo-text="meal.oldPrice" ng-show="meal.oldPrice"></div>
             <div bo-text="'$' + meal.price"></div>
-            <div><!-- See More<i class="material-icons">arrow_forward</i> --></div>
+            <div>
+              <!-- See More<i class="material-icons">arrow_forward</i> --></div>
+          </div>
+        </div>
+        <div class="mealWrapper hover">
+          <div class="mealInfo">
+            <h4 bo-text="meal.name"></h4>
+            <div class="description" bo-text="meal.description" style="height: 212px"></div>
+          </div>
+          <div class="chefInfo">
+            <img bo-src="meal.providerImageURL || 'assets/images/chef-dummy.jpg'"></img>
+            <div class="chefDetails">
+              <div bo-text="meal.providerName"></div>
+              <div bo-text="meal.localityServed"></div>
+            </div>
+            <div class="rating star">
+              <div bo-text="meal.rating"></div>
+              <i class="material-icons">star_rate</i>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="price">
+            <div bo-text="meal.oldPrice" ng-show="meal.oldPrice"></div>
+            <div bo-text="'$' + meal.price"></div>
+            <div></div>
+            <!-- <div ng-click="$ctrl.addToCart(item, 1)">Add to Cart<i class="material-icons">local_grocery_store</i></div> -->
           </div>
         </div>
       </div>
@@ -81,7 +111,8 @@
               <div class="rating star">
                 <div bo-text="chef.rating"></div>
                 <i class="material-icons">star_rate</i>
-                <div><!-- SEE MORE<i class="material-icons">arrow_forward</i> --></div>
+                <div>
+                  <!-- SEE MORE<i class="material-icons">arrow_forward</i> --></div>
               </div>
             </div>
           </div>

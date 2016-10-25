@@ -28,7 +28,7 @@ function HomeCtrl($log, $rootScope, $state, $mdDialog, $document, $cookies, Chef
         clickOutsideToClose: false
       });
     }
-  }
+  };
 
   Chef.getFeaturedChefs(function(response) {
     vm.chefs = response.data;
