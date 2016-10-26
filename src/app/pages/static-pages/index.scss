@@ -1,0 +1,20 @@
+@import '../../variable.scss';
+.faq-title {
+  max-width: 1040px;
+  margin: auto;
+  min-height: calc(100vh - 325px);
+  h3 {
+    font-family: "Montserrat", Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: #AD1C44;
+    border-bottom: 1px dashed #AFAFAF;
+  }
+  .partyDetails {
+    font-size: 25px;
+    font-family: "Montserrat", Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+}

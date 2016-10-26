@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"term",
+				"terms-condition"
+			],
+			[
+				"qua",
+				"quality-control"
+			],
+			[
+				"pla",
+				"places-serve"
+			],
+			[
+				"joi",
+				"join-us"
+			],
+			[
+				"cus",
+				"customer-support"
+			],
+			[
+				"about",
+				"about-us"
+			],
+			[
+				"pri",
+				"privacy-policy"
+			],
+			[
+				"abou",
+				"about-us\t(index.js)"
+			],
+			[
+				"tem",
+				"templateUrl\t(index.module.js)"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"min",
+				"minus\t index.scss"
+			],
+			[
 				"one",
 				"none"
 			],
@@ -52,16 +96,8 @@
 				"txt_3\t(_variable.scss)"
 			],
 			[
-				"min",
-				"min-height"
-			],
-			[
 				"bor",
 				"border"
-			],
-			[
-				"fon",
-				"font-size"
 			],
 			[
 				"clo",
@@ -138,10 +174,6 @@
 			[
 				"List",
 				"ListCmt"
-			],
-			[
-				"tem",
-				"templateUrl\t(index.js)"
 			],
 			[
 				"filt",
@@ -482,50 +514,35 @@
 			[
 				"sec",
 				"secbg\t index.scss"
-			],
-			[
-				"ba",
-				"background"
-			],
-			[
-				"push",
-				"pushState\t(index.run.js)"
-			],
-			[
-				"M",
-				"M_WIDTH"
-			],
-			[
-				"messag",
-				"message-menu"
-			],
-			[
-				"und",
-				"undefined\t(index.run.js)"
-			],
-			[
-				"bmd",
-				"bmd-ripple\t message.scss"
-			],
-			[
-				"type",
-				"type=\"text\t(setting.html)"
-			],
-			[
-				"margin",
-				"margin: 〔property〕"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "gulp/build.js",
+			"file": "src/app/pages/static-pages/faq/tpl.html",
 			"settings":
 			{
-				"buffer_size": 4198,
+				"buffer_size": 5951,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/pages/static-pages/index.module.js",
+			"settings":
+			{
+				"buffer_size": 2065,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/pages/static-pages/index.scss",
+			"settings":
+			{
+				"buffer_size": 522,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -590,15 +607,49 @@
 		"/D/wamp64/www/00CurrentWork/captainscook",
 		"/D/wamp64/www/00CurrentWork/captainscook/.tmp",
 		"/D/wamp64/www/00CurrentWork/captainscook/.tmp/partials",
+		"/D/wamp64/www/00CurrentWork/captainscook/.tmp/serve",
 		"/D/wamp64/www/00CurrentWork/captainscook/src",
-		"/D/wamp64/www/00CurrentWork/captainscook/src/app"
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages"
 	],
 	"file_history":
 	[
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/faq/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/index.module.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/places-we-serve/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/join-us/index.scss",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/index.scss",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/footer/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/about-us/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/join-us/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/privacy-policy/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/terms-condition/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/quality-control/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/footer/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/index.module.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/customer-support/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/customer-support/index.scss",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/index.module.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/terms-condition/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/quality-control/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/privacy-policy/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/places-we-serve/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/join-us/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/faq/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/customer-support/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/static-pages/about-us/index.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/checkout/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/_variable.scss",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/checkout/index.scss",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/login/signup/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/login/signin/tpl.html",
+		"/D/wamp64/www/00CurrentWork/captainscook/gulp/build.js",
+		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/login/index.scss",
 		"/D/wamp64/www/00CurrentWork/captainscook/dist/index.html",
 		"/D/wamp64/www/00CurrentWork/captainscook/dist/scripts/app-acabfc24a9.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/index.config.js",
-		"/D/wamp64/www/00CurrentWork/captainscook/src/app/index.module.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/models/cart/index.service.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/auth/index.module.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/auth/auth.service.js",
@@ -606,11 +657,9 @@
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/auth/interceptor.service.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/auth/router.decorator.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/results/index.js",
-		"/D/wamp64/www/00CurrentWork/captainscook/gulp/build.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/home/index.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/home/index.tpl.html",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/home/index.scss",
-		"/D/wamp64/www/00CurrentWork/captainscook/src/app/_variable.scss",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/results/index.scss",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/pages/results/tpl.html",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/routes/listing/index.js",
@@ -648,7 +697,6 @@
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/common/trust.filter.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/common/index.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/index.html",
-		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/footer/tpl.html",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/routes/landing/index.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/footer/index.scss",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/routes/login/signin/index.js",
@@ -658,7 +706,6 @@
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/routes/login/signup/tpl.html",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/routes/login/signin/index.scss",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/routes/login/signup/index.scss",
-		"/D/wamp64/www/00CurrentWork/captainscook/src/app/components/footer/index.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/routes/main.html",
 		"/D/wamp64/www/00CurrentWork/captainkook_webpack/src/app/components/header/index.js",
 		"/D/wamp64/www/00CurrentWork/captainscook/src/app/index.route.js",
@@ -696,33 +743,7 @@
 		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/components/service/teamtalk.service.js",
 		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/chats/chats.scss",
 		"/D/wamp64/www/00CurrentWork/teamtalk/gulp/inject.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/gulp/build.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/components/service/asset.service.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/partials/templateCacheHtml.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/assets/json/templateCacheHtml.json",
-		"/D/wamp64/www/00CurrentWork/teamtalk/dist/assets/json/templateCacheHtml.json",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/uploadedFiles/uploadedFiles_default.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/videoConference/videoConference.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/chatsWriter/chatsWriter.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/bower_components/angular-material/angular-material.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/collaborate/main/main.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/administration/group/group.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/administration/administration.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/changepassword/changepassword.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/collaborate/collaborate.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/notificationsReader/notificationsReader.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/collaborate/private/private.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/contacts/contacts.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/index.controller.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/collaborate/share/share.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/uploadedFiles/uploadedFiles.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/chat.main.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/index.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/assets/file-upload/file-upload.ctrl.js",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/assets/file-upload/file-upload.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/channel/channel.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/channel/channel_default.html",
-		"/D/wamp64/www/00CurrentWork/teamtalk/src/app/message/pages/chat/setting/setting_default.html"
+		"/D/wamp64/www/00CurrentWork/teamtalk/gulp/build.js"
 	],
 	"find":
 	{
@@ -771,6 +792,97 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"status.isFirstOpen",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"</div><div uib-accordion-group class=\"panel-default\" heading=\"\" is-open=\"status.isFirstOpen\" is-disabled=\"status.isFirstDisabled\">\n    \n    </div>",
+			"accordion-g",
+			"ng-transclude=\"\"",
+			">\n",
+			"about",
+			"argument",
+			"faq",
+			"quality",
+			"terms",
+			"privacy",
+			"join",
+			"places",
+			"customer",
+			"about",
+			"about-us",
+			"true",
+			"AboutUs",
+			"aboutUsCmt",
+			"faqCmt",
+			"qualityControlCmt",
+			"placesWeServeCmt",
+			"aboutUsCtrl",
+			"termsConditionCtrl",
+			"aboutUsCtrl",
+			"termsConditionCmt",
+			"aboutUsCtrl",
+			"qualityControlCtrl",
+			"aboutUsCtrl",
+			"qualityControlCmt",
+			"aboutUsCtrl",
+			"privacyPolicyCtrl",
+			"aboutUsCtrl",
+			"privacyPolicyCmt",
+			"aboutUsCtrl",
+			"placesWeServeCtrl",
+			"aboutUsCtrl",
+			"placesWeServeCmt",
+			"aboutUsCtrl",
+			"joinUsCtrl",
+			"aboutUsCtrl",
+			"joinUsCmt",
+			"aboutUsCtrl",
+			"faqCtrl",
+			"aboutUsCtrl",
+			"faqCmt",
+			"aboutUsCtrl",
+			"customerSupportCtrl",
+			"aboutUsCtrl",
+			"customerSupportCmt",
+			"aboutUsCmt",
+			"argument",
+			"aboutUsCtrl",
+			"routeConfig",
+			"ngMaterial",
+			"argument",
+			"results",
 			"partials",
 			"app/pages/main.html",
 			"./app",
@@ -807,98 +919,7 @@
 			"argument",
 			"changeWindow",
 			"showCarousel",
-			"numberOfCarousel",
-			"false",
-			"getConfig",
-			"false",
-			"PHOTO",
-			"right",
-			"search_form",
-			"search_body",
-			"main",
-			"argument",
-			"goSearch",
-			"span",
-			"title",
-			"black",
-			"page_wrap",
-			"col-sm-offset-2 col-sm-8",
-			"thumb",
-			"argument",
-			"goResult",
-			"meal_info",
-			"argument",
-			"over",
-			"title",
-			"$",
-			"scrollup",
-			"malarkey",
-			"argument",
-			"orderplace",
-			"checkout",
-			"place",
-			"checkout",
-			"argument",
-			"goOrderPlace",
-			"CheckOutCtrl",
-			"OrderPlaceCtrl",
-			"argument",
-			"list",
-			"checkout",
-			"list",
-			"argument",
-			"$scope.",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg",
-			"http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg",
-			"argument",
-			"results",
-			"argument",
-			"goList",
-			"chefInfo",
-			"meal.",
-			"angular.png",
-			"filters",
-			"dataset",
-			"argument",
-			"goHome",
-			"stateName",
-			"argument",
-			"showSearch",
-			"searchShow",
-			"argument",
-			"home",
-			"argument",
-			"this.",
-			"goResult",
-			".input",
-			"div:last",
-			"rating",
-			".materia",
-			"auroselContainer",
-			"carousel",
-			"fa",
-			"button",
-			"trusted",
-			"routes",
-			"Search",
-			"searchBtn",
-			"components",
-			"HomeCtrl",
-			"SearchCtrl",
-			"home",
-			"routes",
-			"var",
-			"right",
-			"Twitter"
+			"numberOfCarousel"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -927,24 +948,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "gulp/build.js",
+					"file": "src/app/pages/static-pages/faq/tpl.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4198,
+						"buffer_size": 5951,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								273,
-								273
+								215,
+								215
 							]
 						],
 						"settings":
@@ -968,15 +989,15 @@
 								{
 									"1":
 									[
-										379,
-										380
+										211,
+										214
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/square_bracket.png",
+										"Packages/BracketHighlighter/icons/tag.png",
 										"brackethighlighter.default"
 									]
 								},
@@ -984,8 +1005,8 @@
 								{
 									"1":
 									[
-										272,
-										273
+										41,
+										44
 									]
 								},
 								"unmatched":
@@ -994,6 +1015,16 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -1004,31 +1035,26 @@
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -1039,17 +1065,144 @@
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/app/pages/static-pages/index.module.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2065,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1356,
+								1356
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1431,
+										1432
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1324,
+										1325
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material Oceanic Next (SL).tmTheme",
 							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1059,6 +1212,137 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/app/pages/static-pages/index.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								80,
+								80
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										520,
+										521
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										42,
+										43
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1173,7 +1457,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 335.0,
+	"side_bar_width": 268.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

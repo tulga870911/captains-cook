@@ -15,7 +15,7 @@
     // justify-content: center;
     // margin-top: 350px;
     h3{
-      color: white;
+      // color: white;
     }
     .error {
       //color: @warningColor;
@@ -25,9 +25,9 @@
     }
     h3 {
       text-align: center;
-      position: absolute;
+      // position: absolute;
       width: 100%;
-      margin-top: -45px;
+      // margin-top: -45px;
     }
     .otp {
       div {
@@ -42,7 +42,9 @@
       background-color: #fff;
       margin: 0px auto;
       // position: absolute;
-      width: 300px;
+      // width: 300px;
+      min-width: 420px;
+      padding: 15px;
       .boxWrapper {
         padding: 20px;
         * {

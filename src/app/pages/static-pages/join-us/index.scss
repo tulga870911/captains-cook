@@ -1,0 +1,12 @@
+@import '../../../variable.scss';
+.bs-callout-info {
+  border-left-color: rgba(105, 030, 051, 1);
+}
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}

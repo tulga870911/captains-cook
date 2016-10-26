@@ -36,26 +36,40 @@
           .vegan {
             float: right;
             color: $green;
+            margin-top: 5px;
+            &.none{
+              color: $blue;
+            }
           }
         }
         .qty {
+          padding: 0 10px;
+          padding-top: 15px;
           button {
-            margin-top: 15px;
             outline: none!important;
             font-size: 23px;
             color: $themeColor;
             font-weight: 600;
-            padding: 0 20px;
+            padding: 0 5px;
             span {
               @extend %txt_4;
-              margin: 0 10px;
+              margin: 0 7px;
               color: $active;
+              vertical-align: middle;
+              &.minus, &.plus{
+                font-size: 30px;
+                color: $themeColor;
+                &:hover{
+                  color: $active;
+                }
+              }
             }
           }
         }
         .price {
           display: flex;
           flex-direction: column;
+          padding-top: 15px;
           .new {
             font-family: 'sansRegular';
             font-size: 28px;
@@ -156,12 +170,18 @@
             padding: 15px;
             border-radius: 5px;
             width: 100%;
+            font-family: 'montserratBold';
+            color: $active;
           }
           i {
             color: $themeColor;
             position: absolute;
             top: 14px;
             right: 10px;
+          }
+          .alert{
+            color: $warningColor;
+            padding: 7px 0;
           }
         }
       }

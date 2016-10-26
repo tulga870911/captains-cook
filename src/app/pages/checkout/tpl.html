@@ -24,14 +24,14 @@
               </div>
               <div class="info">
                 <span class="location"><i class="material-icons">place</i> {{item.localityServed}}</span>
-                <span class="sl">SL: <span uib-rating ng-model="item.spicyLevel" max="$ctrl.max" read-only="$ctrl.isReadonly" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+                <span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
                 <span class="label" ng-class="{'label-warning': $ctrl.percent<30, 'label-info': $ctrl.percent>=30 && percent<70, 'label-success': $ctrl.percent>=70}" ng-show="overStar && !$ctrl.isReadonly">{{$ctrl.percent}}%</span></span>
-                <span class="vegan" ng-hide="item.nonVeg">VEGAN</span>
+                <span class="vegan" ng-hide="item.nonVeg" ng-class="{'none': ($index % 2) === 0}">VEGAN</span>
               </div>
             </div>
             <div class="qty" flex="20" flex-xs="50">
               <div hide-gt-xs>QTY</div>
-              <button class="btn btn-default btn-sm"><span class="minus" ng-click="$ctrl.decreaseQuantity($index)">- </span><span>{{item.quantity}}</span><span class="plus" ng-click="$ctrl.increaseQuantity($index)"> +</span></button>
+              <button class="btn btn-default btn-sm"><span class="minus" ng-click="$ctrl.decreaseQuantity($index)">−</span><span>{{item.quantity}}</span><span class="plus" ng-click="$ctrl.increaseQuantity($index)">+</span></button>
             </div>
             <div class="price" flex="20" flex-xs="50">
               <div hide-gt-xs>PRICE</div>
@@ -114,6 +114,7 @@
                 <i class="material-icons" ng-click="$ctrl.applyCoupon()">arrow_forward</i>
                 <input type="submit" style="position: absolute; left: -9999px; width:1px, height: 1px">
               </form>
+              <div class="alert">this is alert test</div>
             </div>
           </div>
         </div>

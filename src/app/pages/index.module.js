@@ -3,6 +3,7 @@ import './home/index';
 import './details/index';
 import './login/index';
 import './results/index';
+import './static-pages/index.module';
 
 import { routerConfig } from './pages.router';
 import { MainCtrl } from './main.ctrl';
@@ -18,7 +19,8 @@ export default angular.module('captainscook.pages', [
     'captainscook.pages.home',
     'captainscook.pages.details',
     'captainscook.pages.login',
-    'captainscook.pages.results'
+    'captainscook.pages.results',
+    'captainscook.pages.static'
   ])
   .config(routerConfig)
   .component('main', MainCmt);
