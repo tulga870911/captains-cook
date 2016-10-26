@@ -141,6 +141,9 @@ $imgpath: '../';
     .vegan {
       text-align: right;
       color: $green;
+      &.none {
+        color: $blue;
+      }
     }
   }
   .mealInfo {
@@ -210,6 +213,29 @@ $imgpath: '../';
   .price {
     padding: 10px;
     padding-left: 15px;
+    div.btn {
+      outline: none!important;
+      font-size: 23px;
+      color: $themeColor;
+      font-weight: 600;
+      padding: 0 5px;
+      float: right;
+      line-height: 31px;
+      span {
+        @extend %txt_4;
+        margin: 0 7px;
+        color: $active;
+        vertical-align: middle;
+        &.minus,
+        &.plus {
+          font-size: 30px;
+          color: $themeColor;
+          &:hover {
+            color: $active;
+          }
+        }
+      }
+    }
     div {
       display: inline-block;
       vertical-align: middle;
