@@ -11,7 +11,7 @@ export default angular.module('captainscook.auth', [
   .factory('authInterceptor', authInterceptor)
   .run(routerDecorator);
 
-/** @ngInject */
 function authConfig($httpProvider) {
+  'ngInject';
   $httpProvider.interceptors.push('authInterceptor');
 }

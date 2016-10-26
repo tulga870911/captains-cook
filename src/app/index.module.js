@@ -27,7 +27,8 @@ angular.module('captainscook', [
     'captainscook.models',
     'pasvaz.bindonce',
     'slick',
-    'angular-flexslider'
+    'angular-flexslider',
+    'angular-loading-bar'
   ])
   .component('ctFooter', Footer)
   .component('ctHeader', Header)

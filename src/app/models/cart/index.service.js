@@ -6,6 +6,8 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
     getAvailableItems: { method: 'GET', url: ServerUrl + '/items/available?locality=:locality&subLocality=:subLocality&from=:from&to=:to' }
   });
 
+  $log.log(Resource);
+
   let items = [];
   let total_price = 0;
 

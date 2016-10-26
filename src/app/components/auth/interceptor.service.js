@@ -1,5 +1,5 @@
-/** @ngInject */
-export function authInterceptor($log, $q, $cookies, $injector, Util) {
+export function authInterceptor($log, $q, $cookies, $injector) {
+  'ngInject';
   let state;
   return {
     // Add authorization token to headers

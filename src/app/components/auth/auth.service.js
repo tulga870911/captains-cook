@@ -4,7 +4,8 @@ export function AuthService($log, $location, $http, $cookies, $q, $rootScope, Se
   let currentUser = {};
 
   if ($cookies.get('token') && $location.path() !== '/logout') {
-    currentUser = JSON.parse($cookies.get('currentUser'));
+    // currentUser = JSON.parse($cookies.get('currentUser'));
+    currentUser = angular.fromJson($cookies.get('currentUser'));
   }
 
   let Auth = {
@@ -35,7 +36,8 @@ export function AuthService($log, $location, $http, $cookies, $q, $rootScope, Se
             $rootScope.$emit('USER_UPDATED', currentUser);
 
             $cookies.put('token', currentUser.token);
-            $cookies.put('currentUser', JSON.stringify(currentUser));
+            // $cookies.put('currentUser', JSON.stringify(currentUser));
+            $cookies.put('currentUser', angular.toJson(currentUser));
 
             bSuccess = true;
           }

@@ -17,7 +17,9 @@ gulp.task('partials', function () {
       removeEmptyAttributes: true,
       removeAttributeQuotes: true,
       collapseBooleanAttributes: true,
-      collapseWhitespace: true
+      collapseWhitespace: true,
+      useShortDoctype: true,
+      removeComments: true
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
       module: 'captainscook',
@@ -39,7 +41,7 @@ gulp.task('html', ['inject'], function () {
   var cssFilter = $.filter('**/*.css', { restore: true });
 
   return gulp.src(path.join(conf.paths.tmp, '/serve/*.html'))
-    // .pipe($.inject(partialsInjectFile, partialsInjectOptions))
+    .pipe($.inject(partialsInjectFile, partialsInjectOptions))
     .pipe($.useref())
     .pipe(jsFilter)
     // .pipe($.sourcemaps.init())
@@ -119,4 +121,4 @@ gulp.task('loader', function() {
   return gulp.src(path.join(conf.paths.bower, '/slick-carousel/slick/ajax-loader.gif'))
     .pipe(gulp.dest(path.join(conf.paths.dist, '/styles')));
 });
-gulp.task('build', ['html', 'fonts', 'other', 'html-copy', 'slick-fonts', 'loader']);
+gulp.task('build', ['partials', 'html', 'fonts', 'other', 'slick-fonts', 'loader']);

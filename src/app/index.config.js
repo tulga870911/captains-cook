@@ -1,9 +1,11 @@
-export function config($logProvider, $provide, $httpProvider, $compileProvider) {
+export function config($logProvider, $provide, $httpProvider, $compileProvider, cfpLoadingBarProvider) {
   'ngInject';
   // Enable log
   $logProvider.debugEnabled(true);
   $compileProvider.debugInfoEnabled(false);
   $httpProvider.defaults.useXDomain = true;
+  //loading bar
+  cfpLoadingBarProvider.includeSpinner = false;
   // $log remove
   $provide.decorator('$log', ['$delegate',
     function($delegate) {

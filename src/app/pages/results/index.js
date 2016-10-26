@@ -1,7 +1,7 @@
 import { ResultsFilterCtrl } from "./filter/index";
 
 const ResultsCmt = {
-  templateUrl: './app/pages/results/tpl.html',
+  templateUrl: 'app/pages/results/tpl.html',
   controller: ResultsCtrl
 }
 export default angular.module('captainscook.pages.results', [])
