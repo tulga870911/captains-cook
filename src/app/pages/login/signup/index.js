@@ -4,7 +4,7 @@ export function SignUpCtrl($log, $state, $mdDialog, Auth) {
 
   vm.fnSignup = fnSignup;
   vm.fnConfirmSignup = fnConfirmSignup;
-  vm.isOTPStage = false;
+  vm.isOTPStage = Auth.isOTPStage();
   vm.isError = false;
   vm.errMsg = 'Signup failed';
 
@@ -21,6 +21,7 @@ export function SignUpCtrl($log, $state, $mdDialog, Auth) {
         if (!data.errorCode) {
           $log.log('Signup Success', res);
           vm.isOTPStage = true;
+          Auth.setOTPStage();
         } else if (data.errorCode === 'EMAIL_NOT_AVAILABLE') {
           vm.isError = true;
           vm.errMsg = 'The Email address is not available.';
@@ -46,6 +47,9 @@ export function SignUpCtrl($log, $state, $mdDialog, Auth) {
 
   function fnConfirmSignup() {
     vm.isError = false;
+
+    if (vm.isOTPStage)
+      vm.user = Auth.getCurrentUser();
 
     Auth.confirmSignup({
       mobileNumber: vm.user.mobileNumber,

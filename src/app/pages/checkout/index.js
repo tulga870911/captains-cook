@@ -143,7 +143,7 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth) {
         "longitude": 76.33
       },
       paymentMode: 'cash on delivery'
-    }, (error, orderItem) => {
+    }, error => {
       if (!error) {
         $state.go('main.orderplace')
       } else {

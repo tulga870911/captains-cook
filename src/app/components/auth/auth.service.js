@@ -2,6 +2,7 @@
 export function AuthService($log, $location, $http, $cookies, $q, $rootScope, ServerUrl, Util) {
   let safeCb = Util.safeCb;
   let currentUser = {};
+  let bOTPStage = false;
 
   if ($cookies.get('token') && $location.path() !== '/logout') {
     // currentUser = JSON.parse($cookies.get('currentUser'));
@@ -33,11 +34,10 @@ export function AuthService($log, $location, $http, $cookies, $q, $rootScope, Se
           if (res && res.status == 200 && res.data) {
             currentUser = res.data.data;
 
-            $rootScope.$emit('USER_UPDATED', currentUser);
-
             $cookies.put('token', currentUser.token);
-            // $cookies.put('currentUser', JSON.stringify(currentUser));
             $cookies.put('currentUser', angular.toJson(currentUser));
+
+            $rootScope.$emit('USER_UPDATED', currentUser);
 
             bSuccess = true;
           }
@@ -56,6 +56,7 @@ export function AuthService($log, $location, $http, $cookies, $q, $rootScope, Se
      * Delete access token and user info
      */
     logout() {
+      bOTPStage = false;
       $cookies.remove('token');
       currentUser = {};
     },
@@ -83,6 +84,7 @@ export function AuthService($log, $location, $http, $cookies, $q, $rootScope, Se
           }
         })
         .then(res => {
+          currentUser = user;
           safeCb(callback)(null, res);
           return res;
         })
@@ -91,6 +93,14 @@ export function AuthService($log, $location, $http, $cookies, $q, $rootScope, Se
           safeCb(callback)(err);
           return $q.reject(err);
         });
+    },
+
+    isOTPStage() {
+      return bOTPStage;
+    },
+
+    setOTPStage() {
+      bOTPStage = true;
     },
 
     /**
@@ -114,6 +124,9 @@ export function AuthService($log, $location, $http, $cookies, $q, $rootScope, Se
             currentUser = res.data.data;
 
             $cookies.put('token', currentUser.token);
+            $cookies.put('currentUser', angular.toJson(currentUser));
+
+            $rootScope.$emit('USER_UPDATED', currentUser);
 
             bSuccess = true;
           }

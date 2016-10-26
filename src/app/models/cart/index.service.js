@@ -57,7 +57,10 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
     clearShoppingCart() {
       items = [];
       total_price = 0;
-      discount_amount = 0;
+      objDiscount = {
+        discount_amount: 0,
+        discount_text: ''
+      };
       $rootScope.$emit('CART_UPDATED');
     },
     getTotalAmount() {
