@@ -18,6 +18,10 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
   vm.isCategorySelected = isCategorySelected;
   vm.showFilter = showFilter;
   vm.addToCart = Cart.addToShoppingCart;
+  vm.getCurrentQty = Cart.getCurrentQty;
+
+  // vm.decreaseQuantity = decreaseQuantity;
+  // vm.increaseQuantity = increaseQuantity;
 
   vm.categories = Meal.getCurrentCategories();
   vm.meals = Meal.getCurrentItems();

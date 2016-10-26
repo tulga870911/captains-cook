@@ -26,7 +26,8 @@
                 <span class="location"><i class="material-icons">place</i> {{item.localityServed}}</span>
                 <span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
                 <span class="label" ng-class="{'label-warning': $ctrl.percent<30, 'label-info': $ctrl.percent>=30 && percent<70, 'label-success': $ctrl.percent>=70}" ng-show="overStar && !$ctrl.isReadonly">{{$ctrl.percent}}%</span></span>
-                <span class="vegan" ng-hide="item.nonVeg" ng-class="{'none': ($index % 2) === 0}">VEGAN</span>
+                <span class="vegan" ng-hide="item.nonVeg">VEGAN</span>
+                <span class="vegan none" ng-show="item.nonVeg">NON VEGAN</span>
               </div>
             </div>
             <div class="qty" flex="20" flex-xs="50">
@@ -88,6 +89,10 @@
                 <span>Food Total:</span>
                 <span>{{$ctrl.getTotalAmount() | currency : '$'}}</span>
               </div>
+              <div class="item" ng-show="$ctrl.objDiscount.discount_amount > 0">
+                <span>Discount:</span>
+                <span>{{$ctrl.objDiscount.discount_amount | currency : '$'}}</span>
+              </div>
               <div class="item">
                 <span>Delivery:</span>
                 <span class="delivery">FREE</span>
@@ -96,7 +101,7 @@
             <div class="total">
               <div class="title">
                 <h4>Total:</h4>
-                <h4>$<span>{{$ctrl.getTotalAmount()}}<span>.00</span></span></h4>
+                <h4>$<span>{{$ctrl.getTotalAmount() - $ctrl.objDiscount.discount_amount}}<span>.00</span></span></h4>
               </div>
               <div class="button">
                 <button class="btn btn-default" ng-click="$ctrl.placeOrder()" ng-disabled="$ctrl.items.length == 0">Place Order <i class="material-icons">arrow_forward</i></button>
@@ -114,7 +119,7 @@
                 <i class="material-icons" ng-click="$ctrl.applyCoupon()">arrow_forward</i>
                 <input type="submit" style="position: absolute; left: -9999px; width:1px, height: 1px">
               </form>
-              <div class="alert">this is alert test</div>
+              <div class="alert" ng-show="$ctrl.errMessage">{{$ctrl.errMessage}}</div>
             </div>
           </div>
         </div>

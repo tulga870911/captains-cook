@@ -38,6 +38,7 @@
               <div class="sl" flex="45"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
               </div>
               <div class="vegan" flex="20" bo-hide="item.nonVeg">VEGAN</div>
+              <div class="vegan none" flex="20" bo-show="item.nonVeg">NON-VEGAN</div>
             </div>
           </div>
           <div class="chefInfo">
@@ -55,7 +56,8 @@
           <div class="price">
             <div bo-text="item.oldPrice"></div>
             <div bo-text="'$' + item.price"></div>
-            <div>Add to Cart<i class="material-icons">local_grocery_store</i></div>
+            <button class="btn btn-default"  ng-hide="$ctrl.getCurrentQty(item) === 0"><span class="minus" ng-click="$ctrl.decreaseQuantity(item)">- </span><span>{{$ctrl.getCurrentQty(item)}}</span><span class="plus" ng-click="$ctrl.increaseQuantity(item)"> +</span></button>
+            <div ng-click="$ctrl.addToCart(item, 1)" ng-show="$ctrl.getCurrentQty(item) === 0">Add to Cart<i class="material-icons">local_grocery_store</i></div>
           </div>
         </div>
         <div class="mealWrapper hover">
@@ -84,7 +86,8 @@
           <div class="price">
             <div bo-text="item.oldPrice"></div>
             <div bo-text="'$' + item.price"></div>
-            <div ng-click="$ctrl.addToCart(item, 1)">Add to Cart<i class="material-icons">local_grocery_store</i></div>
+            <button class="btn btn-default"  ng-hide="$ctrl.getCurrentQty(item) === 0"><span class="minus" ng-click="$ctrl.decreaseQuantity(item)">- </span><span>{{$ctrl.getCurrentQty(item)}}</span><span class="plus" ng-click="$ctrl.increaseQuantity(item)"> +</span></button>
+            <div ng-click="$ctrl.addToCart(item, 1)" ng-show="$ctrl.getCurrentQty(item) === 0">Add to Cart<i class="material-icons">local_grocery_store</i></div>
           </div>
         </div>
       </div>
