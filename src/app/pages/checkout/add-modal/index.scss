@@ -1,0 +1,11 @@
+@import '../../../variable.scss';
+.checkout-add {
+  max-width: 470px;
+  md-input-container {
+    width: 100%;
+    input {
+      font-size: 21px;
+      font-weight: 600;
+    }
+  }
+}

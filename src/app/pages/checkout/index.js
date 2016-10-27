@@ -1,4 +1,5 @@
 import { OrderPlaceCmt } from './order-place/index';
+import { addModalCtrl } from './add-modal/index';
 
 const CheckOutCmt = {
   templateUrl: 'app/pages/checkout/tpl.html',
@@ -9,7 +10,7 @@ export default angular.module('captainscook.pages.checkout', [])
   .component('checkout', CheckOutCmt)
   .component('orderPlace', OrderPlaceCmt);
 
-function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth) {
+function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $document) {
   'ngInject';
 
   let vm = this;
@@ -22,18 +23,23 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth) {
   vm.getTotalAmount = Cart.getTotalAmount;
   vm.applyCoupon = applyCoupon;
   vm.placeOrder = placeOrder;
+  vm.showModal = showModal;
 
   vm.objDiscount = Cart.getDiscount();
 
   vm.errMessage = '';
 
-  $rootScope.$on('$destroy', $rootScope.$on('CART_UPDATED', function() {
+  $rootScope.$on('$destroy', $rootScope.$on('CART_UPDATED', function () {
     vm.items = Cart.getItems();
     $log.log('cart_updated', vm.items);
   }));
 
   vm.$onInit = function onInit() {
-    init()
+    vm.paymentRadio = `Banana`;
+    vm.modal = {
+      unit: 'this is unit'
+    };
+    init();
   }
 
   function init() {
@@ -58,6 +64,18 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth) {
       { stateOn: 'glyphicon-heart' },
       { stateOff: 'glyphicon-off' }
     ];
+  }
+
+  function showModal(event) {
+    $mdDialog.show({
+      controller: addModalCtrl,
+      controllerAs: '$ctrl',
+      templateUrl: 'app/pages/checkout/add-modal/tpl.html',
+      parent: $document[0].body,
+      targetEvent: event,
+      clickOutsideToClose: true
+        // fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+    })
   }
 
   function applyCoupon() {
@@ -124,7 +142,7 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth) {
 
     Cart.placeOrder({
       consumerId: currentUser.customerId,
-      deliveryTime: {'from': delivery_date + delivery_time, 'to':delivery_date + delivery_time + 3600000},
+      deliveryTime: { 'from': delivery_date + delivery_time, 'to': delivery_date + delivery_time + 3600000 },
       couponCode: vm.coupon,
       originalAmount: vm.getTotalAmount(),
       discountAmount: vm.objDiscount.discount_amount,

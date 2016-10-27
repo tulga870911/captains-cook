@@ -43,6 +43,7 @@ ct-search {
       }
     }
     .time {
+      overflow: hidden;
       md-autocomplete {
         min-width: 155px!important;
       }
