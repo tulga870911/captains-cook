@@ -1,5 +1,5 @@
-import { OrderPlaceCmt } from './order-place/index';
-import { addModalCtrl } from './add-modal/index';
+import { ConfirmationCmt } from './confirmation/index';
+import { LocalityCtrl } from './locality/index';
 
 const CheckOutCmt = {
   templateUrl: 'app/pages/checkout/tpl.html',
@@ -8,7 +8,7 @@ const CheckOutCmt = {
 
 export default angular.module('captainscook.pages.checkout', [])
   .component('checkout', CheckOutCmt)
-  .component('orderPlace', OrderPlaceCmt);
+  .component('confirmation', ConfirmationCmt);
 
 function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $document) {
   'ngInject';
@@ -68,9 +68,9 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $
 
   function showModal(event) {
     $mdDialog.show({
-      controller: addModalCtrl,
+      controller: LocalityCtrl,
       controllerAs: '$ctrl',
-      templateUrl: 'app/pages/checkout/add-modal/tpl.html',
+      templateUrl: 'app/pages/checkout/locality/tpl.html',
       parent: $document[0].body,
       targetEvent: event,
       clickOutsideToClose: true
@@ -163,7 +163,7 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $
       paymentMode: 'cash on delivery'
     }, error => {
       if (!error) {
-        $state.go('main.orderplace')
+        $state.go('main.confirmation')
       } else {
         vm.errMessage = 'Failed to place an order.';
       }

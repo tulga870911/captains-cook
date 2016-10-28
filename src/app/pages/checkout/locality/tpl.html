@@ -1,62 +1,65 @@
-<md-dialog aria-label="add payment" class="checkout-add">
-  <form ng-cloak name="checkoutAdd">
+<md-dialog aria-label="locality" class="locality-dlg">
+  <form ng-cloak name="localityForm">
     <md-dialog-content>
       <div class="md-dialog-content">
         <md-input-container>
           <label>UNIT/FLAT/WING/FLOOR NUMBER</label>
-          <input ng-model="$ctrl.modal.unit" name="unit" required>
-          <div ng-messages="checkoutAdd.unit.$error">
+          <input ng-model="$ctrl.locality.unit" name="unit" required>
+          <div ng-messages="localityForm.unit.$error">
             <div ng-message="required">This is required.</div>
             <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
           </div>
         </md-input-container>
         <md-input-container>
           <label>UNIT/BUILDING NAME</label>
-          <input ng-model="$ctrl.modal">
-          <div ng-messages="checkoutAdd.description.$error">
+          <input ng-model="$ctrl.locality">
+          <div ng-messages="localityForm.description.$error">
             <div ng-message="required">This is required.</div>
             <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
           </div>
         </md-input-container>
         <md-input-container>
           <label>STREET NAME</label>
-          <input ng-model="$ctrl.modal">
-          <div ng-messages="checkoutAdd.description.$error">
+          <input ng-model="$ctrl.locality">
+          <div ng-messages="localityForm.description.$error">
             <div ng-message="required">This is required.</div>
             <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
           </div>
         </md-input-container>
         <md-input-container>
-          <label>FANDMARK</label>
-          <input ng-model="$ctrl.modal">
-          <div ng-messages="checkoutAdd.description.$error">
+          <label>LANDMARK</label>
+          <input ng-model="$ctrl.locality">
+          <div ng-messages="localityForm.description.$error">
             <div ng-message="required">This is required.</div>
             <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
           </div>
         </md-input-container>
         <md-input-container>
           <label>SUBLOCALITY</label>
-          <input ng-model="$ctrl.modal">
-          <div ng-messages="checkoutAdd.description.$error">
+          <input ng-model="$ctrl.locality">
+          <div ng-messages="localityForm.description.$error">
             <div ng-message="required">This is required.</div>
             <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
           </div>
         </md-input-container>
         <md-input-container>
           <label>LOCALITY</label>
-          <input ng-model="$ctrl.modal">
-          <div ng-messages="checkoutAdd.description.$error">
+          <input ng-model="$ctrl.locality">
+          <div ng-messages="localityForm.description.$error">
             <div ng-message="required">This is required.</div>
             <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
           </div>
         </md-input-container>
         <md-input-container>
           <label>CITY</label>
-          <input ng-model="$ctrl.modal">
-          <div ng-messages="checkoutAdd.description.$error">
+          <input ng-model="$ctrl.locality">
+          <div ng-messages="localityForm.description.$error">
             <div ng-message="required">This is required.</div>
             <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
           </div>
+        </md-input-container>
+        <md-input-container>
+          <button type="submit" ng-disabled="localityForm.$invalid">Save</button>
         </md-input-container>
       </div>
     </md-dialog-content>

@@ -25,9 +25,9 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
       template: '<checkout></checkout>',
       authenticate: true
     })
-    .state('main.orderplace', {
-      url: '/orderplace',
-      template: '<order-place></order-place>',
+    .state('main.confirmation', {
+      url: '/confirmation',
+      template: '<confirmation></confirmation>',
       authenticate: true
     });
 }

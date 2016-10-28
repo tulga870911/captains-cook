@@ -1,0 +1,26 @@
+@import '../../../variable.scss';
+.locality-dlg {
+  max-width: 470px;
+  md-input-container {
+    width: 100%;
+    input {
+      font-size: 21px;
+      font-weight: 600;
+    }
+  }
+  button {
+    height: 40px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid $themeColor;
+    font-size: 13px;
+    text-align: center;
+    color: $themeColor;
+    @extend %sansRegular;
+  }
+  button:disabled {
+    opacity: 0.8;
+    color: $disabledColor;
+    border-color: $disabledColor;
+  }
+}

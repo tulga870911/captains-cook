@@ -1,9 +1,9 @@
-export const OrderPlaceCmt = {
-  templateUrl: 'app/pages/checkout/order-place/tpl.html',
-  controller: OrderPlaceCtrl
+export const ConfirmationCmt = {
+  templateUrl: 'app/pages/checkout/confirmation/tpl.html',
+  controller: ConfirmationCtrl
 };
 
-function OrderPlaceCtrl($state, Cart) {
+function ConfirmationCtrl($state, Cart) {
   'ngInject';
   let vm = this;
 

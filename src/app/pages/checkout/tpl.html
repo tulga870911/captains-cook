@@ -49,7 +49,7 @@
           <div class="pan">
             <div class="title">
               <h4>Delivery Address</h4>
-              <i class="material-icons">control_point</i>
+              <i class="material-icons" ng-click="$ctrl.showModal($event)">control_point</i>
             </div>
             <div class="pan_item">
               <div class="left">
@@ -63,7 +63,7 @@
           <div class="pan">
             <div class="title">
               <h4>Payment Method</h4>
-              <i class="material-icons" ng-click="$ctrl.showModal($event)">control_point</i>
+              <i class="material-icons">control_point</i>
             </div>
             <md-radio-group ng-model="$ctrl.paymentRadio">
               <div class="pan_item">
