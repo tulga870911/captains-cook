@@ -55,25 +55,13 @@ function DetailsCtrl($log, $state, Meal, Cart) {
     vm.quantity = Cart.getCurrentQty(vm.currentItem);
   }
   function increaseQuantity(item) {
-    // if (vm.quantity >= vm.currentItem.qtyAvailable){
-    //   vm.quantity = vm.currentItem.qtyAvailable;
-    //   return;
-    // }
-    // vm.quantity++;
     vm.quantity = Cart.addToShoppingCart(item, 1);
   }
   function decreaseQuantity(item) {
-    // if (vm.quantity <= 0){
-    //   vm.quantity = 0;
-    //   return;
-    // }
-    // vm.quantity--;
     vm.quantity = Cart.addToShoppingCart(item, -1);
   }
   function addToCart(item) {
-    // vm.quantity = 1;
     vm.quantity = Cart.addToShoppingCart(item, 1);
-    // goToCheckout();
   }
   function selectPreviousItem() {
     angular.element('#slider a.flex-prev').click();

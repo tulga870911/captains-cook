@@ -20,8 +20,8 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
   vm.addToCart = Cart.addToShoppingCart;
   vm.getCurrentQty = Cart.getCurrentQty;
 
-  // vm.decreaseQuantity = decreaseQuantity;
-  // vm.increaseQuantity = increaseQuantity;
+  vm.decreaseQuantity = decreaseQuantity;
+  vm.increaseQuantity = increaseQuantity;
 
   vm.categories = Meal.getCurrentCategories();
   vm.meals = Meal.getCurrentItems();
@@ -78,6 +78,13 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
         angular.element('.carousel_wrap').css('opacity', '1');
       }, 500)
     }, 10);
+  }
+
+  function increaseQuantity(item) {
+    Cart.addToShoppingCart(item, 1);
+  }
+  function decreaseQuantity(item) {
+    Cart.addToShoppingCart(item, -1);
   }
 
   function changeWindow() {
