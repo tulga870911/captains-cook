@@ -82,11 +82,6 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
     getDiscount() {
       return objDiscount;
     },
-    increaseQuantity(index) {
-      items[index].quantity++;
-      total_price += items[index].price;
-      $rootScope.$emit('CART_UPDATED');
-    },
     getCurrentQty(item) {
       if (!item || !item.id)
         return 0;
@@ -97,16 +92,6 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
       else
         return 0;
     },
-    decreaseQuantity(index) {
-      if (items[index].quantity <= 0)
-        items[index].quantity = 0;
-      else {
-        items[index].quantity--;
-        total_price -= items[index].price;
-      }
-      $rootScope.$emit('CART_UPDATED');
-    },
-
     removeItem(index) {
       total_price -= items[index].price * items[index].quantity;
       items.splice(index, 1);

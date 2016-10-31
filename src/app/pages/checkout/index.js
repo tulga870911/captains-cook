@@ -17,8 +17,8 @@ function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdD
 
   vm.items = Cart.getItems();
 
-  vm.increaseQuantity = Cart.increaseQuantity;
-  vm.decreaseQuantity = Cart.decreaseQuantity;
+  vm.increaseQuantity = increaseQuantity;
+  vm.decreaseQuantity = decreaseQuantity;
   vm.removeItem = Cart.removeItem;
   vm.getTotalAmount = Cart.getTotalAmount;
   vm.applyCoupon = applyCoupon;
@@ -63,6 +63,15 @@ function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdD
       { stateOn: 'glyphicon-heart' },
       { stateOff: 'glyphicon-off' }
     ];
+  }
+
+  function increaseQuantity(index) {
+    vm.items[index].quantity = Cart.addToShoppingCart(vm.items[index], 1);
+    $log.log('qty', vm.items[index].quantity);
+  }
+
+  function decreaseQuantity(index) {
+    vm.items[index].quantity = Cart.addToShoppingCart(vm.items[index], -1);
   }
 
   function showModal(event, index) {
