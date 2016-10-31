@@ -34,18 +34,18 @@
           <div class="mealInfo">
             <h4 bo-text="item.name"></h4>
             <div class="meal_info" layout="row">
-              <div class="name" flex="25"><i class="material-icons">location_on</i>name</div>
-              <div class="sl" flex="45"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
-              </div>
-              <div class="vegan" flex="30" bo-hide="item.nonVeg">VEGAN</div>
-              <div class="vegan none" flex="30" bo-show="item.nonVeg">NON-VEGAN</div>
+              <!-- div class="name" flex="25"><i class="material-icons">location_on</i>name</div -->
+              <div class="sl" flex="60"><span class="sl"><span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+              </span></div>
+              <div class="vegan" flex="40" bo-hide="item.nonVeg">VEG</div>
+              <div class="vegan none" flex="40" bo-show="item.nonVeg">NON-VEG</div>
             </div>
           </div>
           <div class="chefInfo">
             <img bo-src="item.providerImageURL || 'assets/images/chef-dummy.jpg'"></img>
             <div class="chefDetails">
               <div bo-text="item.providerName"></div>
-              <div bo-text="item.localityServed"></div>
+              <!-- div bo-text="item.localityServed"></div -->
             </div>
             <div class="rating star">
               <div bo-text="item.rating"></div>
@@ -64,10 +64,11 @@
           <div class="mealInfo" ng-click="$ctrl.goToDetailsPage($index)">
             <h4 bo-text="item.name"></h4>
             <div class="meal_info" layout="row">
-              <div class="name" flex="35"><i class="material-icons">location_on</i>name</div>
-              <div class="sl" flex="45"><span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
-              </div>
-              <div class="vegan" flex="20" bo-hide="item.nonVeg">VEGAN</div>
+              <!-- div class="name" flex="35"><i class="material-icons">location_on</i>name</div -->
+              <div class="sl" flex="60"><span class="sl"><span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+              </span></div>
+              <div class="vegan" flex="40" bo-hide="item.nonVeg">VEG</div>
+              <div class="vegan none" flex="40" bo-show="item.nonVeg">NON-VEG</div>
             </div>
             <div class="description" bo-text="item.description"></div>
           </div>
@@ -75,7 +76,7 @@
             <img bo-src="item.providerImageURL || 'assets/images/chef-dummy.jpg'"></img>
             <div class="chefDetails">
               <div bo-text="item.providerName"></div>
-              <div bo-text="item.localityServed"></div>
+              <!--div bo-text="item.localityServed"></div -->
             </div>
             <div class="rating star">
               <div bo-text="item.rating"></div>

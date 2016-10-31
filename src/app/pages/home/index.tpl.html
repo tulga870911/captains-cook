@@ -13,17 +13,17 @@
   </div>
   <div class="page_wrap row mainContent">
     <div class="col-sm-12">
-      <div class="col-sm-7 cauroselContainer">
-        <h3>Deals & Promotions <!-- <span ng-click="$ctrl.showAllDeals()">All Deals<i class="material-icons">arrow_forward</i></span> --></h3>
+      <div class="col-sm-8 cauroselContainer">
+        <h3>DEALS & PROMOTIONS <!-- <span ng-click="$ctrl.showAllDeals()">All Deals<i class="material-icons">arrow_forward</i></span> --></h3>
         <div class="carousel">
-          <flex-slider slider-id="slider" flex-slide="item in $ctrl.meals track by $index" animation="fade" animation-loop="false" slideshow="false" control-nav="false" init-delay="100">
+          <flex-slider slider-id="slider" flex-slide="item in $ctrl.meals track by $index" animation="fade" animation-loop="true" slideshow="true" control-nav="false" init-delay="100">
             <li>
               <img ng-src="{{item.imageURL}}">
             </li>
           </flex-slider>
         </div>
       </div>
-      <div class="col-sm-5 offerContainer">
+      <div class="col-sm-4 offerContainer">
         <div class="coupon">
           <img src="assets/images/coupon.png"></img>
           <div class="text">
@@ -34,17 +34,17 @@
             </div>
           </div>
         </div>
-        <div class="offerBox">
+        <!-- div class="offerBox">
           <img src="assets/images/refer-icon.png"></img>
           <h4>REFER A FRIEND</h4>
           <div class="input">
             <input placeholder="Friend's email"></input>
             <i class="material-icons">arrow_forward</i>
           </div>
-        </div>
+        </div -->
       </div>
     </div>
-    <h3 style="float: left;margin: 35px 0 3px 13px;">Featured Meals</h3>
+    <h3 style="float: left;margin: 35px 0 3px 13px;">FEATURED MEALS</h3>
     <div class="col-sm-12 meals" layout="row" layout-wrap layout-padding>
       <div class="meal" flex="33" flex-sm="50" flex-xs="100" bindonce ng-repeat="meal in $ctrl.meals">
         <div class="mealWrapper">
@@ -71,7 +71,7 @@
               <!-- See More<i class="material-icons">arrow_forward</i> --></div>
           </div>
         </div>
-        <div class="mealWrapper hover">
+        <!-- div class="mealWrapper hover">
           <div class="mealInfo">
             <h4 bo-text="meal.name"></h4>
             <div class="description" bo-text="meal.description" style="height: 212px"></div>
@@ -93,19 +93,19 @@
             <div bo-text="'$' + meal.price"></div>
             <div></div>
             <!-- <div ng-click="$ctrl.addToCart(item, 1)">Add to Cart<i class="material-icons">local_grocery_store</i></div> -->
-          </div>
-        </div>
+          <!-- /div>
+        </div -->
       </div>
     </div>
     <div class="col-sm-12 chefs">
-      <h3>Featured Chefs</h3>
+      <h3>FEATURED CHEFS</h3>
       <div class="col-sm-12 chefsContainer">
         <div class="col-sm-4 chef" bindonce ng-repeat="chef in $ctrl.chefs">
           <div class="chefWrapper">
             <div class="chefInfo">
               <img bo-src="chef.imageUrl"></img>
               <div class="chefDetails">
-                <div bo-text="chef.name"></div>
+                <h4 bo-text="chef.name"></h4>
                 <div bo-text="chef.localityServed"></div>
               </div>
               <div class="rating star">

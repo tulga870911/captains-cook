@@ -2,7 +2,7 @@
 .home {
   .banner {
     width: 100%;
-    height: 500px;
+    height: 400px;
     background: url($imgpath+'assets/images/header-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -185,13 +185,21 @@
         .chefInfo {
           img,
           .chefDetails {
+            width: 50%;
             display: inline-block;
+            white-space: nowrap;
+            font-weight: 600;
             vertical-align: middle;
           }
+          img {
+            height: 15%;
+            width: 15%;
+          }
           .rating {
-            float: none;
-            padding-left: 55px;
-            margin-top: -10px;
+            width: 20%;
+            float: right;
+            font-weight: 600;
+            padding-left: 10px;
             div:last-child {
               float: right;
               color: $themeColor;
@@ -208,6 +216,9 @@
         position: relative;
         .mealWrapper {
           @extend %mealWrapper;
+        }
+        .mealWrapper {
+          margin-bottom: 0px;
         }
       }
     }

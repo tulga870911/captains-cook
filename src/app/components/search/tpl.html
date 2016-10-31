@@ -13,7 +13,7 @@
     <i class="material-icons icon">location_on</i>
   </div>
   <div class="col-sm-12 col-md-6">
-    <div class="col-sm-4 col-xs-6 no-padding-r date">
+    <div class="col-sm-4 col-xs-4 no-padding-r date">
       <!-- <input type="" name=""> -->
       <md-autocomplete ng-disabled="$ctrl.delivery_date.isDisabled" md-no-cache="$ctrl.delivery_date.noCache" md-selected-item="$ctrl.delivery_date.selectedItem" md-search-text-change="$ctrl.delivery_date.onSearchTextChange($ctrl.delivery_date.searchText)" md-search-text="$ctrl.delivery_date.searchText" md-selected-item-change="$ctrl.delivery_date.onSelectItemChange(item)" md-items="item in $ctrl.delivery_date.querySearch(ctrl.delivery_date.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Pick" md-menu-class="autocomplete-custom-template">
         <md-item-template>
@@ -29,7 +29,7 @@
       </md-autocomplete>
       <i class="material-icons icon">today</i>
     </div>
-    <div class="col-sm-4 col-xs-6 no-padding-l time">
+    <div class="col-sm-5 col-xs-8 time">
       <!-- <input type="" name=""> -->
       <md-autocomplete ng-disabled="$ctrl.delivery_time.isDisabled" md-no-cache="$ctrl.delivery_time.noCache" md-selected-item="$ctrl.delivery_time.selectedItem" md-search-text-change="$ctrl.delivery_time.onSearchTextChange($ctrl.delivery_time.searchText)" md-search-text="$ctrl.delivery_time.searchText" md-selected-item-change="$ctrl.delivery_time.onSelectItemChange(item)" md-items="item in $ctrl.delivery_time.querySearch(ctrl.delivery_time.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Pick" md-menu-class="autocomplete-custom-template">
         <md-item-template>
@@ -45,7 +45,7 @@
       </md-autocomplete>
       <i class="material-icons icon">schedule</i>
     </div>
-    <div class="col-sm-4 col-xs-12 text-center">
+    <div class="col-sm-3 col-xs-12 text-center">
       <md-button aria-label="search" ng-bind-html="$ctrl.searchBtn | trusted" ng-click="$ctrl.showSearchResults()" ng-disabled="!$ctrl.locality.selectedItem || !$ctrl.delivery_date.selectedItem || !$ctrl.delivery_time.selectedItem"></md-button>
     </div>
   </div>

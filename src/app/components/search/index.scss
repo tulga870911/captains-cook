@@ -16,7 +16,7 @@ ct-search {
         border-width: 2px!important;
         height: auto;
         background: white;
-        border: inset;
+        border: solid;
         line-height: 14px;
         border-color: rgb(238, 238, 238);
       }
@@ -43,7 +43,6 @@ ct-search {
       }
     }
     .time {
-      overflow: hidden;
       md-autocomplete {
         min-width: 155px!important;
       }
