@@ -95,12 +95,12 @@ $imgpath: '../';
     top: 0;
     opacity: 0;
     transition: all 200ms;
-    height: calc(100% - 21px);
+    // height: calc(100% - 21px);
     width: calc(100% - 16px);
     margin: 8px;
     .description {
       padding-top: 15px;
-      height: 178px;
+      height: 140px;
     }
     .price {
       // position: absolute;

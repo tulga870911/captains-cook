@@ -14,6 +14,17 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
 
   vm.showSearchResults = showSearchResults;
 
+  vm.clearDate = clearDate;
+  vm.clearTime = clearTime;
+
+  function clearDate() {
+    vm.delivery_date.searchText = '';
+  }
+
+  function clearTime() {
+    vm.delivery_time.searchText = '';
+  }
+
   vm.$onInit = function onInit() {
     init();
   }

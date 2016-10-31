@@ -60,7 +60,7 @@
             <div ng-click="$ctrl.addToCart(item, 1)" ng-show="$ctrl.getCurrentQty(item) === 0">Add to Cart<i class="material-icons">local_grocery_store</i></div>
           </div>
         </div>
-        <div class="mealWrapper hover">
+        <div class="mealWrapper hover" ng-class="{'active': $index % 2 === 0}">
           <div class="mealInfo" ng-click="$ctrl.goToDetailsPage($index)">
             <h4 bo-text="item.name"></h4>
             <div class="meal_info" layout="row">
@@ -71,24 +71,6 @@
               <div class="vegan none" flex="40" bo-show="item.nonVeg">NON-VEG</div>
             </div>
             <div class="description" bo-text="item.description"></div>
-          </div>
-          <div class="chefInfo">
-            <img bo-src="item.providerImageURL || 'assets/images/chef-dummy.jpg'"></img>
-            <div class="chefDetails">
-              <div bo-text="item.providerName"></div>
-              <!--div bo-text="item.localityServed"></div -->
-            </div>
-            <div class="rating star">
-              <div bo-text="item.rating"></div>
-              <i class="material-icons">star_rate</i>
-            </div>
-          </div>
-          <div class="divider"></div>
-          <div class="price">
-            <div bo-text="item.oldPrice"></div>
-            <div bo-text="'$' + item.price"></div>
-            <div class="btn btn-default"  ng-hide="$ctrl.getCurrentQty(item) === 0"><span class="minus" ng-click="$ctrl.decreaseQuantity(item)">−</span><span>{{$ctrl.getCurrentQty(item)}}</span><span class="plus" ng-click="$ctrl.increaseQuantity(item)">+</span></div>
-            <div ng-click="$ctrl.addToCart(item, 1)" ng-show="$ctrl.getCurrentQty(item) === 0">Add to Cart<i class="material-icons">local_grocery_store</i></div>
           </div>
         </div>
       </div>

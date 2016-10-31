@@ -35,7 +35,7 @@ ct-search {
     }
     .date {
       md-autocomplete {
-        min-width: 155px!important;
+        min-width: 140px!important;
       }
       .icon {
         position: absolute;
@@ -52,7 +52,7 @@ ct-search {
       .icon {
         position: absolute;
         color: $inactive;
-        right: 20px;
+        right: 5px;
         top: 12px;
         background: white;
       }

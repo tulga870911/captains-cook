@@ -15,7 +15,7 @@
   <div class="item" flex="50" flex-md="100" flex-sm="100" flex-xs="100" layout="row" layout-wrap>
     <div class="no-padding-r date" flex="35" flex-xs="40" style="position: relative;">
       <!-- <input type="" name=""> -->
-      <md-autocomplete ng-disabled="$ctrl.delivery_date.isDisabled" md-no-cache="$ctrl.delivery_date.noCache" md-selected-item="$ctrl.delivery_date.selectedItem" md-search-text-change="$ctrl.delivery_date.onSearchTextChange($ctrl.delivery_date.searchText)" md-search-text="$ctrl.delivery_date.searchText" md-selected-item-change="$ctrl.delivery_date.onSelectItemChange(item)" md-items="item in $ctrl.delivery_date.querySearch(ctrl.delivery_date.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Pick" md-menu-class="autocomplete-custom-template">
+      <md-autocomplete ng-disabled="$ctrl.delivery_date.isDisabled" md-no-cache="$ctrl.delivery_date.noCache" md-selected-item="$ctrl.delivery_date.selectedItem" md-search-text-change="$ctrl.delivery_date.onSearchTextChange($ctrl.delivery_date.searchText)" md-search-text="$ctrl.delivery_date.searchText" md-selected-item-change="$ctrl.delivery_date.onSelectItemChange(item)" md-items="item in $ctrl.delivery_date.querySearch(ctrl.delivery_date.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Pick" md-menu-class="autocomplete-custom-template" ng-readonly="true" ng-click="$ctrl.clearDate()">
         <md-item-template>
           <span class="item-metadata date_item">
             <span class="item-metastat">
@@ -31,7 +31,7 @@
     </div>
     <div class="time" flex="40" flex-xs="60" style="position: relative;">
       <!-- <input type="" name=""> -->
-      <md-autocomplete ng-disabled="$ctrl.delivery_time.isDisabled" md-no-cache="$ctrl.delivery_time.noCache" md-selected-item="$ctrl.delivery_time.selectedItem" md-search-text-change="$ctrl.delivery_time.onSearchTextChange($ctrl.delivery_time.searchText)" md-search-text="$ctrl.delivery_time.searchText" md-selected-item-change="$ctrl.delivery_time.onSelectItemChange(item)" md-items="item in $ctrl.delivery_time.querySearch(ctrl.delivery_time.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Pick" md-menu-class="autocomplete-custom-template">
+      <md-autocomplete ng-disabled="$ctrl.delivery_time.isDisabled" md-no-cache="$ctrl.delivery_time.noCache" md-selected-item="$ctrl.delivery_time.selectedItem" md-search-text-change="$ctrl.delivery_time.onSearchTextChange($ctrl.delivery_time.searchText)" md-search-text="$ctrl.delivery_time.searchText" md-selected-item-change="$ctrl.delivery_time.onSelectItemChange(item)" md-items="item in $ctrl.delivery_time.querySearch(ctrl.delivery_time.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Pick" md-menu-class="autocomplete-custom-template" ng-readonly="true" ng-click="$ctrl.clearTime()">
         <md-item-template>
           <span class="item-metadata date_item">
             <span class="item-metastat">
