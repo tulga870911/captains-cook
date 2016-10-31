@@ -60,7 +60,7 @@
             <div ng-click="$ctrl.addToCart(item, 1)" ng-show="$ctrl.getCurrentQty(item) === 0">Add to Cart<i class="material-icons">local_grocery_store</i></div>
           </div>
         </div>
-        <div class="mealWrapper hover" ng-class="{'active': $index % 2 === 0}">
+        <div class="mealWrapper hover">
           <div class="mealInfo" ng-click="$ctrl.goToDetailsPage($index)">
             <h4 bo-text="item.name"></h4>
             <div class="meal_info" layout="row">

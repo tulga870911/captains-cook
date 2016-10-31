@@ -26,33 +26,36 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
           parent: $document.body,
           clickOutsideToClose: false
         });
-      }
-
-      let foundItem = $window._.find(items, { 'id': item.id });
-      let qty_adjuted = qty;
-
-      $log.log('foundItem', foundItem);
-      $log.log('qtyAvailable', item.qtyAvailable);
-
-      if (qty < 0 && foundItem && foundItem.quantity + qty <= 0){
-        qty_adjuted = -foundItem.quantity;
-      }else if (qty > 0 && foundItem && foundItem.quantity + qty > item.qtyAvailable ){
-        qty_adjuted = item.qtyAvailable - foundItem.quantity;
-      }
-
-      if (foundItem) {
-        foundItem.quantity += qty_adjuted;
+        return 0;
       } else {
-        item.quantity = qty_adjuted;
-        items.push(item);
+        let foundItem = $window._.find(items, { 'id': item.id });
+        let qty_adjuted = qty;
+
+        $log.log('foundItem', foundItem);
+        $log.log('qtyAvailable', item.qtyAvailable);
+
+        if (qty < 0 && foundItem && foundItem.quantity + qty <= 0) {
+          qty_adjuted = -foundItem.quantity;
+        } else if (qty > 0 && foundItem && foundItem.quantity + qty > item.qtyAvailable) {
+          qty_adjuted = item.qtyAvailable - foundItem.quantity;
+        } else if (qty > 0 && !foundItem && qty > item.qtyAvailable) {
+          qty_adjuted = item.qtyAvailable;
+        }
+
+        if (foundItem) {
+          foundItem.quantity += qty_adjuted;
+        } else {
+          item.quantity = qty_adjuted;
+          items.push(item);
+        }
+
+        total_price += qty_adjuted * item.price;
+
+        $log.log('cart', items);
+        $rootScope.$emit('CART_UPDATED');
+
+        return foundItem ? foundItem.quantity : qty_adjuted;
       }
-
-      total_price += qty_adjuted * item.price;
-
-      $log.log('cart', items);
-      $rootScope.$emit('CART_UPDATED');
-
-      return foundItem ? foundItem.quantity : qty_adjuted;
     },
     clearShoppingCart() {
       items = [];
@@ -136,7 +139,7 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
       }, function(response) {
         if (!response.error && response.data && !response.errorCode) {
           $log.log('place order response', response.data);
-          
+
           orderIds = response.data.orderIds;
 
           callback(null);
