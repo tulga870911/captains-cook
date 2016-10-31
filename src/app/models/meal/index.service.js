@@ -9,8 +9,83 @@ export function MealService($log, $q, $resource, $window, ServerUrl) {
   let items = [];
   let nSelectedCategory = 0;
   let nSelectedItem = 0;
+  let sorts = ['Rating', 'Price'];
+  let active_sort = sorts[0];
+  let regions = [{
+    name: 'Punjabi',
+    id: 1,
+    active: true
+  }, {
+    name: 'Rajasthani',
+    id: 2,
+    active: true
+  }, {
+    name: 'Gujarati',
+    id: 3,
+    active: true
+  }, {
+    name: 'Maharashtrian',
+    id: 4,
+    active: true
+  }, {
+    name: 'Mughlai',
+    id: 5,
+    active: true
+  }, {
+    name: 'Continental',
+    id: 6,
+    active: true
+  }, {
+    name: 'Fusion',
+    id: 7,
+    active: true
+  }, {
+    name: 'North Indian',
+    id: 8,
+    active: true
+  }, {
+    name: 'South Indian',
+    id: 9,
+    active: true
+  }, {
+    name: 'Indian',
+    id: 10,
+    active: true
+  }];
+  let types = [{
+    name: 'All',
+    id: 1,
+    active: true
+  }, {
+    name: 'Vegan',
+    id: 2
+  }, {
+    name: 'Non-Vegan',
+    id: 3
+  }];
 
   let Meal = {
+    getSorts() {
+      return sorts;
+    },
+    getActiveSort() {
+      return active_sort;
+    },
+    setActiveSort(v) {
+      active_sort = v;
+    },
+    getFoodRegions() {
+      return regions;
+    },
+    getFoodTypes() {
+      return types;
+    },
+    setFoodRegions(v) {
+      regions = v;
+    },
+    setFoodTypes(v) {
+      types = v;
+    },
     getFeaturedItems(callback) {
       return Resource.getFeaturedItems(callback);
     },
@@ -51,11 +126,26 @@ export function MealService($log, $q, $resource, $window, ServerUrl) {
       return categories;
     },
     getCurrentItems() {
-      if (!nSelectedCategory)
-        return items;
-      else {
-        return $window._.filter(items, {'category': categories[nSelectedCategory].name});
-      }
+      return $window._.filter(items, (item) => {
+        if (nSelectedCategory && item.category != categories[nSelectedCategory].name)
+          return false;
+        if ((types[1].active && item.nonVeg) || (types[2].active && !item.nonVeg))
+          return false;
+        for (let i = 0; i < regions.length; i++) {
+          if (regions[i].active && item.cuisine == regions[i].name)
+            return true;
+        }
+      }).sort((a, b) => {
+        if (active_sort === 'Rating') {
+          if (a.rating > b.rating) return -1;
+          else if (a.rating < b.rating) return 1;
+          return 0;
+        } else if (active_sort === 'Price') {
+          if (a.price < b.price) return -1;
+          else if (a.price > b.price) return 1;
+          return 0;
+        }
+      });
     },
     getSelectedCategoryIndex() {
       return nSelectedCategory;

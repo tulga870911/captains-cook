@@ -10,7 +10,7 @@ export default angular.module('captainscook.pages.checkout', [])
   .component('checkout', CheckOutCmt)
   .component('confirmation', ConfirmationCmt);
 
-function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $document) {
+function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdDialog, $document) {
   'ngInject';
 
   let vm = this;
@@ -24,35 +24,34 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $
   vm.applyCoupon = applyCoupon;
   vm.placeOrder = placeOrder;
   vm.showModal = showModal;
+  vm.getFullAddress = getFullAddress;
 
   vm.objDiscount = Cart.getDiscount();
 
   vm.errMessage = '';
 
-  $rootScope.$on('$destroy', $rootScope.$on('CART_UPDATED', function () {
+  vm.delivery_addresses = [];
+
+  $rootScope.$on('$destroy', $rootScope.$on('CART_UPDATED', () => {
     vm.items = Cart.getItems();
     $log.log('cart_updated', vm.items);
   }));
 
+  $rootScope.$on('$destroy', $rootScope.$on('DELIVERY_ADDRESS_UPDATED', (event, data) => {
+    if (data.index == -1){
+      vm.delivery_addresses.push(data.address);
+    }else {
+      vm.delivery_addresses[data.index] = data.address;
+    }
+  }));
+
   vm.$onInit = function onInit() {
-    vm.paymentRadio = `Banana`;
-    vm.modal = {
-      unit: 'this is unit'
-    };
+    vm.paymentMode = 'cash on delivery';
+    
     init();
   }
 
   function init() {
-    // vm.items = [{
-    //   id: 1,
-    //   url: 'assets/images/carousel-image.png'
-    // }, {
-    //   id: 2,
-    //   url: 'assets/images/carousel-image.png'
-    // }, {
-    //   id: 3,
-    //   url: 'assets/images/carousel-image.png'
-    // }];
     vm.rate = 7;
     vm.max = 5;
     vm.isReadonly = true;
@@ -66,16 +65,20 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $
     ];
   }
 
-  function showModal(event) {
+  function showModal(event, index) {
     $mdDialog.show({
       controller: LocalityCtrl,
       controllerAs: '$ctrl',
       templateUrl: 'app/pages/checkout/locality/tpl.html',
       parent: $document[0].body,
       targetEvent: event,
-      clickOutsideToClose: true
-        // fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-    })
+      clickOutsideToClose: true,
+      locals: {
+        locality: index == -1 ? null : vm.delivery_addresses[index],
+        index: index
+      }
+      // fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+    });
   }
 
   function applyCoupon() {
@@ -149,18 +152,8 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $
       deliveryAmount: 0,
       paymentAmount: vm.getTotalAmount() - vm.objDiscount.discount_amount,
       items: items,
-      deliveryAddress: {
-        "unitNumber": "J - 201",
-        "unitName": "Lok Darshan",
-        "streetName": "xxxx",
-        "landmark": "ddd",
-        "locality": "Andheri East",
-        "subLocality": "Marol",
-        "city": "Mumbai",
-        "latitude": 33.44,
-        "longitude": 76.33
-      },
-      paymentMode: 'cash on delivery'
+      deliveryAddress: vm.delivery_addresses[0],
+      paymentMode: vm.paymentMode
     }, error => {
       if (!error) {
         $state.go('main.confirmation')
@@ -169,5 +162,9 @@ function CheckOutCtrl($log, $state, $rootScope, Cart, Coupon, Auth, $mdDialog, $
       }
     });
     return false;
+  }
+
+  function getFullAddress(item) {
+    return item.unitNumber + ' ' + item.unitName + ', ' + item.streetName + ', ' + item.landmark + ', ' + item.subLocality + ', ' + item.locality + ', ' + item.city;
   }
 }

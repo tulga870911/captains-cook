@@ -42,21 +42,22 @@
             <div class="close" ng-click="$ctrl.removeItem($index)"><i class="material-icons">close</i></div>
           </div>
         </div>
-        <div class="delivery" ng-if="$ctrl.items.length > 0">
+        <div class="delivery">
           <div class="title">
             <h4>DELIVERY & PAYMENT</h4>
           </div>
           <div class="pan">
             <div class="title">
               <h4>Delivery Address</h4>
-              <i class="material-icons" ng-click="$ctrl.showModal($event)">control_point</i>
+              <i class="material-icons" ng-click="$ctrl.showModal($event, -1)">control_point</i>
             </div>
-            <div class="pan_item">
+            <div class="pan_item" ng-repeat="item in $ctrl.delivery_addresses">
               <div class="left">
-                <div class="sub_title">Home Address 1</div>
+                <div class="sub_title">Home Address {{$index + 1}}</div>
               </div>
               <div class="title">
-                <h5>Franklin Street 143, B53, San Francisco, CA</h5><i class="material-icons">launch</i>
+                <h5>{{$ctrl.getFullAddress(item)}}</h5>
+                <i class="material-icons" ng-click="$ctrl.showModal($event, $index)">launch</i>
               </div>
             </div>
           </div>
@@ -65,11 +66,11 @@
               <h4>Payment Method</h4>
               <i class="material-icons">control_point</i>
             </div>
-            <md-radio-group ng-model="$ctrl.paymentRadio">
+            <md-radio-group ng-model="$ctrl.paymentMode">
               <div class="pan_item">
               <div class="left">
                 <!-- <div class="sub_title">Home Address 1</div> -->
-                <md-radio-button value="Apple" ng-disabled="true">VISA CARD</md-radio-button>
+                <md-radio-button value="visa" ng-disabled="true">VISA CARD</md-radio-button>
               </div>
               <div class="title">
                 <h5>XXXX-XXXX-XXXX-XXXX</h5><i class="material-icons">launch</i>
@@ -78,10 +79,10 @@
             <div class="pan_item">
               <div class="left">
                 <!-- <div class="sub_title">Home Address 1</div> -->
-                <md-radio-button value="Banana">CASH AT DELIVERY</md-radio-button>
+                <md-radio-button value="cash on delivery">CASH AT DELIVERY</md-radio-button>
               </div>
               <div class="title">
-                <h5><div class="price"><div class="new">$<span>69</span><span>.00</span></div></div></h5><i class="material-icons">launch</i>
+                <h5><div class="price"><div class="new">$<span>{{$ctrl.getTotalAmount() - $ctrl.objDiscount.discount_amount}}</span><span>.00</span></div></div></h5><i class="material-icons">launch</i>
               </div>
             </div>
             </md-radio-group>
@@ -116,7 +117,7 @@
                 <h4>$<span>{{$ctrl.getTotalAmount() - $ctrl.objDiscount.discount_amount}}<span>.00</span></span></h4>
               </div>
               <div class="button">
-                <button class="btn btn-default" ng-click="$ctrl.placeOrder()" ng-disabled="$ctrl.items.length == 0">Place Order <i class="material-icons">arrow_forward</i></button>
+                <button class="btn btn-default" ng-click="$ctrl.placeOrder()" ng-disabled="$ctrl.items.length == 0 || $ctrl.delivery_addresses.length == 0">Place Order <i class="material-icons">arrow_forward</i></button>
               </div>
             </div>
           </div>

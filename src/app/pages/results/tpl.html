@@ -24,7 +24,7 @@
       </div>
       <div flex="50" flex-xs="100">
         <span class="title" style="margin-right: 10px">Sort by:</span>
-        <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched" ng-model="$ctrl.sort" ng-options="opt for opt in $ctrl.sortBy"></select>
+        <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched" ng-model="$ctrl.sort" ng-options="opt for opt in $ctrl.sortBy" ng-change="$ctrl.setActiveSort($ctrl.sort)"></select>
       </div>
     </div>
     <div class="results_body" layout="row" layout-wrap layout-padding>

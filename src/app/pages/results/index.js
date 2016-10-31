@@ -26,6 +26,8 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
   vm.categories = Meal.getCurrentCategories();
   vm.meals = Meal.getCurrentItems();
 
+  vm.setActiveSort = setActiveSort;
+
   vm.showCarousel = true;
 
   $scope.$on('SEARCH_RESULT_UPDATED', function() {
@@ -104,10 +106,10 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
   }
 
   function init() {
-    vm.sortBy = ['opt1', 'opt2', 'opt3', 'opt4'];
+    vm.sortBy = Meal.getSorts();
 
     angular.element(window).resize(changeWindow);
-    vm.sort = vm.sortBy[0];
+    vm.sort = Meal.getActiveSort();
     vm.numberOfCarousel = 6;
     vm.max = 5;
     vm.rate = 4;
@@ -142,5 +144,11 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
     $timeout(function() {
       changeWindow();
     }, 500)
+  }
+
+  function setActiveSort(v) {
+    Meal.setActiveSort(v);
+
+    $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
   }
 }

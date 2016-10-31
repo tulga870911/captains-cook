@@ -1,9 +1,13 @@
-export function ResultsFilterCtrl($log, $mdDialog) {
+export function ResultsFilterCtrl($log, $rootScope, $mdDialog, Meal) {
   'ngInject';
   let vm = this;
+
   vm.cancel = cancel;
   vm.save = save;
-  $log.log('filter controlelr');
+  vm.selectFoodType = selectFoodType;
+  vm.onRegionAllUpdated = onRegionAllUpdated;
+  vm.onRegionUpdated = onRegionUpdated;
+
   init();
 
   function cancel() {
@@ -11,54 +15,50 @@ export function ResultsFilterCtrl($log, $mdDialog) {
   }
 
   function save() {
+    Meal.setFoodRegions(vm.regions);
+    Meal.setFoodTypes(vm.types);
+
+    $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
+
     $mdDialog.cancel()
   }
 
+  function selectFoodType(index) {
+    if (vm.types[index].active) return;
+
+    vm.types[index].active = true;
+    for (let i = 0; i < vm.types.length; i++) {
+      if (i != index) vm.types[i].active = false;
+    }
+  }
+
   function init() {
-    vm.types = [{
-      name: 'All',
-      id: 1,
-      active: true
-    }, {
-      name: 'Vegan',
-      id: 2
-    }, {
-      name: 'Non-Vegan',
-      id: 3
-    }];
-    vm.regions = [{
-      name: 'region1',
-      id: 1
-    }, {
-      name: 'region1',
-      id: 2
-    }, {
-      name: 'region1',
-      id: 3
-    }, {
-      name: 'region1',
-      id: 4
-    }, {
-      name: 'region1',
-      id: 5
-    }, {
-      name: 'region1',
-      id: 6
-    }, {
-      name: 'region1',
-      id: 7
-    }, {
-      name: 'region1',
-      id: 8
-    }, {
-      name: 'region1',
-      id: 9
-    }, {
-      name: 'region1',
-      id: 10
-    }, {
-      name: 'region1',
-      id: 11
-    }]
+    vm.types = Meal.getFoodTypes();
+
+    vm.regions = Meal.getFoodRegions();
+
+    vm.regionAll = true;
+    for (let i = 0; i < vm.regions.length; i++) {
+      if (!vm.regions[i].active) {
+        vm.regionAll = false;
+        break;
+      }
+    }
+  }
+
+  function onRegionAllUpdated() {
+    for (let i = 0; i < vm.regions.length; i++) {
+      vm.regions[i].active = vm.regionAll;
+    }
+  }
+
+  function onRegionUpdated() {
+    vm.regionAll = true;
+    for (let i = 0; i < vm.regions.length; i++) {
+      if (!vm.regions[i].active) {
+        vm.regionAll = false;
+        break;
+      }
+    }
   }
 }

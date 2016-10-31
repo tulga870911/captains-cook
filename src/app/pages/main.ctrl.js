@@ -104,9 +104,6 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
     Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: delivery_date + delivery_time, to: delivery_date + delivery_time + 3600000}, function(){
       $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
     });
-    // Meal.getAvailableItems({ locality: locs[1], subLocality: locs[0], from: 1474531200000, to: 1474534800000 }, function() {
-    //   $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
-    // });
   }));
 
   function loadLocalities() {
