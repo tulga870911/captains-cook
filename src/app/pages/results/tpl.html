@@ -56,8 +56,9 @@
           <div class="price">
             <div bo-text="item.oldPrice"></div>
             <div bo-text="'$' + item.price"></div>
-            <div class="btn btn-default"  ng-hide="$ctrl.getCurrentQty(item) === 0"><span class="minus" ng-click="$ctrl.decreaseQuantity(item)">−</span><span>{{$ctrl.getCurrentQty(item)}}</span><span class="plus" ng-click="$ctrl.increaseQuantity(item)">+</span></div>
-            <div ng-click="$ctrl.addToCart(item, 1)" ng-show="$ctrl.getCurrentQty(item) === 0">Add to Cart<i class="material-icons">local_grocery_store</i></div>
+            <div class="btn btn-default"  ng-hide="$ctrl.getCurrentQty(item) === 0 || item.qtyAvailable === 0"><span class="minus" ng-click="$ctrl.decreaseQuantity(item)">−</span><span>{{$ctrl.getCurrentQty(item)}}</span><span class="plus" ng-click="$ctrl.increaseQuantity(item)">+</span></div>
+            <div ng-click="$ctrl.addToCart(item, 1)" ng-show="$ctrl.getCurrentQty(item) === 0 && item.qtyAvailable > 0">Add to Cart<i class="material-icons">local_grocery_store</i></div>
+            <div ng-if="item.qtyAvailable === 0">SOLD OUT</div>
           </div>
         </div>
         <div class="mealWrapper hover">
