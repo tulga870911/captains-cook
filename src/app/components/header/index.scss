@@ -2,13 +2,10 @@
 .mainHeader {
   background-color: #fff;
   width: 100%;
-  height: 75px;
+  // height: 75px;
   font-weight: 700;
   position: relative;
   justify-content: space-between;
-  .search_form {
-    padding: 0 15px;
-  }
   .left {
     display: flex;
     align-items: center;
@@ -105,5 +102,26 @@
       }
     }
   }
-  .search_wrap {}
+  .search_wrap {
+    ct-search {
+      .search_form {
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .mainHeader {
+    .search_wrap {
+      ct-search {
+        .search_form {
+          padding: 0 15px;
+          .item{
+            // margin: 10px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-/* global moment:false, $ */
+/* global moment:false, $, google */
 import './pages/index.module'
 import './common/index.module'
 import './models/index.module'
@@ -35,5 +35,6 @@ angular.module('captainscook', [
   .component('ctSearch', SearchCmt)
   .constant('$', $)
   .constant('moment', moment)
+  .constant('google', google)
   .config(config)
   .run(runBlock)

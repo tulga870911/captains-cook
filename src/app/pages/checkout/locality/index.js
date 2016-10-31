@@ -1,4 +1,4 @@
-export function LocalityCtrl($log, $scope, $rootScope, $mdDialog, locality, index) {
+export function LocalityCtrl($log, $scope, $rootScope, $mdDialog, locality, index, google) {
   'ngInject';
   $log.log('checkout locality controller');
   let vm = this;
