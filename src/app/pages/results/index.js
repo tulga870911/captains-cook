@@ -28,19 +28,26 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
 
   vm.setActiveSort = setActiveSort;
 
+  vm.foodType = Meal.getSelectedFoodType();
+  vm.foodRegions = Meal.getSelectedFoodRegions();
+  $log.log('foodRegions', vm.foodRegions);
+
   vm.showCarousel = true;
 
   $scope.$on('SEARCH_RESULT_UPDATED', function() {
     vm.showCarousel = false;
     vm.categories = Meal.getCurrentCategories();
     vm.meals = Meal.getCurrentItems();
+    vm.foodType = Meal.getSelectedFoodType();
+    vm.foodRegions = Meal.getSelectedFoodRegions();
+    $log.log('foodRegions', vm.foodRegions);
 
     $timeout(() => {
       vm.showCarousel = true;
     }, 500);
 
-    $log.log('categories', vm.categories);
-    $log.log('meals', vm.meals);
+    // $log.log('categories', vm.categories);
+    // $log.log('meals', vm.meals);
   });
 
   function showFilter() {

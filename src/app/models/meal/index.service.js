@@ -86,6 +86,18 @@ export function MealService($log, $q, $resource, $window, ServerUrl) {
     setFoodTypes(v) {
       types = v;
     },
+    getSelectedFoodType() {
+      let selectedFoodType = types.filter(type => type.active);
+      return selectedFoodType[0].name;
+    },
+    getSelectedFoodRegions() {
+      let selectedRegions = regions.filter(region => region.active);
+      if (selectedRegions && selectedRegions.length == regions.length)
+        return 'All';
+      else {
+        return selectedRegions.map(region => region.name).join(', ');
+      }
+    },
     getFeaturedItems(callback) {
       return Resource.getFeaturedItems(callback);
     },

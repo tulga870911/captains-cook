@@ -19,8 +19,8 @@
     <div class="filter_body" layout="row" layout-wrap>
       <div flex="50" flex-xs="100">
         <button type="button" ng-click="$ctrl.showFilter()" class="btn btn-default btn-sm"><i class="material-icons">swap_vert</i></button>
-        <span class="title">Type: <span>All</span></span>
-        <span class="title"> • Region: <span>All</span></span>
+        <span class="title">Type: <span>{{$ctrl.foodType}}</span></span>
+        <span class="title"> • Region: <span>{{$ctrl.foodRegions}}</span></span>
       </div>
       <div flex="50" flex-xs="100">
         <span class="title" style="margin-right: 10px">Sort by:</span>
