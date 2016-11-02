@@ -4,7 +4,7 @@
       <h3>CHECKOUT</h3>
     </div>
     <div class="body" layout="row" layout-wrap>
-      <div class="left" flex="75" flex-sm="100" flex-xs="100">
+      <div class="left" flex="70" flex-sm="100" flex-xs="100">
         <div class="products" ng-if="$ctrl.items.length > 0">
           <div class="sub_title">
             <h4>PRODUCTS</h4></div>
@@ -26,8 +26,8 @@
                 <span class="location"><i class="material-icons">place</i> {{item.localityServed}}</span>
                 <span class="sl">SL: <span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
                 <span class="label" ng-class="{'label-warning': $ctrl.percent<30, 'label-info': $ctrl.percent>=30 && percent<70, 'label-success': $ctrl.percent>=70}" ng-show="overStar && !$ctrl.isReadonly">{{$ctrl.percent}}%</span></span>
-                <span class="vegan" ng-hide="item.nonVeg">VEGAN</span>
-                <span class="vegan none" ng-show="item.nonVeg">NON VEGAN</span>
+                <span class="vegan" ng-hide="item.nonVeg">VEG</span>
+                <span class="vegan none" ng-show="item.nonVeg">NON VEG</span>
               </div>
             </div>
             <div class="qty" flex="20" flex-xs="50">
@@ -48,52 +48,89 @@
           </div>
           <div class="pan">
             <div class="title">
-              <h4>Delivery Address</h4>
-              <i class="material-icons" ng-click="$ctrl.showModal($event, -1)">control_point</i>
-            </div>
-            <div class="pan_item" ng-repeat="item in $ctrl.delivery_addresses">
-              <div class="left">
-                <div class="sub_title">Home Address {{$index + 1}}</div>
-              </div>
-              <div class="title">
-                <h5>{{$ctrl.getFullAddress(item)}}</h5>
-                <i class="material-icons" ng-click="$ctrl.showModal($event, $index)">launch</i>
-              </div>
-            </div>
-          </div>
-          <div class="pan">
-            <div class="title">
               <h4>Payment Method</h4>
-              <i class="material-icons">control_point</i>
             </div>
             <md-radio-group ng-model="$ctrl.paymentMode">
               <div class="pan_item">
-              <div class="left">
-                <!-- <div class="sub_title">Home Address 1</div> -->
-                <md-radio-button value="visa" ng-disabled="true">VISA CARD</md-radio-button>
+                <div class="left">
+                  <md-radio-button value="sodexo coupon" >SODEXO COUPON</md-radio-button>
+                  <md-radio-button value="cash on delivery">CASH ON DELIVERY</md-radio-button>
+                </div>
               </div>
-              <div class="title">
-                <h5>XXXX-XXXX-XXXX-XXXX</h5><i class="material-icons">launch</i>
-              </div>
-            </div>
-            <div class="pan_item">
-              <div class="left">
-                <!-- <div class="sub_title">Home Address 1</div> -->
-                <md-radio-button value="cash on delivery">CASH AT DELIVERY</md-radio-button>
-              </div>
-              <div class="title">
-                <h5><div class="price"><div class="new">$<span>{{$ctrl.getTotalAmount() - $ctrl.objDiscount.discount_amount}}</span><span>.00</span></div></div></h5><i class="material-icons">launch</i>
-              </div>
-            </div>
             </md-radio-group>
+          </div>
+          <div class="pan">
+            <div class="title">
+              <h4>Delivery Address</h4>
+            </div>
+                  <div class="locality-dlg">
+                    <div class="space_before">
+                    </div>
+                    <md-input-container>
+                      <label>UNIT/FLAT/WING/FLOOR NUMBER</label>
+                      <input ng-model="$ctrl.locality.unitNumber" name="unitNumber" required>
+                      <div ng-messages="localityForm.unitNumber.$error">
+                        <div ng-message="required">This is required.</div>
+                        <!-- div ng-message="md-maxlength">This field must be less than 30 characters long.</div -->
+                      </div>
+                    </md-input-container>
+                    <md-input-container>
+                      <label>UNIT/BUILDING NAME</label>
+                      <input ng-model="$ctrl.locality.unitName" name="unitName" required>
+                      <div ng-messages="localityForm.unitName.$error">
+                        <div ng-message="required">This is required.</div>
+                        <!-- div ng-message="md-maxlength">This field must be less than 30 characters long.</div -->
+                      </div>
+                    </md-input-container>
+                    <md-input-container>
+                      <label>STREET NAME</label>
+                      <input ng-model="$ctrl.locality.streetName" name="streetName" >
+                      <div ng-messages="localityForm.streetName.$error">
+                        <div ng-message="required">This is required.</div>
+                        <!-- div ng-message="md-maxlength">This field must be less than 30 characters long.</div -->
+                      </div>
+                    </md-input-container>
+                    <md-input-container>
+                      <label>LANDMARK</label>
+                      <input ng-model="$ctrl.locality.landmark" name="landmark" >
+                      <div ng-messages="localityForm.landmark.$error">
+                        <div ng-message="required">This is required.</div>
+                        <!-- div ng-message="md-maxlength">This field must be less than 30 characters long.</div -->
+                      </div>
+                    </md-input-container>
+                    <md-input-container>
+                      <label>SUBLOCALITY</label>
+                      <input ng-model="$ctrl.locality.subLocality" name="subLocality" required ng-disabled="true">
+                      <div ng-messages="localityForm.subLocality.$error">
+                        <div ng-message="required">This is required.</div>
+                        <!-- div ng-message="md-maxlength">This field must be less than 30 characters long.</div-->
+                      </div>
+                    </md-input-container>
+                    <md-input-container>
+                      <label>LOCALITY</label>
+                      <input ng-model="$ctrl.locality.locality" name="locality" required ng-disabled="true">
+                      <div ng-messages="localityForm.locality.$error">
+                        <div ng-message="required">This is required.</div>
+                        <!-- div ng-message="md-maxlength">This field must be less than 30 characters long.</div -->
+                      </div>
+                    </md-input-container>
+                    <md-input-container>
+                      <label>CITY</label>
+                      <input ng-model="$ctrl.locality.city" name="city" required ng-disabled="true">
+                      <div ng-messages="localityForm.city.$error">
+                        <div ng-message="required">This is required.</div>
+                        <!-- div ng-message="md-maxlength">This field must be less than 30 characters long.</div -->
+                      </div>
+                    </md-input-container>
+                  </div>
           </div>
         </div>
       </div>
-      <div class="right" flex="25" flex-sm="100" flex-xs="100">
+      <div class="right" flex="30" flex-sm="100" flex-xs="100">
         <div class="pan">
           <div class="pan_head">
             <i class="material-icons">av_timer</i>
-            <span> DELIVERY IN APROX. 60 MINS</span>
+            <span> </span>
           </div>
           <div class="pan_body">
             <div class="order">

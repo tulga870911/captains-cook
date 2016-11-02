@@ -244,6 +244,8 @@
     }
   }
   .pan_item {
+    margin-top: 10px;
+    margin-bottom: 10px;
     .title {
       display: flex;
       justify-content: space-between;
@@ -255,4 +257,22 @@
       }
     }
   }
+}
+
+.locality-dlg {
+  .space_before {
+    margin-top: 20px;
+  }
+  md-input-container {
+    width: 100%;
+    margin: 0px;
+    input {
+      font-size: 21px;
+      font-weight: 600;
+    }
+  }
+}
+
+.button {
+  width: 100%
 }
