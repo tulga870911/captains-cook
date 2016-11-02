@@ -136,6 +136,7 @@
     .chefsContainer {
       padding: 0px;
       margin: 0px;
+      overflow-x: hidden;
     }
     .giftContainer {
       padding-left: 10px;
@@ -234,7 +235,7 @@
         // background-size: cover;
         // background-repeat: no-repeat;
         // background-color: #f6f0d6;
-        .flexslider{
+        .flexslider {
           margin-bottom: 0;
         }
       }
@@ -321,6 +322,14 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    .banner {
+      height: 500px;
     }
   }
 }

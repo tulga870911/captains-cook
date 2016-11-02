@@ -164,3 +164,8 @@ html {
 
 // injector
 // endinjector
+@media screen and (max-width: 768px) {
+  md-dialog {
+    max-width: 100%;
+  }
+}

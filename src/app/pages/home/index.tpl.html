@@ -45,7 +45,7 @@
       </div>
     </div>
     <h3 style="float: left;margin: 35px 0 3px 13px;">FEATURED MEALS</h3>
-    <div class="col-sm-12 meals" layout="row" layout-wrap layout-padding>
+    <div class="col-sm-12 col-xs-12 meals" layout="row" layout-wrap layout-padding>
       <div class="meal" flex="33" flex-sm="50" flex-xs="100" bindonce ng-repeat="meal in $ctrl.meals">
         <div class="mealWrapper">
           <img bo-src="meal.imageURL"></img>
@@ -97,10 +97,10 @@
         </div -->
       </div>
     </div>
-    <div class="col-sm-12 chefs">
+    <div class="col-sm-12 col-xs-12 chefs">
       <h3>FEATURED CHEFS</h3>
-      <div class="col-sm-12 chefsContainer">
-        <div class="col-sm-4 chef" bindonce ng-repeat="chef in $ctrl.chefs">
+      <div class="col-sm-12 col-xs-12 chefsContainer" layout="row" layout-wrap>
+        <div class="col-sm-4 chef" bindonce ng-repeat="chef in $ctrl.chefs" flex="33" flex-sm="50" flex-xs="100">
           <div class="chefWrapper">
             <div class="chefInfo">
               <img bo-src="chef.imageUrl"></img>
