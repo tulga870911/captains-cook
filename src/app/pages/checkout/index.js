@@ -23,31 +23,47 @@ function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdD
   vm.getTotalAmount = Cart.getTotalAmount;
   vm.applyCoupon = applyCoupon;
   vm.placeOrder = placeOrder;
-  vm.showModal = showModal;
+  // vm.showModal = showModal;
   vm.getFullAddress = getFullAddress;
 
   vm.objDiscount = Cart.getDiscount();
 
   vm.errMessage = '';
 
-  vm.delivery_addresses = [];
+  // vm.delivery_addresses = [];
+  vm.delivery_address = {};
+  if ($rootScope.locality.selectedItem) {
+    let locs = $rootScope.locality.selectedItem.display.split(', ');
+
+    vm.delivery_address = {
+      unitNumber: '',
+      unitName: '',
+      streetName: '',
+      landmark: '',
+      subLocality: locs[0],
+      locality: locs[1],
+      city: 'Mumbai',
+      latitude: 0,
+      longitude: 0
+    };
+  }
 
   $rootScope.$on('$destroy', $rootScope.$on('CART_UPDATED', () => {
     vm.items = Cart.getItems();
     $log.log('cart_updated', vm.items);
   }));
 
-  $rootScope.$on('$destroy', $rootScope.$on('DELIVERY_ADDRESS_UPDATED', (event, data) => {
-    if (data.index == -1){
-      vm.delivery_addresses.push(data.address);
-    }else {
-      vm.delivery_addresses[data.index] = data.address;
-    }
-  }));
+  // $rootScope.$on('$destroy', $rootScope.$on('DELIVERY_ADDRESS_UPDATED', (event, data) => {
+  //   if (data.index == -1){
+  //     vm.delivery_addresses.push(data.address);
+  //   }else {
+  //     vm.delivery_addresses[data.index] = data.address;
+  //   }
+  // }));
 
   vm.$onInit = function onInit() {
     vm.paymentMode = 'cash on delivery';
-    
+
     init();
   }
 
@@ -74,7 +90,7 @@ function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdD
     vm.items[index].quantity = Cart.addToShoppingCart(vm.items[index], -1);
   }
 
-  function showModal(event, index) {
+  /*function showModal(event, index) {
     $mdDialog.show({
       controller: LocalityCtrl,
       controllerAs: '$ctrl',
@@ -88,7 +104,7 @@ function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdD
       }
       // fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
     });
-  }
+  }*/
 
   function applyCoupon() {
     let currentUser = Auth.getCurrentUser();
@@ -161,7 +177,7 @@ function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdD
       deliveryAmount: 0,
       paymentAmount: vm.getTotalAmount() - vm.objDiscount.discount_amount,
       items: items,
-      deliveryAddress: vm.delivery_addresses[0],
+      deliveryAddress: vm.delivery_address,
       paymentMode: vm.paymentMode
     }, error => {
       if (!error) {
