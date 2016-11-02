@@ -126,10 +126,14 @@
         .type {
           button {
             width: 100%;
-            background-color: #39a4e2;
+            // background-color: #39a4e2;
+            background-color: $green;
             @extend %txt_6;
             color: white;
             outline: none!important;
+            &.none {
+              background-color: $blue;
+            }
           }
         }
         .ingredients {

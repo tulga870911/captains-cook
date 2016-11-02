@@ -35,7 +35,7 @@
             <h4 bo-text="item.name"></h4>
             <div class="meal_info" layout="row">
               <!-- div class="name" flex="25"><i class="material-icons">location_on</i>name</div -->
-              <div class="sl" flex="60"><span class="sl"><span uib-rating ng-model="$ctrl.rate" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+              <div class="sl" flex="60"><span class="sl"><span uib-rating ng-model="item.spicyLevel" max="$ctrl.max" read-only="$ctrl.isReadonly" state-on="'custom-on'" state-off="'custom-off'" titles="['one','two','three']" aria-labelledby="default-rating"></span>
               </span></div>
               <div class="vegan" flex="40" bo-hide="item.nonVeg">VEG</div>
               <div class="vegan none" flex="40" bo-show="item.nonVeg">NON-VEG</div>

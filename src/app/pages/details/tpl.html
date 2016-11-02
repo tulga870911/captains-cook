@@ -54,7 +54,8 @@
           </div>
           <div class="type">
             <h5 class="title">TYPE:</h5>
-            <button class="btn btn-default btn-lg" ng-show="$ctrl.currentItem.nonVeg">NON-VEGAN</button>
+            <button class="btn btn-default btn-lg none" ng-show="$ctrl.currentItem.nonVeg">NON-VEGAN</button>
+            <button class="btn btn-default btn-lg" ng-hide="$ctrl.currentItem.nonVeg">VEGAN</button>
           </div>
           <div class="ingredients">
             <h5 class="title">INGREDIENTS:</h5>
