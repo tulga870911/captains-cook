@@ -86,7 +86,10 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
     Cart.addToShoppingCart(item, 1);
   }
   function decreaseQuantity(item) {
-    Cart.addToShoppingCart(item, -1);
+    const quantity = Cart.addToShoppingCart(item, -1);
+    if (!quantity){
+      Cart.removeItemByObject(item);
+    }
   }
 
   function changeWindow() {

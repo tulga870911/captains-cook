@@ -92,10 +92,19 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
       else
         return 0;
     },
-    removeItem(index) {
+    removeItemByIndex(index) {
       total_price -= items[index].price * items[index].quantity;
       items.splice(index, 1);
       $rootScope.$emit('CART_UPDATED');
+    },
+    removeItemByObject(item) {
+      let foundItem = $window._.find(items, { 'id': item.id });
+      if (foundItem) {
+        let index = items.indexOf(foundItem);
+        total_price -= items[index].price * items[index].quantity;
+        items.splice(index, 1);
+        $rootScope.$emit('CART_UPDATED');
+      }
     },
 
     placeOrder({
