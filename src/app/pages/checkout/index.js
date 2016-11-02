@@ -19,7 +19,7 @@ function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdD
 
   vm.increaseQuantity = increaseQuantity;
   vm.decreaseQuantity = decreaseQuantity;
-  vm.removeItem = Cart.removeItem;
+  vm.removeItem = Cart.removeItemByIndex;
   vm.getTotalAmount = Cart.getTotalAmount;
   vm.applyCoupon = applyCoupon;
   vm.placeOrder = placeOrder;
