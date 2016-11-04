@@ -19,7 +19,7 @@
   }
   .phone {
     float: left;
-    padding-left: 20px;
+    padding-left: 25px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -126,7 +126,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 410px) {
   .mainHeader {
     .left {
       -webkit-box-flex: 1;
