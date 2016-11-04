@@ -117,7 +117,7 @@
       ct-search {
         .search_form {
           padding: 0 15px;
-          .item{
+          .item {
             // margin: 10px;
           }
         }
@@ -125,9 +125,24 @@
     }
   }
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 430px) {
   .mainHeader {
-    .right{
+    .left {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 100%;
+      flex: 1 1 100%;
+      max-width: 100%;
+      max-height: 100%;
+      box-sizing: border-box;
+    }
+    .right {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 100%;
+      flex: 1 1 100%;
+      max-width: 100%;
+      max-height: 100%;
+      box-sizing: border-box;
       padding-bottom: 15px;
     }
   }
