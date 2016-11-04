@@ -22,7 +22,7 @@ function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth, Cart) 
   vm.logout = logout;
   vm.currentUser = Auth.getCurrentUser();
   vm.cart = {
-    count: 0
+    count: Cart.getCount()
   };
 
   $rootScope.$on('$destroy', $rootScope.$on('USER_UPDATED', function(event, data) {
@@ -31,7 +31,6 @@ function HeaderCtrl($log, $mdDialog, $document, $state, $rootScope, Auth, Cart) 
 
   $rootScope.$on('$destroy', $rootScope.$on('CART_UPDATED', function() {
     vm.cart.count = Cart.getCount();
-    $log.log('cart_updated', vm.cart.count);
   }));
 
   function goHome() {

@@ -7,7 +7,7 @@ const ResultsCmt = {
 export default angular.module('captainscook.pages.results', [])
   .component('results', ResultsCmt);
 
-function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $document, Meal, Cart) {
+function ResultsCtrl($log, $state, $stateParams, $timeout, $scope, $rootScope, $mdDialog, $document, Meal, Cart) {
   'ngInject';
   let vm = this;
   vm.$onInit = function onInit() {
@@ -30,9 +30,17 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
 
   vm.foodType = Meal.getSelectedFoodType();
   vm.foodRegions = Meal.getSelectedFoodRegions();
-  $log.log('foodRegions', vm.foodRegions);
 
   vm.showCarousel = true;
+
+  Meal.getAvailableItems({
+    locality: $stateParams.locality,
+    subLocality: $stateParams.sub_locality,
+    from: parseInt($stateParams.delivery_date) + parseInt($stateParams.delivery_time),
+    to: parseInt($stateParams.delivery_date) + parseInt($stateParams.delivery_time) + 3600000
+  }, function() {
+    $scope.$broadcast('SEARCH_RESULT_UPDATED');
+  });
 
   $scope.$on('SEARCH_RESULT_UPDATED', function() {
     vm.showCarousel = false;
@@ -40,14 +48,10 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
     vm.meals = Meal.getCurrentItems();
     vm.foodType = Meal.getSelectedFoodType();
     vm.foodRegions = Meal.getSelectedFoodRegions();
-    $log.log('foodRegions', vm.foodRegions);
 
     $timeout(() => {
       vm.showCarousel = true;
     }, 500);
-
-    // $log.log('categories', vm.categories);
-    // $log.log('meals', vm.meals);
   });
 
   function showFilter() {
@@ -92,9 +96,10 @@ function ResultsCtrl($log, $state, $timeout, $scope, $rootScope, $mdDialog, $doc
   function increaseQuantity(item) {
     Cart.addToShoppingCart(item, 1);
   }
+
   function decreaseQuantity(item) {
     const quantity = Cart.addToShoppingCart(item, -1);
-    if (!quantity){
+    if (!quantity) {
       Cart.removeItemByObject(item);
     }
   }

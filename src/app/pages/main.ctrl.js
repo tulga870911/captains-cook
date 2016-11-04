@@ -1,5 +1,5 @@
 /** @ngInject */
-export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
+export function MainCtrl($log, $q, $rootScope, $timeout, $stateParams, Locality) {
   let vm = this;
 
   $rootScope.locality = {
@@ -42,7 +42,17 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
         $rootScope.delivery_time.items = [];
       else
         $rootScope.delivery_time.items = $rootScope.delivery_date.subitems[index];
-      $rootScope.delivery_time.selectedItem = null;
+
+      //Even if the DeliveryDate has changed, leave the DeliveryTime if it exists in the new slots
+      if (index != -1 && $rootScope.delivery_time.selectedItem && !$rootScope.delivery_time.items.find(item => item.value === $rootScope.delivery_time.selectedItem.value)) {
+        $rootScope.delivery_time.selectedItem = null;
+      }
+
+      //If the selected DeliveryTime is null and 
+      if (!$rootScope.delivery_time.selectedItem && !$rootScope.delivery_time.hasSelectedOnce && $stateParams.delivery_time) {
+        $rootScope.delivery_time.hasSelectedOnce = true;
+        $rootScope.delivery_time.selectedItem = $rootScope.delivery_time.items.find(item => item.value === parseInt($stateParams.delivery_time));
+      }
     },
     onSearchTextChange: text => {
       $log.info('DeliveryDate Text changed to ' + text);
@@ -66,6 +76,7 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
     selectedItem: null,
     searchText: '',
     items: [],
+    hasSelectedOnce: false,
     onSelectItemChange: item => {
       $log.info('DeliveryTime Item changed to ' + item);
     },
@@ -91,20 +102,20 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
     // populateDeliveryDateTime();
   };
 
-  $rootScope.$on('$destroy', $rootScope.$on('SHOW_SEARCH_RESULTS', () => {
-    let locs = $rootScope.locality.selectedItem.display.split(', ');
-    let delivery_date = $rootScope.delivery_date.selectedItem.value;
-    let delivery_time = $rootScope.delivery_time.selectedItem.value;
+  // $rootScope.$on('$destroy', $rootScope.$on('SHOW_SEARCH_RESULTS', () => {
+  //   let locs = $rootScope.locality.selectedItem.display.split(', ');
+  //   let delivery_date = $rootScope.delivery_date.selectedItem.value;
+  //   let delivery_time = $rootScope.delivery_time.selectedItem.value;
 
-    $log.log('trying to fetch results', {
-      locality: $rootScope.locality.selectedItem.display,
-      from: delivery_date + delivery_time,
-      to: delivery_date + delivery_time + 3600000
-    });
-    Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: delivery_date + delivery_time, to: delivery_date + delivery_time + 3600000}, function(){
-      $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
-    });
-  }));
+  //   $log.log('trying to fetch results', {
+  //     locality: $rootScope.locality.selectedItem.display,
+  //     from: delivery_date + delivery_time,
+  //     to: delivery_date + delivery_time + 3600000
+  //   });
+  //   Meal.getAvailableItems({locality: locs[1], subLocality: locs[0], from: delivery_date + delivery_time, to: delivery_date + delivery_time + 3600000}, function(){
+  //     $rootScope.$broadcast('SEARCH_RESULT_UPDATED');
+  //   });
+  // }));
 
   function loadLocalities() {
     Locality.getLocalities(function(response) {
@@ -124,7 +135,7 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
           };
         });
 
-        for (let i = 0, len = times.length; i < len; i++){
+        for (let i = 0, len = times.length; i < len; i++) {
           let date_from = new Date(times[i].from);
           let date_to = new Date(times[i].to);
           let startOfDay = new Date(date_from.getFullYear(), date_from.getMonth(), date_from.getDate());
@@ -137,12 +148,14 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
 
           $rootScope.delivery_date.subitems[i] = [];
 
-          for (let timestamp = date_from.getTime(); timestamp < date_to.getTime(); timestamp+= 3600 * 1000){
+          for (let timestamp = date_from.getTime(); timestamp < date_to.getTime(); timestamp += 3600 * 1000) {
             let date = new Date(timestamp);
-            
-            let from_hours = date.getHours(), from_mins = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+
+            let from_hours = date.getHours(),
+              from_mins = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
             let from_ampm = from_hours < 12 ? 'AM' : 'PM';
-            let to_hours = from_hours + 1, to_mins = from_mins;
+            let to_hours = from_hours + 1,
+              to_mins = from_mins;
             let to_ampm = to_hours < 12 ? 'AM' : 'PM';
 
             from_hours = from_hours % 12;
@@ -156,9 +169,17 @@ export function MainCtrl($log, $q, $rootScope, $timeout, Locality, Meal) {
             };
           }
         }
-        $log.log('available items', response.data);
 
-        $rootScope.$emit('LOCALITY_UPDATED');
+        // $log.log('state params', $stateParams);
+        if ($stateParams.locality && $stateParams.sub_locality) {
+          let strLoc = $stateParams.sub_locality + ', ' + $stateParams.locality;
+          $rootScope.locality.selectedItem = $rootScope.locality.items.find(item => item.value === strLoc.toLowerCase());
+        }
+        if ($stateParams.delivery_date) {
+          $rootScope.delivery_date.selectedItem = $rootScope.delivery_date.items.find(item => item.value === parseInt($stateParams.delivery_date));
+        }
+
+        $rootScope.$emit('BASEDATA_UPDATED');
       }
     });
   }

@@ -1,5 +1,5 @@
 import { ConfirmationCmt } from './confirmation/index';
-import { LocalityCtrl } from './locality/index';
+// import { LocalityCtrl } from './locality/index';
 
 const CheckOutCmt = {
   templateUrl: 'app/pages/checkout/tpl.html',
@@ -10,7 +10,7 @@ export default angular.module('captainscook.pages.checkout', [])
   .component('checkout', CheckOutCmt)
   .component('confirmation', ConfirmationCmt);
 
-function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth, $mdDialog, $document) {
+function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth) {
   'ngInject';
 
   let vm = this;

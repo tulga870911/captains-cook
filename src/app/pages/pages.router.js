@@ -11,7 +11,7 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
       template: '<home></home>'
     })
     .state('main.results', {
-      url: '/results',
+      url: '/results/:locality/:sub_locality/:delivery_date/:delivery_time',
       template: '<results></results>',
       authenticate: true
     })

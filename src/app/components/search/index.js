@@ -29,7 +29,7 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
     init();
   }
 
-  $rootScope.$on('$destroy', $rootScope.$on('LOCALITY_UPDATED', function () {
+  $rootScope.$on('$destroy', $rootScope.$on('BASEDATA_UPDATED', function() {
     vm.locality = $rootScope.locality;
     vm.delivery_date = $rootScope.delivery_date;
   }));
@@ -44,9 +44,18 @@ function SearchCtrl($log, $q, $timeout, $state, $rootScope) {
   }
 
   function showSearchResults() {
-    $rootScope.$emit('SHOW_SEARCH_RESULTS');
+    // $rootScope.$emit('SHOW_SEARCH_RESULTS');
 
-    $state.go('main.results');
+    let locs = $rootScope.locality.selectedItem.display.split(', ');
+    let delivery_date = $rootScope.delivery_date.selectedItem.value;
+    let delivery_time = $rootScope.delivery_time.selectedItem.value;
+
+    $state.go('main.results', {
+      locality: locs[1],
+      sub_locality: locs[0],
+      delivery_date: delivery_date,
+      delivery_time: delivery_time
+    }, { reload: true });
   }
 
 }

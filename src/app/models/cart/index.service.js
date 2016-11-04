@@ -16,6 +16,15 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
   };
   let orderIds = [];
 
+  if (sessionStorage.cart) {
+    let session_cart = angular.fromJson(sessionStorage.cart);
+    items = session_cart.items;
+    total_price = session_cart.total_price;
+
+    $log.log('cart in sessionStorage', items);
+    $rootScope.$emit('CART_UPDATED');
+  }
+
   let Cart = {
     addToShoppingCart(item, qty) {
       if (!Auth.isLoggedIn()) {
@@ -53,6 +62,11 @@ export function CartService($log, $q, $resource, $document, $window, $rootScope,
 
         $log.log('cart', items);
         $rootScope.$emit('CART_UPDATED');
+
+        sessionStorage.cart = angular.toJson({
+          items: items,
+          total_price: total_price
+        });
 
         return foundItem ? foundItem.quantity : qty_adjuted;
       }
