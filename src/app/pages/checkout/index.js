@@ -181,6 +181,7 @@ function CheckOutCtrl($log, $state, $scope, $rootScope, Cart, Coupon, Auth) {
       paymentMode: vm.paymentMode
     }, error => {
       if (!error) {
+        Cart.clearShoppingCart();
         $state.go('main.confirmation')
       } else {
         vm.errMessage = 'Failed to place an order.';
