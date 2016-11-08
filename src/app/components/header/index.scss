@@ -17,7 +17,7 @@
   }
   .phone {
     float: left;
-    padding-left: 25px;
+    padding-left: 7px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -68,6 +68,7 @@
         font-size: 18px;
         padding: 10px;
         border-left: 1px $inactive solid;
+        max-width: 95px;
       }
     }
     .img {
@@ -97,6 +98,10 @@
       }
       &:last-child {
         color: #000;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
       }
     }
   }
@@ -124,24 +129,24 @@
   }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 475px) {
   .mainHeader {
-    .phone{
+    .phone {
       display: none;
     }
     .left {
       -webkit-box-flex: 1;
-      -webkit-flex: 1 1 40%;
-      flex: 1 1 40%;
-      max-width: 40%;
+      -webkit-flex: 1 1 20%;
+      flex: 1 1 20%;
+      max-width: 20%;
       max-height: 100%;
       box-sizing: border-box;
     }
     .right {
       -webkit-box-flex: 1;
-      -webkit-flex: 1 1 60%;
-      flex: 1 1 60%;
-      max-width: 60%;
+      -webkit-flex: 1 1 80%;
+      flex: 1 1 80%;
+      max-width: 80%;
       max-height: 100%;
       box-sizing: border-box;
     }
