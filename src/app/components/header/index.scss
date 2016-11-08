@@ -69,6 +69,12 @@
         padding: 10px;
         border-left: 1px $inactive solid;
         max-width: 95px;
+        .dropdown-toggle {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 100%;
+        }
       }
     }
     .img {
@@ -98,10 +104,6 @@
       }
       &:last-child {
         color: #000;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
       }
     }
   }
